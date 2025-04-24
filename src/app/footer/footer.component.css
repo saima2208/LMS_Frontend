@@ -1,0 +1,110 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f9fa;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 40px;
+}
+
+footer h5 {
+  font-size: 1.2rem;
+  color: #ffc107;
+  margin-bottom: 15px;
+}
+
+footer h3 {
+  font-size: 2rem;
+  color: blueviolet;
+  margin-bottom: 10px;
+}
+
+footer ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer ul li {
+  margin-bottom: 10px;
+}
+
+footer ul li a {
+  text-decoration: none;
+  color: #fff;
+  padding: 5px 0;
+  transition: color 0.3s;
+}
+
+footer ul li a:hover {
+  color: #ffc107;
+}
+
+footer .bi {
+  font-size: 1.5rem;
+  color: #fff;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+footer .bi:hover {
+  color: #ffc107;
+}
+
+footer table {
+  margin-top: 10px;
+}
+
+footer .btn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+  text-align: left;
+  display: inline-block;
+  transition: color 0.3s;
+}
+
+footer .btn:hover {
+  color: #ffc107;
+}
+
+footer .d-flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+footer .col {
+  flex: 1;
+  margin: 10px;
+}
+
+footer .col.mb-3 {
+  min-width: 200px;
+}
+
+footer hr {
+  border-color: #555;
+  margin: 20px 0;
+}
+
+ p {
+  text-align: center;
+  color: #1f1d1d;
+ margin-left: 100px;
+  font-size: 0.9rem;
+}
+
+footer p span {
+  color: blueviolet;
+  font-weight: bold;
+}

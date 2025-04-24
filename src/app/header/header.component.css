@@ -1,0 +1,87 @@
+/* Navbar Styles */
+.navbar {
+  background-color: #333; /* Dark background for the navbar */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  padding: 10px 20px;
+}
+
+.navbar-brand h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: blueviolet;
+  margin: 0;
+}
+
+.navbar-toggler {
+  border: none;
+  background: #fff; /* Toggler button color */
+}
+
+.navbar-toggler-icon {
+  background-color: #fff; /* Toggler icon background */
+  border-radius: 2px;
+  width: 25px;
+  height: 2px;
+  display: block;
+  position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  background-color: #fff;
+  width: 25px;
+  height: 2px;
+  position: absolute;
+  left: 0;
+}
+
+.navbar-toggler-icon::before {
+  top: -7px;
+}
+
+.navbar-toggler-icon::after {
+  top: 7px;
+}
+
+.navbar-nav .nav-item .nav-link {
+  font-size: 1rem;
+  color: #f8f9fa; /* Light text color */
+  margin-right: 15px;
+  transition: color 0.3s;
+}
+
+.navbar-nav .nav-item .nav-link:hover,
+.navbar-nav .nav-item .nav-link:focus {
+  color: #ffc107; /* Highlight color on hover/focus */
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: #444; /* Dropdown background */
+  border: none;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+  color: #f8f9fa;
+  font-size: 0.9rem;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item:hover {
+  background-color: #ffc107; /* Highlight dropdown items */
+  color: #000; /* Readable text on highlight */
+}
+
+.form-inline .btn {
+  font-size: 0.9rem;
+  margin: 0 5px;
+  padding: 5px 15px;
+  background-color: #28a745; /* Green button */
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-inline .btn:hover {
+  background-color: #218838; /* Darker green on hover */
+  transform: scale(1.05); /* Slight zoom on hover */
+}

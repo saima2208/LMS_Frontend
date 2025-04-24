@@ -1,0 +1,149 @@
+/* Responsive Design */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .col-3,
+  .col-9 {
+    width: 100%;
+  }
+
+  .sidebar {
+    width: 100%;
+    position: static;
+    border-right: none;
+    box-shadow: none;
+  }
+
+  .content {
+    margin-left: 0;
+  }
+
+  .profile-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-card img {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .profile-card .details {
+    text-align: center;
+  }
+
+  .profile-card .info p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #555;
+    margin: 0 0 10px;
+  }
+
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f9;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #444;
+  margin-top: 10px;
+}
+
+h4 {
+  font-size: 1rem;
+  color: #555;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 5px 0;
+  padding: 2;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+
+.col-3 {
+  flex: 0 0 25%;
+  padding: 15px;
+}
+
+.col-9 {
+  flex: 0 0 75%;
+  padding: 15px;
+}
+
+.profile-card {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card .row {
+  align-items: center;
+}
+
+.profile-card img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 2px solid #ddd;
+  object-fit: cover;
+}
+
+.info {
+  padding: 0 20px;
+}
+
+.info p {
+  display: flex;
+  align-items: center;
+}
+
+.info p span {
+  font-weight: bold;
+  margin-left: 5px;
+}
+
+/* .info p::before {
+  content: '🔹';
+  margin-right: 5px;
+} */
+
+.btn {
+  margin-top: 20px;
+  text-align: center;
+  background: #fda085;
+  color: #fff;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 700px;
+}
+
+.profile-card .btn:hover {
+  background: #ad610a;
+}
+

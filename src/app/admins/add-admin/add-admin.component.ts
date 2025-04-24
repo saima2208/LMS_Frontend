@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
+import { AdminDashboardComponent } from "../admin-dashboard/admin-dashboard.component";
 
 @Component({
   selector: 'app-add-admin',
-  imports: [],
+  imports: [AdminDashboardComponent],
   templateUrl: './add-admin.component.html',
   styleUrl: './add-admin.component.css'
 })

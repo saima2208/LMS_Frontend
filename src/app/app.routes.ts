@@ -6,6 +6,8 @@ import { StudentDashboardComponent } from './students/student-dashboard/student-
 import { TeacherDashboardComponent } from './teachers/teacher-dashboard/teacher-dashboard.component';
 import { StudentComponent } from './students/student/student.component';
 import { TeacherComponent } from './teachers/teacher/teacher.component';
+import { RegistrationComponent } from './registration/registration.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
   {path:'admin',component:AdminDashboardComponent},
@@ -15,6 +17,8 @@ export const routes: Routes = [
   {path:'student',component:StudentDashboardComponent},
   {path:'teacher',component:TeacherDashboardComponent},
   {path:'studentProfile',component:StudentComponent},
-  {path:'teacherProfile',component:TeacherComponent}
+  {path:'teacherProfile',component:TeacherComponent},
+  {path:'registration',component:RegistrationComponent},
+  {path:'login',component:LoginComponent}
 
 ];

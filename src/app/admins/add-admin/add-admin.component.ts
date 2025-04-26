@@ -3,7 +3,7 @@ import { AdminDashboardComponent } from "../admin-dashboard/admin-dashboard.comp
 
 @Component({
   selector: 'app-add-admin',
-  imports: [AdminDashboardComponent],
+  imports: [],
   templateUrl: './add-admin.component.html',
   styleUrl: './add-admin.component.css'
 })

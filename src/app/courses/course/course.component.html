@@ -1,1 +1,36 @@
-<p>course works!</p>
+
+  <h1 class="form-title text-primary text-center mb-4"> Our Courses </h1>
+  <div class="row mt-4">
+      <div class="col-md-4 mb-4" *ngFor="let course of course">
+          <div class="card shadow-lg rounded-4">
+              <!-- Course Image -->
+              <img [src]="course.image" class="card-img-top img-fluid book-image" alt="Course Image">
+
+              <div class="card-body text-center">
+                  <!-- Course Name -->
+                  <h5 class="card-title fw-bold text-primary">{{ course.name }}</h5>
+
+                  <!-- Short description -->
+                  <p class="card-text text-muted">✍️ {{ course.description }}</p>
+
+                  <!-- Course Price -->
+                   <p class="card-text text-success">💲 <strong>Price:</strong> ${{ course.price }}</p>
+
+                  <!-- View details Button -->
+                  <div class="button-container">
+                    <button class="btn btn-warning shadow-sm fw-bold">
+                      View Details
+                    </button>
+                    <button class="btn btn-enroll shadow-sm fw-bold">
+                      Enroll
+
+                    </button>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+

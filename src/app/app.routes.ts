@@ -8,6 +8,9 @@ import { StudentComponent } from './students/student/student.component';
 import { TeacherComponent } from './teachers/teacher/teacher.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
+import { CourseComponent } from './courses/course/course.component';
+import { AddCourseComponent } from './courses/add-course/add-course.component';
+import { CourseListComponent } from './courses/course-list/course-list.component';
 
 export const routes: Routes = [
   {path:'admin',component:AdminDashboardComponent},
@@ -19,6 +22,9 @@ export const routes: Routes = [
   {path:'studentProfile',component:StudentComponent},
   {path:'teacherProfile',component:TeacherComponent},
   {path:'registration',component:RegistrationComponent},
-  {path:'login',component:LoginComponent}
+  {path:'login',component:LoginComponent},
+  {path:'courses',component:CourseComponent},
+  {path:'add-course',component:AddCourseComponent},
+  {path:'course-list',component:CourseListComponent}
 
 ];

@@ -1,0 +1,144 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.card {
+  border: none;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+  height: 200px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem; /* Adjust gap for more spacing */
+}
+
+.btn {
+  flex: 1;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  color: #ffffff;
+}
+
+.btn-enroll {
+  background-color: #28a745;
+  color: #ffffff;
+  font-weight: bold;
+  position: relative;
+}
+
+.btn-enroll:hover {
+  background-color: #218838;
+}
+
+.btn-enroll .price-badge {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  background-color: #ffc107;
+  color: #212529;
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 0.3rem 0.5rem;
+  border-radius: 12px;
+}
+
+.text-primary {
+  color: #007bff !important;
+}
+
+.text-success {
+  color: #28a745 !important;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem; /* Space between cards */
+  justify-content: center;
+}
+
+.col-md-4 {
+  flex: 1 1 calc(25% - 1.5rem); /* Adjust for 4 cards per row */
+  max-width: calc(25% - 1.5rem);
+}
+
+@media (max-width: 992px) {
+  .col-md-4 {
+    flex: 1 1 calc(33.333% - 1.5rem); /* 3 cards per row on medium screens */
+    max-width: calc(33.333% - 1.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .col-md-4 {
+    flex: 1 1 calc(50% - 1.5rem); /* 2 cards per row on smaller screens */
+    max-width: calc(50% - 1.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .col-md-4 {
+    flex: 1 1 100%; /* 1 card per row on extra small screens */
+    max-width: 100%;
+  }
+
+  .form-title {
+    font-size: 1.5rem;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+}

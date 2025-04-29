@@ -1,5 +1,5 @@
 export class User {
-  id: number;
+  user_id: number;
   name: string;
   fatherName: string;
   motherName: string;
@@ -13,8 +13,8 @@ export class User {
   // role:Role;
 
 
-  constructor(id: number, name: string, fatherName: string, motherName: string, address: string, phoneNo: string, email: string,gender:string, nationality:string,image:string, password: string, ) {
-      this.id = id;
+  constructor(user_id: number, name: string, fatherName: string, motherName: string, address: string, phoneNo: string, email: string,gender:string, nationality:string,image:string, password: string, ) {
+      this.user_id = user_id;
       this.name = name;
       this.fatherName = fatherName;
       this.motherName = motherName;
@@ -29,3 +29,16 @@ export class User {
 
   }
 }
+
+export interface User {
+  userId: number;
+  name: string;
+  fatherName: string;
+  motherName: string;
+  email: string;
+  password: string;
+  phone: string;
+  avatarUrl?: string;
+  role: 'Admin' | 'Teacher' | 'Student';
+}
+

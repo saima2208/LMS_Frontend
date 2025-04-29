@@ -2,17 +2,20 @@ import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { Course } from '../../model/course.model';
+
 import { CommonModule, NgFor } from '@angular/common';
+// import { Course, CourseService } from '../../services/course.service';
+import { Course} from '../../model/course.model';
 
 @Component({
   selector: 'app-add-course',
   imports: [FormsModule, CommonModule],
   templateUrl: './add-course.component.html',
-  styleUrl: './add-course.component.css'
+  styleUrl: './add-course.component.css',
 })
-export class AddCourseComponent implements OnInit {
-  courses: Course = new Course(0,0,0,'','','','','',0,'');
+export class AddCourseComponent implements OnInit{
+
+  courses: Course = new Course(0,0,0,'','','','',0,'');
   isEditMode: boolean = false;
 
   constructor(private router: Router) {
@@ -54,3 +57,4 @@ export class AddCourseComponent implements OnInit {
    this.router.navigate(['/course-list']); // Navigate back to course list
  }
 }
+

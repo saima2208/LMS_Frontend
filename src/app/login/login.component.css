@@ -1,5 +1,5 @@
 /* General Container Styling */
-.body {
+/* .body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,10 +8,10 @@
   padding: 20px;
   background: linear-gradient(to right, #6a11cb, #2575fc);
   font-family: Arial, sans-serif;
-}
+} */
 
 /* Role Selection Section */
-.role-selection {
+/* .role-selection {
   background: white;
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -42,10 +42,10 @@
   outline: none;
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
+} */
 
 /* Login Form Section */
-.login-form {
+/* .login-form {
   background: white;
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
@@ -82,10 +82,10 @@
   outline: none;
   border-color: #007bff;
   box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
+} */
 
 /* Submit Button */
-.login-form button {
+/* .login-form button {
   width: 100%;
   padding: 10px;
   font-size: 1rem;
@@ -100,10 +100,10 @@
 
 .login-form button:hover {
   background: linear-gradient(to right, #2575fc, #6a11cb);
-}
+} */
 
 /* Links */
-.login-form a {
+/* .login-form a {
   font-size: 0.9rem;
   color: #007bff;
   text-decoration: none;
@@ -125,7 +125,7 @@
 
 .login-form p a:hover {
   text-decoration: underline;
-}
+} */
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -137,3 +137,64 @@
     padding: 20px;
   }
 }
+
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-align: left;
+}
+
+input {
+  font-size: 16px;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+}
+
+button {
+  font-size: 16px;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+.error {
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: 10px;
+}
+

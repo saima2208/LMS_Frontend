@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardComponent } from './admins/admin-dashboard/admin-dashboard.component';
 import { AdminComponent } from './admins/admin/admin.component';
 import { AddAdminComponent } from './admins/add-admin/add-admin.component';
@@ -10,7 +10,11 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { CourseComponent } from './courses/course/course.component';
 import { AddCourseComponent } from './courses/add-course/add-course.component';
+
+import { NgModule } from '@angular/core';
 import { CourseListComponent } from './courses/course-list/course-list.component';
+
+
 
 export const routes: Routes = [
   {path:'admin',component:AdminDashboardComponent},
@@ -25,6 +29,10 @@ export const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'courses',component:CourseComponent},
   {path:'add-course',component:AddCourseComponent},
+  { path: 'login', component: LoginComponent },
   {path:'course-list',component:CourseListComponent}
 
+
 ];
+
+

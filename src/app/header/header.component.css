@@ -1,7 +1,9 @@
 /* Navbar Styles */
 .navbar {
-  background-color: #333; /* Dark background for the navbar */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  background-color: #ffffff; /* Dark background for the navbar */
+
+  /* Subtle shadow for depth */
+  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
   padding: 10px 20px;
 }
 
@@ -45,8 +47,8 @@
 }
 
 .navbar-nav .nav-item .nav-link {
-  font-size: 1rem;
-  color: #f8f9fa; /* Light text color */
+  font-size: 1.2rem;
+  color: #0a0b0b; /* Light text color */
   margin-right: 15px;
   transition: color 0.3s;
 }

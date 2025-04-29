@@ -11,7 +11,7 @@
     </div> -->
 
 
-<div class="body">
+<!-- <div class="body">
 
 
 
@@ -28,4 +28,31 @@
   </div>
 
 
+</div> -->
+
+
+<div class="login-container">
+  <h2>Login</h2>
+  <form >
+    <label for="email">Email:</label>
+    <input
+      id="email"
+      type="email"
+      [(ngModel)]="credentials.email"
+      name="email"
+      required
+    />
+    <label for="password">Password:</label>
+    <input
+      id="password"
+      type="password"
+      [(ngModel)]="credentials.password"
+      name="password"
+      required
+    />
+    <button type="submit">Login</button>
+
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </form>
 </div>
+

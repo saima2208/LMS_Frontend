@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Course } from '../../model/course.model';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, NgFor } from '@angular/common';
+import { CourseService } from '../../services/course.service';
 
 
 
@@ -37,6 +38,10 @@ constructor(private router: Router) {}
     }
   }
   addNewCourse(): void {
-    this.router.navigate(['/add-course'], { state: { course: new Course(0,0,0, '', '','','', '',0,'') } });
+    this.router.navigate(['/add-course'], { state: { course: new Course(0,0,0, '', '','','', 0,'') } });
   }
+
+
+// // this is object for this  class
+
 }

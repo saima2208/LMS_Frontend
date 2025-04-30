@@ -11,7 +11,6 @@ import { LoginComponent } from './login/login.component';
 import { CourseComponent } from './courses/course/course.component';
 import { AddCourseComponent } from './courses/add-course/add-course.component';
 
-import { NgModule } from '@angular/core';
 import { CourseListComponent } from './courses/course-list/course-list.component';
 
 
@@ -29,7 +28,7 @@ export const routes: Routes = [
   {path:'login',component:LoginComponent},
   {path:'courses',component:CourseComponent},
   {path:'add-course',component:AddCourseComponent},
-  { path: 'login', component: LoginComponent },
+  {path: 'login', component: LoginComponent },
   {path:'course-list',component:CourseListComponent}
 
 

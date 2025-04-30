@@ -1,23 +1,32 @@
 <div class="container">
     <fieldset>
-    <h1>{{ isEditMode ? "Edit Course" : "Add Course" }}</h1>
-    <form (ngSubmit)="saveCourse()">
+    <h1>{{ isUpdate ? "Edit Course" : "Add Course" }}</h1>
+    <form (ngSubmit)="onSubmit()">
       <label for="name">Name:</label><br />
-      <input type="text" name="name" [(ngModel)]="courses.name" required /><br />
+      <input type="text" name="name" [(ngModel)]="course.name" required /><br />
 
-      <label for="description">Description:</label><br />
-      <textarea [(ngModel)]="courses.description" name="description" required></textarea><br />
+     
 
      <label for="startDate">Start Date</label><br>
-     <input type="text" name="startDate" [(ngModel)]="courses.startDate" required /><br />
+     <input type="date" name="startDate" [(ngModel)]="course.startDate" required /><br />
 
-     <label for="instructor">Instructor</label><br>
-     <input type="text" name="instructor" [(ngModel)]="courses.teacher_id" required /><br />
+     <label for="teacher">Teacher</label><br>
+     <input type="text" name="teacher" [(ngModel)]="course.teacher_id" required /><br />
+
+     <label for="price">Price</label><br>
+     <input type="text" name="price" [(ngModel)]="course.price" required /><br />
+
 
      <label for="duration">Course Duration</label><br>
-     <input type="text" name="duration" [(ngModel)]="courses.duration" required /><br />
+     <input type="text" name="duration" [(ngModel)]="course.duration" required /><br />
 
-      <button type="submit" class="btn btn-success">{{ isEditMode ? "Update" : "Add" }}</button>
+     <label for="description">Description:</label><br />
+     <textarea [(ngModel)]="course.description" name="description" required></textarea><br />
+
+     <label for="image">Course Image</label><br>
+     <input type="text" name="image" [(ngModel)]="course.image" required /><br />
+
+      <button type="submit" class="btn btn-success">{{ isUpdate ? "Update" : "Add" }}</button>
     </form>
   </fieldset>
   </div>

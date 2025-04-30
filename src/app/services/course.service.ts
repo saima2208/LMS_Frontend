@@ -1,18 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Course } from '../model/course.model';
 
-export interface Course {
-  course_id?: number;
-  name: string;
-  price: string;
-  startDate: string;
-  duration: number;
-  teacher_id:Number;
-  total_lessons:Number;
-  description: string;
-  image:string;
-}
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +12,7 @@ export class CourseService {
 
   constructor(private http: HttpClient) {}
 
-  getCourses(): Observable<Course[]> {
+  getAllCourses(): Observable<Course[]> {
     return this.http.get<Course[]>(this.apiUrl);
   }
 
@@ -42,3 +32,5 @@ export class CourseService {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
 }
+
+

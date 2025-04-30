@@ -4,7 +4,6 @@ export class Course {
   total_lesson:number;
   name: string;
   description: string;
-
   price:string;
   startDate: String;
   duration: number;
@@ -16,7 +15,6 @@ export class Course {
       this.name = name;
       this.total_lesson = total_lesson;
       this.description = description;
-
       this.startDate = startDate;
       this.price = price;
       this.duration = duration;
@@ -25,40 +23,4 @@ export class Course {
 
 }
 
-
-export class Writer {
-  id: number;
-  writerName: string;
-  bookName: string;
-  quantity: number;
-  price: number;
-  imageUrl: string;
-
-constructor(id: number, writerName: string,  bookName: string, quantity: number, price: number, imageUrl: string
-) {
-  this.id = id;
-  this.writerName = writerName;
-  this.bookName = bookName;
-  this.quantity = quantity;
-  this.price = price;
-  this.imageUrl = imageUrl;
-}
-}
-
-export class Catagory {
-  id: number;
-  name: string;
-  description: string;
-
-  price: number;
-  imageUrl: string;
-  constructor(id: number, name: string, description: string, quantity: number, price: number, imageUrl: string) {
-    this.id = id;
-    this.name = name;
-    this.description = description;
-
-    this.price = price;
-    this.imageUrl = imageUrl;
-  }
-}
 

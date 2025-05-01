@@ -1,7 +1,7 @@
 export class Course {
   course_id: number;
   teacher_id:number;
-  total_lesson:number;
+
   name: string;
   description: string;
   price:string;
@@ -9,16 +9,16 @@ export class Course {
   duration: number;
   image: string;
 
-  constructor(course_id: number,teacher_id:number,total_lesson:number, name: string, description: string,price:string, startDate: String, duration: number,image:string) {
-      this.course_id = course_id;
-      this.teacher_id = teacher_id;
-      this.name = name;
-      this.total_lesson = total_lesson;
-      this.description = description;
-      this.startDate = startDate;
-      this.price = price;
-      this.duration = duration;
-      this.image = image;
+  constructor() {
+      this.course_id = 0;
+      this.teacher_id = 0;
+      this.name = '';
+
+      this.description = '';
+      this.startDate = '';
+      this.price = '';
+      this.duration = 0;
+      this.image = '';
   }
 
 }

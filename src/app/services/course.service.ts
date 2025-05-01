@@ -20,8 +20,16 @@ export class CourseService {
     return this.http.get<Course>(`${this.apiUrl}/${id}`);
   }
 
-  createCourse(course: Course): Observable<Course> {
-    return this.http.post<Course>(this.apiUrl, course);
+  // createCourse(course: Course): Observable<Course> {
+  //   return this.http.post<Course>(this.apiUrl, course);
+  // }
+
+
+
+  createCourse(course: any): Observable<any> {
+    return this.http.post(this.apiUrl, course).pipe(
+
+    );
   }
 
   updateCourse(id: number, course: Course): Observable<Course> {

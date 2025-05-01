@@ -15,86 +15,87 @@ import { NgIf } from '@angular/common';
   styleUrl: './course-list.component.css'
 })
 export class CourseListComponent implements OnInit {
-courses:Course[]=[];
 
-constructor(private router: Router,courseService:CourseService) {}
+// courses:Course[]=[];
 
-  ngOnInit(): void {
-    // Load courses from localStorage
-    this.courses = JSON.parse(localStorage.getItem('courses') || '[]');
-  }
+// constructor(private router: Router,courseService:CourseService) {}
 
-  // Navigate to edit page
-  editCourse(course: Course): void {
-    const id = course.course_id;
-    this.router.navigate(['add-course'], { state: { course } });
-  }
+//   ngOnInit(): void {
+//     // Load courses from localStorage
+//     this.courses = JSON.parse(localStorage.getItem('courses') || '[]');
+//   }
 
-  // Delete course and update localStorage
-  deleteCourse(course: Course): void {
-    if (confirm('Are you sure you want to delete this course?')) {
-      this.courses = this.courses.filter((p) => p.course_id !== course.course_id);
-      localStorage.setItem('courses', JSON.stringify(this.courses));
-    }
-  }
-  addNewCourse(): void {
-    this.router.navigate(['/add-course'], { state: { course: new Course(0,0,0, '', '','','', 0,'') } });
-  }
+//   // Navigate to edit page
+//   editCourse(course: Course): void {
+//     const id = course.course_id;
+//     this.router.navigate(['add-course'], { state: { course } });
+//   }
+
+//   // Delete course and update localStorage
+//   deleteCourse(course: Course): void {
+//     if (confirm('Are you sure you want to delete this course?')) {
+//       this.courses = this.courses.filter((p) => p.course_id !== course.course_id);
+//       localStorage.setItem('courses', JSON.stringify(this.courses));
+//     }
+//   }
+//   addNewCourse(): void {
+//     this.router.navigate(['/add-course'], { state: { course: new Course(0,0,0, '', '','','', 0,'') } });
+//   }
 
 
-// // this is object for this  class
+
 
 
   // this is object for this  class
 
-//  courses:Course[]=[];
+ courses:Course[]=[];
 
-//   constructor(private router:Router, private courseService: CourseService){
-
-
-//   }
+  constructor(private router:Router, private courseService: CourseService){
 
 
-//   ngOnInit(): void {
-      
-//     this.saveCourses();
-
-//   }
-
-//   // this is the method to get all the data from the data base
-
-//   saveCourses(){
+  }
 
 
-//     this.courseService.getAllCourses().subscribe(data=>{
+  ngOnInit(): void {
 
-//             this.courses=data;
-//     });
+    this.saveCourses();
 
-//   }
+  }
 
-//   editCourse(a:Course){
+  // this is the method to get all the data from the data base
 
-//     this.router.navigate(['/add-course'],{state:{a}})
-//   }
-
-//   deleteCourse(a:Course){
-
-//     if(confirm("are you want to delete?")){
+  saveCourses(){
 
 
-//      this.courseService.deleteCourse(a.course_id).subscribe(()=>{
+    this.courseService.getAllCourses().subscribe(data=>{
 
-//       this.saveCourses();
-//      });
+            this.courses=data;
+    });
 
-     
-//     }
-//   }
+  }
 
-//   addNewCourse(): void {
-//          this.router.navigate(['/add-course'], { state: { course: new Course(0,0,0, '', '','','', 0,'') } });
-//        }
+  editCourse(a:Course){
+
+    this.router.navigate(['/add-course'],{state:{a}})
+  }
+
+  deleteCourse(a:Course){
+
+    if(confirm("are you want to delete?")){
+
+
+     this.courseService.deleteCourse(a.course_id).subscribe(()=>{
+
+      this.saveCourses();
+     });
+
+
+    }
+  }
+
+  addNewCourse(): void {
+         this.router.navigate(['/add-course'], { state: { course: new Course(0,0,0, '', '','','', 0,'') } });
+       }
 
 
 }

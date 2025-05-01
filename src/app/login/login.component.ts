@@ -17,6 +17,7 @@ import { Router } from '@angular/router';
 import { LoginRequest } from '../model/login.model';
 import { FormsModule } from '@angular/forms';
 import { NgFor, NgIf } from '@angular/common';
+import { AuthServiceService } from '../services/auth-service.service';
 
 
 @Component({
@@ -25,21 +26,42 @@ import { NgFor, NgIf } from '@angular/common';
   templateUrl: './login.component.html',
    styleUrl: './login.component.css'
 })
+// export class LoginComponent {
+//   credentials: LoginRequest = { email: '', password: '' };
+//   errorMessage: string = '';
+
+//   constructor(private AuthService: AuthServiceService, private router: Router) {}
+
+//   login(): void {
+//     this.AuthService.login(this.credentials).subscribe({
+//       next: (response) => {
+//         this.AuthService.setToken(response.token);
+//         this.router.navigate(['/dashboard']); // Redirect after login
+//       },
+//       error: () => {
+//         this.errorMessage = 'Invalid email or password';
+//       },
+//     });
+//   }
+// }
+
 export class LoginComponent {
-  credentials: LoginRequest = { email: '', password: '' };
-  errorMessage: string = '';
+  email = '';
+  password = '';
 
-  // constructor(private AuthService: AuthServiceService, private router: Router) {}
+  constructor(private auth: AuthServiceService, private router: Router) { }
 
-  // login(): void {
-  //   this.AuthService.login(this.credentials).subscribe({
-  //     next: (response) => {
-  //       this.AuthService.saveToken(response.token);
-  //       this.router.navigate(['/dashboard']); // Redirect after login
-  //     },
-  //     error: () => {
-  //       this.errorMessage = 'Invalid email or password';
-  //     },
-  //   });
-  // }
+  onLogin() {
+    this.auth.login({ email: this.email, password: this.password })
+      .subscribe({
+        next: (res) => {
+          this.auth.setToken(res.access_token);
+          this.router.navigate(['/dashboard']);
+        },
+        error: (error) => {
+          alert('Invalid credentials')
+          console.log(error)
+        }
+      });
+  }
 }

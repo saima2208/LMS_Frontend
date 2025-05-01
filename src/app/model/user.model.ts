@@ -10,7 +10,7 @@ export class User {
   nationality:string;
   image:string;
   password: string;
-  // role:Role;
+  //  role:Role;
 
 
   constructor(user_id: number, name: string, fatherName: string, motherName: string, address: string, phoneNo: string, email: string,gender:string, nationality:string,image:string, password: string, ) {

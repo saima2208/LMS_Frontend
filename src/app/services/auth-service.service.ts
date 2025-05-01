@@ -1,34 +1,51 @@
-// import { HttpClient } from '@angular/common/http';
-// import { Injectable } from '@angular/core';
-// import { Observable } from 'rxjs';
-// import { LoginRequest, LoginResponse } from '../model/login.model';
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { LoginRequest, LoginResponse } from '../model/login.model';
+import { Router } from '@angular/router';
 
-// @Injectable({
-//   providedIn: 'root'
-// })
-// export class AuthServiceService {
+@Injectable({
+  providedIn: 'root'
+})
+export class AuthServiceService {
 
-//   private apiUrl = 'http://localhost:8080/api/auth/login'; // Replace with your backend URL
+  private readonly tokenKey = 'access_token';
+  private roleSubject = new BehaviorSubject<string | null>(null);
 
-//   constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) { }
 
-//   // Login user
-//   login(credentials: LoginRequest): Observable<LoginResponse> {
-//     return this.http.post<LoginResponse>(this.apiUrl, credentials);
-//   }
+  login(credentials: { email: string; password: string }) {
+    return this.http.post<any>('http://localhost:8080/api/auth/login', credentials);
+  }
 
-//   // Save token in local storage
-//   saveToken(token: string): void {
-//     localStorage.setItem('authToken', token);
-//   }
+  setToken(token: string) {
+    localStorage.setItem(this.tokenKey, token);
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    this.roleSubject.next(payload.role);
+  }
 
-//   // Get token from local storage
-//   getToken(): string | null {
-//     return localStorage.getItem('authToken');
-//   }
+  getRole() {
+    return this.roleSubject.asObservable();
+  }
 
-//   // Remove token (Logout)
-//   logout(): void {
-//     localStorage.removeItem('authToken');
-//   }
-// }
+  logout() {
+    localStorage.removeItem(this.tokenKey);
+    this.roleSubject.next(null);
+    this.router.navigate(['/login']);
+  }
+
+  getToken() {
+    return localStorage.getItem(this.tokenKey);
+  }
+
+  isAuthenticated(): boolean {
+    return !!this.getToken();
+  }
+
+  getUserRole(): string {
+    const token = this.getToken();
+    if (!token) return '';
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    return payload.role.toLowerCase();
+}
+}

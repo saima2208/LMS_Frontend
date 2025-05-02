@@ -14,12 +14,17 @@ import { AddCourseComponent } from './courses/add-course/add-course.component';
 import { CourseListComponent } from './courses/course-list/course-list.component';
 import { AddLessonComponent } from './lessons/add-lesson/add-lesson.component';
 import { LessonListComponent } from './lessons/lesson-list/lesson-list.component';
+import { EnrollmentComponent } from './enrollment/enrollment.component';
+import { HomeComponent } from './pages/home/home.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { FeedbackComponent } from './pages/feedback/feedback.component';
 
 
 
 export const routes: Routes = [
   {path:'admin',component:AdminDashboardComponent},
-  {path: '',component:AdminDashboardComponent},
+  {path: '',component:HomeComponent},
+  {path: 'home',component:HomeComponent},
   {path:'adminProfile',component:AdminComponent},
   {path:'add-admin',component:AddAdminComponent},
   {path:'student',component:StudentDashboardComponent},
@@ -33,7 +38,10 @@ export const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path:'course-list',component:CourseListComponent},
   {path:'add-lesson',component:AddLessonComponent},
-  {path:'lesson-list',component:LessonListComponent}
+  {path:'lesson-list',component:LessonListComponent},
+  {path:'enroll',component:EnrollmentComponent},
+  {path:'contact',component:ContactComponent},
+  {path:'feedback',component:FeedbackComponent}
 
 
 ];

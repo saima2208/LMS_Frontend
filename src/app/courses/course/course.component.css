@@ -67,15 +67,17 @@
   color: #ffffff;
 }
 
-.btn-enroll {
+.btn-success  {
   background-color: #28a745;
-  color: #ffffff;
+  color: #212529;
   font-weight: bold;
-  position: relative;
+  /* position: relative; */
+  align-items: center;
 }
 
-.btn-enroll:hover {
+.btn-success:hover {
   background-color: #218838;
+  color: #ffffff;
 }
 
 .btn-enroll .price-badge {

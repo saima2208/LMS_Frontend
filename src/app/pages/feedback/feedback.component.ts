@@ -6,7 +6,7 @@ import { CommonModule, NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-feedback',
-  imports: [FormsModule, CommonModule, NgFor],
+  imports: [FormsModule, CommonModule],
   templateUrl: './feedback.component.html',
   styleUrl: './feedback.component.css'
 })

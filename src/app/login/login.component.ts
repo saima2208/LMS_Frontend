@@ -22,7 +22,7 @@ import { AuthServiceService } from '../services/auth-service.service';
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule,NgIf],
+  imports: [FormsModule],
   templateUrl: './login.component.html',
    styleUrl: './login.component.css'
 })

@@ -1,67 +1,68 @@
-
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-login',
-//   imports: [],
-//   templateUrl: './login.component.html',
-//   styleUrl: './login.component.css'
-// })
-// export class LoginComponent {
-
-// }
-
-
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
-import { LoginRequest } from '../model/login.model';
-import { FormsModule } from '@angular/forms';
-import { NgFor, NgIf } from '@angular/common';
-import { AuthServiceService } from '../services/auth-service.service';
 
+import { Router, RouterLink } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { AuthService } from '../core/auth.service';
 
 @Component({
   selector: 'app-login',
   imports: [FormsModule],
   templateUrl: './login.component.html',
-   styleUrl: './login.component.css'
+  styleUrl: './login.component.css'
 })
-// export class LoginComponent {
-//   credentials: LoginRequest = { email: '', password: '' };
-//   errorMessage: string = '';
-
-//   constructor(private AuthService: AuthServiceService, private router: Router) {}
-
-//   login(): void {
-//     this.AuthService.login(this.credentials).subscribe({
-//       next: (response) => {
-//         this.AuthService.setToken(response.token);
-//         this.router.navigate(['/dashboard']); // Redirect after login
-//       },
-//       error: () => {
-//         this.errorMessage = 'Invalid email or password';
-//       },
-//     });
-//   }
-// }
-
 export class LoginComponent {
   email = '';
   password = '';
 
-  constructor(private auth: AuthServiceService, private router: Router) { }
+  constructor(
+    private auth: AuthService,
+    private router: Router
+  ) { }
+
+  // onLogin() {
+  //   this.auth.login({ email: this.email, password: this.password })
+  //     .subscribe({
+  //       next: (res) => {
+  //         this.auth.setToken(res.access_token);
+  //         this.router.navigate(['/adminProfile']);
+  //       },
+  //       error: (error) => {
+  //         alert('Invalid credentials')
+  //         console.log(error)
+  //       }
+  //     });
+  // }
 
   onLogin() {
-    this.auth.login({ email: this.email, password: this.password })
-      .subscribe({
-        next: (res) => {
-          this.auth.setToken(res.access_token);
-          this.router.navigate(['/dashboard']);
-        },
-        error: (error) => {
-          alert('Invalid credentials')
-          console.log(error)
+    const loginData = { email: this.email, password: this.password };
+
+    this.auth.login(loginData).subscribe({
+      next: (res) => {
+        // Set token
+        this.auth.setToken(res.access_token);
+
+        // Role-based navigation
+        switch (res.role) {
+          case 'ADMIN':
+            this.router.navigate(['/adminProfile']);
+            break;
+          case 'TEACHER':
+            this.router.navigate(['/teacherProfile']);
+            break;
+          case 'STUDENT':
+            this.router.navigate(['/studentProfile']);
+            break;
+          default:
+            alert('Unknown role. Please contact support.');
         }
-      });
+      },
+      error: (error) => {
+        // Handle errors
+        alert('Invalid credentials');
+        console.error(error);
+      }
+    });
   }
+
+
 }

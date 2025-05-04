@@ -1,13 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
-import { LoginRequest, LoginResponse } from '../model/login.model';
 import { Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthServiceService {
+export class AuthService {
 
   private readonly tokenKey = 'access_token';
   private roleSubject = new BehaviorSubject<string | null>(null);
@@ -31,7 +30,7 @@ export class AuthServiceService {
   logout() {
     localStorage.removeItem(this.tokenKey);
     this.roleSubject.next(null);
-    this.router.navigate(['/login']);
+    this.router.navigate(['/'], { replaceUrl: true });
   }
 
   getToken() {
@@ -47,5 +46,5 @@ export class AuthServiceService {
     if (!token) return '';
     const payload = JSON.parse(atob(token.split('.')[1]));
     return payload.role.toLowerCase();
-}
+  }
 }

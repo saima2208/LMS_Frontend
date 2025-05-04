@@ -14,59 +14,20 @@ import { NgIf } from '@angular/common';
   templateUrl: './course-list.component.html',
   styleUrl: './course-list.component.css'
 })
-export class CourseListComponent implements OnInit {
+export class CourseListComponent  {
+  courses: Course[] = [];
 
+  constructor(private courseService: CourseService) {}
 
-  // this is object for this  class
+  // // ngOnInit(): void {
+  // //   this.loadCourses();
+  // // }
 
- courses:Course[]=[];
+  // // loadCourses(): void {
+  // //   this.courseService.getCourses().subscribe((data) => (this.courses = data));
+  // // }
 
-  constructor(private router:Router, private courseService: CourseService){
-
-
+  // deleteCourse(id: number): void {
+  //   this.courseService.deleteCourse(id).subscribe(() => this.loadCourses());
   }
 
-
-  ngOnInit(): void {
-
-    this.saveCourses();
-
-  }
-
-  // this is the method to get all the data from the data base
-
-  saveCourses(){
-
-
-    this.courseService.getAllCourses().subscribe(data=>{
-
-            this.courses=data;
-    });
-
-  }
-
-  editCourse(a:Course){
-
-    this.router.navigate(['/add-course'],{state:{a}})
-  }
-
-  deleteCourse(a:Course){
-
-    if(confirm("are you want to delete?")){
-
-
-     this.courseService.deleteCourse(a.course_id).subscribe(()=>{
-
-      this.saveCourses();
-     });
-
-
-    }
-  }
-
-  addNewCourse(): void {
-         this.router.navigate(['/add-course'], { state: { course: new Course() } });
-       }
-
-
-}

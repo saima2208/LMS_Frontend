@@ -50,10 +50,12 @@ export class LoginComponent {
             window.location.href="/adminProfile";
             break;
           case 'teacher':
-            this.router.navigate(['/teacherProfile']);
+            // this.router.navigate(['/teacherProfile']);
+            window.location.href="/teacherProfile";
             break;
           case 'student':
-            this.router.navigate(['/studentProfile']);
+            // this.router.navigate(['/studentProfile']);
+            window.location.href="/studentProfile";
             break;
           default:
             alert('Unknown role. Please contact support.');

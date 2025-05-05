@@ -18,12 +18,13 @@ import { EnrollmentComponent } from './enrollment/enrollment.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { FeedbackComponent } from './pages/feedback/feedback.component';
+import { authGuard } from './core/auths.guard';
 
 
 
 export const routes: Routes = [
   {path:'admin',component:AdminDashboardComponent},
-  {path: '',component:HomeComponent},
+  {path: '',component:HomeComponent, canActivate: [authGuard],},
   {path: 'home',component:HomeComponent},
   {path:'adminProfile',component:AdminComponent},
   {path:'add-admin',component:AddAdminComponent},
@@ -42,6 +43,7 @@ export const routes: Routes = [
   {path:'enroll',component:EnrollmentComponent},
   {path:'contact',component:ContactComponent},
   {path:'feedback',component:FeedbackComponent}
+
 
 
 ];

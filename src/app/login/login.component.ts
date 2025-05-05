@@ -41,15 +41,18 @@ export class LoginComponent {
         // Set token
         this.auth.setToken(res.access_token);
 
+        const role = this.auth.getUserRole();
+
         // Role-based navigation
-        switch (res.role) {
-          case 'ADMIN':
-            this.router.navigate(['/adminProfile']);
+        switch (role) {
+          case 'admin':
+            // this.router.navigate(['/adminProfile']);
+            window.location.href="/adminProfile";
             break;
-          case 'TEACHER':
+          case 'teacher':
             this.router.navigate(['/teacherProfile']);
             break;
-          case 'STUDENT':
+          case 'student':
             this.router.navigate(['/studentProfile']);
             break;
           default:

@@ -1,9 +1,9 @@
-<!-- <div class="container">
+<div class="container">
     <fieldset>
     <h1>{{ isUpdate ? "Edit Course" : "Add Course" }}</h1>
     <form (ngSubmit)="onSubmit()" #courseForm="ngForm">
       <label for="name">Name:</label><br />
-      <input type="text" name="name" [(ngModel)]="course.name" required /><br /> -->
+      <input type="text" name="name" [(ngModel)]="cor.name" required /><br />
 
        <!-- Course Name -->
        <!-- <div class="form-group">
@@ -27,24 +27,24 @@
 
 
 
-     <!-- <label for="startDate">Start Date</label><br>
-     <input type="date" name="startDate" [(ngModel)]="course.startDate" required /><br />
+     <label for="startDate">Start Date</label><br>
+     <input type="date" name="startDate" [(ngModel)]="cor.startDate" required /><br />
 
      <label for="teacher">Teacher</label><br>
-     <input type="text" name="teacher" [(ngModel)]="course.teacher_id" required /><br />
+     <input type="text" name="teacher" [(ngModel)]="cor.teacher_id" required /><br />
 
      <label for="price">Price</label><br>
-     <input type="text" name="price" [(ngModel)]="course.price" required /><br />
+     <input type="text" name="price" [(ngModel)]="cor.price" required /><br />
 
 
      <label for="duration">Course Duration</label><br>
-     <input type="text" name="duration" [(ngModel)]="course.duration" required /><br />
+     <input type="text" name="duration" [(ngModel)]="cor.duration" required /><br />
 
      <label for="description">Description:</label><br />
-     <textarea [(ngModel)]="course.description" name="description" required></textarea><br />
+     <textarea [(ngModel)]="cor.description" name="description" required></textarea><br />
 
      <label for="image">Course Image</label><br>
-     <input type="text" name="image" [(ngModel)]="course.image" required /><br />
+     <input type="text" name="image" [(ngModel)]="cor.image" required /><br />
 
       <button type="submit" class="btn btn-success">{{ isUpdate ? "Update" : "Add" }}</button>
     </form>
@@ -52,4 +52,4 @@
   </div>
 
 
- -->
+

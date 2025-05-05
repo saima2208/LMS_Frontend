@@ -1,6 +1,6 @@
- <!-- Example Code Start-->
+
  <nav class="navbar navbar-expand-lg " style="background-color: solid;">
-  <!-- bg-body-tertiary -->
+
   <div class="container-fluid">
     <a class="navbar-brand"  href="#"><h3 style="color: blueviolet;margin-left: 15px;">eduCare</h3></a>
      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,6 +59,8 @@
 
       </ul>
       <form class="d-flex " >
+
+        @if (isAuthenticated) {
         <div class="d-inline p-2">
           <a href="/registration">
             <button class="btn btn-success" type="button">Registration</button>
@@ -69,10 +71,22 @@
           <a href="login">
             <button class="btn btn-success" type="button">Login</button>
           </a>
-
-      </div>
+        </div>
+      } @else {
+        <div class="d-inline p-2">
+          <a href="login">
+            <button (click)="logout()" class="btn btn-success" type="button">🚪 Logout</button>
+          </a>
+        </div>
+        <!-- <li class="nav-item">
+          <button (click)="logout()"
+              class="nav-link btn btn-link text-white px-3 py-2 rounded-lg transition-all hover:bg-light-green">
+              🚪 Logout
+          </button>
+        </li> -->
+      }
       </form>
     </div>
   </div>
 </nav>
-<!-- Example Code End -->
+

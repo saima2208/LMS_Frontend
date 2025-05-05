@@ -1,0 +1,148 @@
+.a{
+  /* background-image: url('https://biddabari.com/frontend/assets/images/exam-page/footer-background.png'); */
+  color: rgba(70, 67, 67, 0.984);
+  font-size: larger;
+  /* margin-top: 45px; */
+  background-color: rgb(238, 234, 229);
+}
+h1{
+  color: #000000;
+}
+h2{
+  color: #121313;
+}
+h3{
+  color: #0d52a1;
+}
+
+.course-cart-area {
+  background-color: #b2b86a;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 100px;
+}
+
+.course-price {
+  margin-bottom: 20px;
+}
+
+.course-price h4 {
+  font-size: 1.5rem;
+  color: #28a745;
+  margin: 0;
+}
+
+.course-price s {
+  font-size: 1rem;
+  color: #a78181;
+  margin-left: 10px;
+}
+
+.left-days p {
+  font-size: 1.5rem;
+  color: #d9534f;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.course-short-description .description-column {
+  padding: 10px 0;
+  border-bottom: 1px solid #eaeaea;
+  font-size: 0.9rem;
+}
+
+.course-short-description .description-column:last-child {
+  border-bottom: none;
+}
+
+.course-short-description .description-column p {
+  margin: 0;
+  font-size: 20px;
+  color: #000;
+}
+
+.course-purchase {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.course-purchase .btn-primary {
+  display: inline-block;
+  background-color: #0e1df5;
+  color: #fff;
+  padding: 10px 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+  width: 100%;
+}
+
+.course-purchase .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.course-purchase p {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.course-includes-area {
+  margin-top: 20px;
+}
+
+.course-includes-area .title h5 {
+  font-size: 1.7rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.course-includes-area p {
+  font-size: 1.0rem;
+  color: #121111;
+  margin: 5px 0;
+}
+
+.cart-contact {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.cart-contact h3 {
+  font-size: 1.5rem;
+  color: #630505;
+}
+
+.cart-contact h4 {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .course-cart-area {
+    padding: 15px;
+  }
+
+  .course-price h4 {
+    font-size: 1.2rem;
+  }
+
+  .course-purchase .btn-primary {
+    font-size: 0.6rem;
+    padding: 10px 16px;
+    color: #e0e0e0;
+
+  }
+
+
+
+  .cart-contact h4 {
+    font-size: 1.2rem;
+  }
+}
+

@@ -1,7 +1,7 @@
-.container {
+/* .container {
   max-width: 1200px;
   margin: 0 auto;
-}
+}*/
 
 .form-title {
   font-size: 2rem;
@@ -44,7 +44,7 @@
 .button-container {
   display: flex;
   justify-content: space-between;
-  gap: 1rem; /* Adjust gap for more spacing */
+  gap: 1rem;
 }
 
 .btn {
@@ -71,7 +71,7 @@
   background-color: #28a745;
   color: #212529;
   font-weight: bold;
-  /* position: relative; */
+
   align-items: center;
 }
 
@@ -107,32 +107,32 @@
 .row {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem; /* Space between cards */
+  gap: 1.5rem;
   justify-content: center;
 }
 
 .col-md-4 {
-  flex: 1 1 calc(25% - 1.5rem); /* Adjust for 4 cards per row */
+  flex: 1 1 calc(25% - 1.5rem);
   max-width: calc(25% - 1.5rem);
 }
 
 @media (max-width: 992px) {
   .col-md-4 {
-    flex: 1 1 calc(33.333% - 1.5rem); /* 3 cards per row on medium screens */
+    flex: 1 1 calc(33.333% - 1.5rem);
     max-width: calc(33.333% - 1.5rem);
   }
 }
 
 @media (max-width: 768px) {
   .col-md-4 {
-    flex: 1 1 calc(50% - 1.5rem); /* 2 cards per row on smaller screens */
+    flex: 1 1 calc(50% - 1.5rem);
     max-width: calc(50% - 1.5rem);
   }
 }
 
 @media (max-width: 480px) {
   .col-md-4 {
-    flex: 1 1 100%; /* 1 card per row on extra small screens */
+    flex: 1 1 100%;
     max-width: 100%;
   }
 
@@ -142,5 +142,243 @@
 
   .card-body {
     padding: 1rem;
+  }
+}
+
+.b.card {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #000;
+}
+
+
+
+
+/* video */
+/* .card {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #000;
+}
+
+.card video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+.card-video-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 20px;
+}
+
+.card-video-overlay h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.card-video-overlay h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.card .card-title {
+  font-size: 3rem;
+  font-weight: bold;
+} */
+
+
+
+/* General Body Styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Video Section Styling */
+.video {
+  margin-bottom: 2rem;
+}
+
+.card.text-bg-dark {
+  position: relative;
+  overflow: hidden;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgb(151, 52, 52);
+  background-color: black;
+  object-fit: cover;
+ filter: brightness(100%);
+}
+
+.card-video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.card-video-overlay h2 {
+  font-size: 2.7rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  
+}
+
+.card-video-overlay h3 {
+  font-size: 1.7rem;
+  margin-top: 0;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  z-index: -1;
+}
+
+/* Course Section Styling */
+.course {
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 2rem;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+.card {
+  border: none;
+  background: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.card-body {
+  padding: 1rem;
+}
+
+.card-title {
+  color: #0d6efd;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.card-text {
+  margin: 0.5rem 0;
+}
+
+.text-success {
+  font-weight: bold;
+}
+
+/* Button Styling */
+.button-container {
+  margin-top: 1rem;
+}
+
+.btn {
+  margin: 0.2rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-radius: 0.3rem;
+  text-transform: uppercase;
+}
+
+.btn-success {
+  background-color: #28a745;
+  color: white;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-enroll {
+  background-color: #ffc107;
+  color: white;
+}
+
+.btn-enroll:hover {
+  background-color: #e0a800;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card {
+      margin-bottom: 2rem;
+  }
+
+  .card-video-overlay h2 {
+      font-size: 2rem;
+  }
+
+  .card-video-overlay h3 {
+      font-size: 1.2rem;
   }
 }

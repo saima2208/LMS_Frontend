@@ -1,3 +1,4 @@
+import { TeacherListComponent } from './teachers/teacher-list/teacher-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardComponent } from './admins/admin-dashboard/admin-dashboard.component';
 import { AdminComponent } from './admins/admin/admin.component';
@@ -19,6 +20,8 @@ import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { FeedbackComponent } from './pages/feedback/feedback.component';
 import { authGuard } from './core/auths.guard';
+import { DetailsComponent } from './courses/details/details.component';
+import { TermsAndConditionComponent } from './pages/terms-and-condition/terms-and-condition.component';
 
 
 
@@ -42,7 +45,10 @@ export const routes: Routes = [
   {path:'lesson-list',component:LessonListComponent},
   {path:'enroll',component:EnrollmentComponent},
   {path:'contact',component:ContactComponent},
-  {path:'feedback',component:FeedbackComponent}
+  {path:'feedback',component:FeedbackComponent},
+  {path:'course-details',component:DetailsComponent},
+  {path:'teacher-list',component:TeacherListComponent},
+  {path:'termsCondition',component:TermsAndConditionComponent}
 
 
 

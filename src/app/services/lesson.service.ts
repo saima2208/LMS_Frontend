@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Lesson } from '../model/lesson.model';
 import { Observable } from 'rxjs';
@@ -12,7 +12,7 @@ export class LessonService {
 
   constructor(private http: HttpClient) {}
 
-  getAllLessons(): Observable<Lesson[]> {
+  getLessons(): Observable<Lesson[]> {
     return this.http.get<Lesson[]>(this.apiUrl);
   }
 
@@ -20,15 +20,24 @@ export class LessonService {
     return this.http.get<Lesson>(`${this.apiUrl}/${id}`);
   }
 
+  getLessonsByCourseId(courseId: number): Observable<Lesson[]> {
+    return this.http.get<Lesson[]>(`${this.apiUrl}?courseId=${courseId}`);
+  }
+
   createLesson(lesson: Lesson): Observable<Lesson> {
-    return this.http.post<Lesson>(this.apiUrl, lesson);
+    return this.http.post<Lesson>(this.apiUrl, lesson, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    });
   }
 
   updateLesson(id: number, lesson: Lesson): Observable<Lesson> {
-    return this.http.put<Lesson>(`${this.apiUrl}/${id}`, lesson);
+    return this.http.put<Lesson>(`${this.apiUrl}/${id}`, lesson, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    });
   }
 
   deleteLesson(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+
 }

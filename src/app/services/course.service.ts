@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Course } from '../model/course.model';
 
@@ -45,13 +45,26 @@ export class CourseService {
   // }
 
 
-  createCourse(course: Course): Observable<any> {
-    return this.http.post('http://localhost:8080/api/courses', course); // Replace with your API endpoint
+  // createCourse(course: Course): Observable<any> {
+  //   return this.http.post('http://localhost:8080/api/courses', course); // Replace with your API endpoint
+  // }
+
+  // updateCourse(id: number, course: Course): Observable<any> {
+  //   return this.http.put(`/http://localhost:8080/api/courses/${id}`, course); // Replace with your API endpoint
+  // }
+
+  createCourse(course: Course): Observable<Course> {
+    return this.http.post<Course>(this.apiUrl, course, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    });
   }
 
-  updateCourse(id: number, course: Course): Observable<any> {
-    return this.http.put(`/api/courses/${id}`, course); // Replace with your API endpoint
+  updateCourse(id: number, course: Course): Observable<Course> {
+    return this.http.put<Course>(`${this.apiUrl}/${id}`, course, {
+      headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+    });
   }
+
 
 
   deleteCourse(id: number): Observable<void> {

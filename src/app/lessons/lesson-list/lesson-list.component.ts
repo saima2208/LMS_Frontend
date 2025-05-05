@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LessonService } from '../../services/lesson.service';
 import { Lesson } from '../../model/lesson.model';
@@ -9,7 +9,8 @@ import { Lesson } from '../../model/lesson.model';
   templateUrl: './lesson-list.component.html',
   styleUrl: './lesson-list.component.css'
 })
-export class LessonListComponent {
+  export class LessonListComponent implements OnInit {
+
  // this is object for this  class
 
  lessons:Lesson[]=[];
@@ -20,18 +21,30 @@ export class LessonListComponent {
   }
 
 
+
+
+
+
   ngOnInit(): void {
-
-    this.saveLesson();
-
+    this.lessonService.getLessons().subscribe((data) => {
+      this.lessons = data;
+    });
   }
+
+
+
+  // ngOnInit(): void {
+
+  //   this.saveLesson();
+
+  // }
 
   // this is the method to get all the data from the data base
 
   saveLesson(){
 
 
-    this.lessonService.getAllLessons().subscribe(data=>{
+    this.lessonService.getLessons().subscribe(data=>{
 
             this.lessons=data;
     });

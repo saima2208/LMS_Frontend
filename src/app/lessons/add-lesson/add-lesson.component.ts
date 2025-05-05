@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Lesson } from '../../model/lesson.model';
 import { Router } from '@angular/router';
 import { LessonService } from '../../services/lesson.service';
@@ -53,6 +53,7 @@ export class AddLessonComponent {
         })
       }
       }
+
 
     }
 

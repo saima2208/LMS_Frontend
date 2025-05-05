@@ -1,1 +1,45 @@
-<p>teacher-list works!</p>
+<section class="head">
+
+  <div class="card text-bg-dark">
+    <img src="https://cf.sbts.edu/boycecollege/uploads/2024/10/teachers_conference_panel_1280.jpg" class="card-img" alt="...">
+     <!-- <img src="Image/contact.jpg" class="card-img"  alt=""> -->
+    <div class="card-img-overlay">
+      <h1 class="card-title">Our Honorable Teachers Panel</h1>
+
+
+
+    </div>
+  </div>
+</section>
+
+<section class="list">
+  <div class="container">
+    <h1>Teacher List</h1>
+    <table class="table  table-striped table-hover table-bordered ">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Subject</th>
+         <th>Image</th>
+         <th>Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (instructor of instructors; track instructor.name) {
+        <!-- <tr *ngFor="let instructor of instructors"> -->
+          <tr>
+            <td>{{instructors.indexOf(instructor) + 1}}</td>
+          <td>{{ instructor.name }}</td>
+          <td>{{ instructor.subject }}</td>
+          <td><img src="{{instructor.image }}" alt="Image" class="img-thumbnail" width="60" height="60"/></td>
+          <td>{{ instructor.details }}</td>
+
+        </tr>}
+      </tbody>
+    </table>
+
+  </div>
+
+  
+</section>

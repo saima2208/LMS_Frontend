@@ -2,18 +2,30 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Lesson } from '../model/lesson.model';
 import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LessonService {
-
   private apiUrl = 'http://localhost:8080/api/lessons';
 
   constructor(private http: HttpClient) {}
 
   getLessons(): Observable<Lesson[]> {
-    return this.http.get<Lesson[]>(this.apiUrl);
+    return this.http.get<any[]>(this.apiUrl).pipe(
+      map((data) =>
+        data.map((item) => {
+          const lesson = new Lesson();
+          lesson.lesson_id = item.id;
+          lesson.course_id = item.course.id;
+          lesson.topic = item.topic;
+          lesson.content = item.content;
+          lesson.video_url = ''; // Add video URL if your API includes it
+          return lesson;
+        })
+      )
+    );
   }
 
   getLessonById(id: number): Observable<Lesson> {
@@ -39,5 +51,4 @@ export class LessonService {
   deleteLesson(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
-
 }

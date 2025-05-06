@@ -27,7 +27,7 @@ import { TermsAndConditionComponent } from './pages/terms-and-condition/terms-an
 
 export const routes: Routes = [
   {path:'admin',component:AdminDashboardComponent},
-  {path: '',component:HomeComponent, canActivate: [authGuard],},
+  {path: 'home',component:HomeComponent, canActivate: [authGuard],},
   {path: 'home',component:HomeComponent},
   {path:'adminProfile',component:AdminComponent},
   {path:'add-admin',component:AddAdminComponent},

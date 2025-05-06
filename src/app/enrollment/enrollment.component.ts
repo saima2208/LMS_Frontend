@@ -34,10 +34,13 @@ export class EnrollmentComponent {
     console.log('Enrollment Data Submitted:', this.enrollmentData);
     alert('Form submitted successfully! Confirm you within 24 hours');
     this.resetForm();
+    window.location.href="/home";
+
   }
 
   isMobileConfirmed(): boolean {
     return this.enrollmentData.mobile === this.enrollmentData.confirmMobile;
+ 
   }
 
   resetForm() {
@@ -49,5 +52,7 @@ export class EnrollmentComponent {
       paymentMethod: '',
     };
   }
+
+
   }
 

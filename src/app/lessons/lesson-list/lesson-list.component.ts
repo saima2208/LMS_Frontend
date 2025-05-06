@@ -7,71 +7,43 @@ import { Lesson } from '../../model/lesson.model';
   selector: 'app-lesson-list',
   imports: [],
   templateUrl: './lesson-list.component.html',
-  styleUrl: './lesson-list.component.css'
+  styleUrl: './lesson-list.component.css',
 })
-  export class LessonListComponent implements OnInit {
+export class LessonListComponent implements OnInit {
+  // this is object for this  class
 
- // this is object for this  class
+  lessons: Lesson[] = [];
 
- lessons:Lesson[]=[];
-
-  constructor(private router:Router, private lessonService: LessonService){
-
-
-  }
-
-
-
-
-
+  constructor(private router: Router, private lessonService: LessonService) {}
 
   ngOnInit(): void {
+    this.lessonService.getLessons().subscribe((data) => {
+      this.lessons = data;
+      
+    });
+  }
+
+  // this is the method to get all the data from the data base
+
+  saveLesson() {
     this.lessonService.getLessons().subscribe((data) => {
       this.lessons = data;
     });
   }
 
-
-
-  // ngOnInit(): void {
-
-  //   this.saveLesson();
-
-  // }
-
-  // this is the method to get all the data from the data base
-
-  saveLesson(){
-
-
-    this.lessonService.getLessons().subscribe(data=>{
-
-            this.lessons=data;
-    });
-
+  editLesson(a: Lesson) {
+    this.router.navigate(['/add-course'], { state: { a } });
   }
 
-  editLesson(a:Lesson){
-
-    this.router.navigate(['/add-course'],{state:{a}})
-  }
-
-  deleteLesson(a:Lesson){
-
-    if(confirm("are you want to delete?")){
-
-
-     this.lessonService.deleteLesson(a.lesson_id).subscribe(()=>{
-
-      this.saveLesson();
-     });
-
-
+  deleteLesson(a: Lesson) {
+    if (confirm('are you want to delete?')) {
+      this.lessonService.deleteLesson(a.lesson_id).subscribe(() => {
+        this.saveLesson();
+      });
     }
   }
 
   addNewLesson(): void {
-         this.router.navigate(['/add-lesson'], { state: { lesson: new Lesson() } });
-       }
-
+    this.router.navigate(['/add-lesson'], { state: { lesson: new Lesson() } });
+  }
 }

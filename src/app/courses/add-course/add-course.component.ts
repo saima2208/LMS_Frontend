@@ -66,34 +66,6 @@ import { Course } from '../../model/course.model';
         });
       }
     }
-    // onSubmit(){
-
-
-
-    // if(this.isUpdate){
-
-
-    //   this.courseService.updateCourse(this.cor.course_id!,this.cor).subscribe(()=>{
-
-    //       this.router.navigate(['/course-list'])
-
-    //   })
-    // }
-
-    //    else{
-
-    //     this.courseService.createCourse(this.cor).subscribe(()=>{
-
-    //       this.router.navigate(['/course-list'])
-
-    //       this.cor= new Course()
-    //     })
-    //    }
-
-    // }
-
-
-
 
 
   }

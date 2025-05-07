@@ -3,7 +3,7 @@ export class Course {
   teacher_id:number;
   name: string;
   price: string;
-  startDate: String;
+  startDate: Date;
   duration: number;
   description: string;
   image: string;
@@ -13,7 +13,7 @@ export class Course {
       this.teacher_id = 0;
       this.name = '';
       this.price = '';
-      this.startDate = '';
+      this.startDate = new Date();
       this.duration = 0;
       this.description = '';
       this.image = '';

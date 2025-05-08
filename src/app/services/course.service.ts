@@ -18,8 +18,8 @@ export class CourseService {
         data.map((item) => {
           const course = new Course();
 
-          course.course_id = item.id;
-          course.teacher_id = item.teacher.id;
+          course.id = item.id;
+          course.teacherId = item.teacher.id;
           course.name = item.name;
           course.price = item.price;
           course.startDate = item.startDate;

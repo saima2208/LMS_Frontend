@@ -31,29 +31,57 @@ export class AddLessonComponent {
 
     // this is the form Method
 
-    onSubmit(){
+    // onSubmit(){
 
-      if(this.isUpdate){
-
-
-        this.lessonService.updateLesson(this.lessons.id,this.lessons).subscribe(()=>{
-
-          this.router.navigate(['/lesson-list']);
-        })
-      }
-
-      else{
+    //   if(this.isUpdate){
 
 
-        this.lessonService.createLesson(this.lessons).subscribe(()=>{
+    //     this.lessonService.updateLesson(this.lessons.id,this.lessons).subscribe(()=>{
 
-          this.lessons= new Lesson()
+    //       this.router.navigate(['/lesson-list']);
+    //     })
+    //   }
+
+    //   else{
 
 
-        })
-      }
-      }
+    //     this.lessonService.createLesson(this.lessons).subscribe(()=>{
 
+    //       this.lessons= new Lesson()
+
+
+    //     })
+    //   }
+    //   }
+
+
+       onSubmit() {
+            if (this.isUpdate) {
+              // Update course logic
+              this.lessonService.updateLesson(this.lessons.id!, this.lessons).subscribe({
+                next: () => {
+                  this.router.navigate(['/lesson-list']);
+                },
+                error: (err) => {
+                  alert('Failed to update lesson: ' + err.message);
+                  console.error(err);
+                },
+              });
+            } else {
+              // Create course logic
+              this.lessonService.createLesson(this.lessons).subscribe({
+                next: () => {
+                  this.router.navigate(['/lesson-list']);
+                  this.lessons = new Lesson(); // Reset the form model
+                },
+                error: (err) => {
+                  alert('Failed to create lesson: ' + err.message);
+                  console.error(err);
+                },
+              });
+            }
+          }
+      
 
     }
 

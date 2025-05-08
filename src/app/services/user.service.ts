@@ -8,7 +8,7 @@ import { User } from '../model/user.model';
   providedIn: 'root',
 })
 export class UserService {
-  private apiUrl = 'http://localhost:8080/api/user'; // Replace with your backend URL
+  private apiUrl = 'http://localhost:8080/api/users';
 
   constructor(private http: HttpClient) {}
 
@@ -36,4 +36,11 @@ export class UserService {
   deleteUser(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
+
+  getUserByRole(role: string): Observable<User[]> {
+    return this.http.get<User[]>(`${this.apiUrl}/role`, {
+      params: { role }
+    });
+  }
+  
 }

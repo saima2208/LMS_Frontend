@@ -1,6 +1,6 @@
 export class Course {
-  course_id: number;
-  teacher_id:number;
+  id: number;
+  teacherId:number;
   name: string;
   price: string;
   startDate: Date;
@@ -9,8 +9,8 @@ export class Course {
   image: string;
 
   constructor() {
-      this.course_id = 0;
-      this.teacher_id = 0;
+      this.id = 0;
+      this.teacherId = 0;
       this.name = '';
       this.price = '';
       this.startDate = new Date();

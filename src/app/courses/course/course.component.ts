@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import { Course } from '../../model/course.model';
 import { CommonModule, NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CourseService } from '../../services/course.service';
 
 @Component({
   selector: 'app-course',
@@ -15,13 +17,22 @@ export class CourseComponent {
 
 
 
+  // ngOnInit(): void {
+
+  //   let allCourse = JSON.parse(localStorage.getItem('courses') || '[]');
+  //   this.course = allCourse;
+
+
+  // }
+
+  constructor(private router: Router, private courseService: CourseService) {}
+
   ngOnInit(): void {
-
-    let allCourse = JSON.parse(localStorage.getItem('courses') || '[]');
-    this.course = allCourse;
-
-
+    this.courseService.getCourses().subscribe((data) => {
+      this.course = data;
+    });
   }
+
 
 
 

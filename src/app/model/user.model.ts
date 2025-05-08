@@ -1,5 +1,5 @@
 export class User {
-  user_id: number;
+  id: number;
   name: string;
   fatherName: string;
   motherName: string;
@@ -14,7 +14,7 @@ export class User {
 
 
   constructor() {
-      this.user_id = 0;
+      this.id = 0;
       this.name = "";
       this.fatherName = "";
       this.motherName = "";

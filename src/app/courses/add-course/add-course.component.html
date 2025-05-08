@@ -1,64 +1,35 @@
 <div class="container">
-    <fieldset>
+  <fieldset>
     <h1>{{ isUpdate ? "Edit Course" : "Add Course" }}</h1>
     <form (ngSubmit)="onSubmit()" #courseForm="ngForm">
-
-      <label for="teacher">Teacher</label><br>
-     <input type="text" name="teacher" [(ngModel)]="cor.teacher_id" required /><br />
+      <label for="teacher">Teacher</label><br />
+      <select name="teacher" [(ngModel)]="cor.teacherId" required style="width: 100%;">
+        <option *ngFor="let teacher of teachers" [value]="teacher.id">
+          {{ teacher.id }} {{ teacher.name }} 
+        </option>
+      </select><br />
 
       <label for="name">Name:</label><br />
       <input type="text" name="name" [(ngModel)]="cor.name" required /><br />
 
-      <label for="price">Price</label><br>
+      <label for="price">Price</label><br />
       <input type="text" name="price" [(ngModel)]="cor.price" required /><br />
-      
-      <label for="startDate">Start Date</label><br>
+
+      <label for="startDate">Start Date</label><br />
       <input type="date" name="startDate" [(ngModel)]="cor.startDate" required /><br />
 
-      <label for="duration">Course Duration</label><br>
+      <label for="duration">Course Duration</label><br />
       <input type="text" name="duration" [(ngModel)]="cor.duration" required /><br />
 
       <label for="description">Description:</label><br />
       <textarea [(ngModel)]="cor.description" name="description" required></textarea><br />
 
-      <label for="image">Course Image</label><br>
+      <label for="image">Course Image</label><br />
       <input type="text" name="image" [(ngModel)]="cor.image" required /><br />
 
-       <button type="submit" class="btn btn-success">{{ isUpdate ? "Update" : "Add" }}</button>
-     </form>
-   </fieldset>
-   </div>
-
-
-       <!-- Course Name -->
-       <!-- <div class="form-group">
-        <label for="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          [(ngModel)]="course.name"
-          #name="ngModel"
-          required
-          minlength="3"
-          class="form-control"
-        />
-        <div *ngIf="name.invalid && name.touched" class="text-danger">
-          <small *ngIf="name.errors?.required">Name is required.</small>
-          <small *ngIf="name.errors?.minlength">Minimum 3 characters required.</small>
-        </div>
-      </div> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      <button type="submit" class="btn btn-success">
+        {{ isUpdate ? "Update" : "Add" }}
+      </button>
+    </form>
+  </fieldset>
+</div>

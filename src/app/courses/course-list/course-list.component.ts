@@ -34,7 +34,7 @@ export class CourseListComponent {
   }
 
   Delete(a: Course): void {
-    if (a.course_id != null) {
+    if (a.id != null) {
       if (confirm('are you want to delete?')) {
         this.courseService.getCourses().subscribe(() => {
           this.saveCourse();

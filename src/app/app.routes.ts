@@ -50,8 +50,6 @@ export const routes: Routes = [
   {path:'teacher-list',component:TeacherListComponent},
   {path:'termsCondition',component:TermsAndConditionComponent}
 
-
-
 ];
 
 

@@ -1,13 +1,13 @@
 export class Lesson {
-  lesson_id: number;
-  course_id: number;
+  id: number;
+  courseId: number;
   topic: string;
   content: string;
   video_url: string;
 
   constructor() {
-      this.lesson_id =0;
-      this.course_id = 0;
+      this.id =0;
+      this.courseId = 0;
       this.topic = '';
       this.content ='';
       this.video_url = '';

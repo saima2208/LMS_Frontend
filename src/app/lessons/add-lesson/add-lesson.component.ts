@@ -36,7 +36,7 @@ export class AddLessonComponent {
       if(this.isUpdate){
 
 
-        this.lessonService.updateLesson(this.lessons.lesson_id,this.lessons).subscribe(()=>{
+        this.lessonService.updateLesson(this.lessons.id,this.lessons).subscribe(()=>{
 
           this.router.navigate(['/lesson-list']);
         })

@@ -32,12 +32,12 @@ export class LessonListComponent implements OnInit {
   }
 
   editLesson(a: Lesson) {
-    this.router.navigate(['/add-course'], { state: { a } });
+    this.router.navigate(['/add-lesson'], { state: { a } });
   }
 
   deleteLesson(a: Lesson) {
     if (confirm('are you want to delete?')) {
-      this.lessonService.deleteLesson(a.lesson_id).subscribe(() => {
+      this.lessonService.deleteLesson(a.id).subscribe(() => {
         this.saveLesson();
       });
     }

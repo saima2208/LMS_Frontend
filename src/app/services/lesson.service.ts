@@ -17,8 +17,8 @@ export class LessonService {
       map((data) =>
         data.map((item) => {
           const lesson = new Lesson();
-          lesson.lesson_id = item.id;
-          lesson.course_id = item.course.id;
+          lesson.id = item.id;
+          lesson.courseId = item.course.id;
           lesson.topic = item.topic;
           lesson.content = item.content;
           lesson.video_url = ''; // Add video URL if your API includes it

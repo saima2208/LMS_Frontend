@@ -1,7 +1,7 @@
 export class Course {
   id: number;
   teacherId:number;
-  name: string;
+  courseName: string;
   price: string;
   startDate: Date;
   duration: number;
@@ -11,7 +11,7 @@ export class Course {
   constructor() {
       this.id = 0;
       this.teacherId = 0;
-      this.name = '';
+      this.courseName = '';
       this.price = '';
       this.startDate = new Date();
       this.duration = 0;

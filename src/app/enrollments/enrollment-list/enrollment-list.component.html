@@ -1,0 +1,25 @@
+<!-- components/enrollment-list.component.html -->
+<div>
+  <h2>All Enrollments</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Enroll ID</th>
+        <th>Course Name</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let enrollment of enrollments">
+        <td>{{ enrollment.id }}</td>
+        <td>{{ enrollment.courseName }}</td>
+        <td>{{ enrollment.name }}</td>
+        <td>{{ enrollment.email }}</td>
+        <td>{{ enrollment.status }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

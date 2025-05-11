@@ -1,0 +1,17 @@
+.video-list {
+  display: grid;
+  gap: 16px;
+}
+
+.video {
+  border: 1px solid #ccc;
+  padding: 12px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+}
+
+video {
+  width: 100%;
+  max-width: 640px;
+  border-radius: 8px;
+}

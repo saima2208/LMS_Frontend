@@ -1,3 +1,23 @@
+
+// export interface User {
+//   id: number;
+//   name: string;
+//   fatherName: string;
+//   motherName: string;
+//   email: string;
+//   password: string;
+//   phone: string;
+//    gender:string;
+//   nationality:string;
+//   avatarUrl?: string;
+//   role: 'Admin' | 'Teacher' | 'Student';
+// }
+export enum Role {
+  Admin = 'Admin',
+  Teacher = 'Teacher',
+  Student = 'Student',
+}
+
 export class User {
   id: number;
   name: string;
@@ -10,7 +30,7 @@ export class User {
   nationality:string;
   image:string;
   password: string;
-   // role:Role;
+  role:Role;
 
 
   constructor() {
@@ -26,19 +46,8 @@ export class User {
       this.image = "";
 
       this.password = "";
+      this.role= Role.Admin;
 
   }
+
 }
-
-// export interface User {
-//   userId: number;
-//   name: string;
-//   fatherName: string;
-//   motherName: string;
-//   email: string;
-//   password: string;
-//   phone: string;
-//   avatarUrl?: string;
-//   role: 'Admin' | 'Teacher' | 'Student';
-// }
-

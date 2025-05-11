@@ -17,13 +17,13 @@
       </tr>
     </thead>
     <tbody>
-      @for (course of courses; track course.name) {
+      @for (course of courses; track course.courseName) {
       <!-- <tr *ngFor="let course of courses"> -->
       <tr>
         <td>{{ courses.indexOf(course) + 1 }}</td>
         <td>{{ course.id }}</td>
         <td>{{ course.teacherId }}</td>
-        <td>{{ course.name }}</td>
+        <td>{{ course.courseName }}</td>
 
         <td>{{ course.startDate }}</td>
 
@@ -38,8 +38,8 @@
                 </td>
         <td>
           <div class="button-container">
-            <button class="btn btn-primary" (click)="Edit(course)">Edit</button>
-            <button class="btn btn-warning" (click)="Delete(course)">
+            <button class="btn btn-primary" (click)="updateCourse(course)">Edit</button>
+            <button class="btn btn-warning" (click)="deleteCourse(course)">
               Delete
             </button>
           </div>

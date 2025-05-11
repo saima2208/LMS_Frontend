@@ -1,5 +1,5 @@
-<fieldset>
-  <form (ngSubmit)="submitForm()">
+ <fieldset>
+  <form (ngSubmit)="onSubmit()">
     <h1>Enrollment Form</h1>
     <div>
       <label for="name">Full Name:</label>
@@ -7,11 +7,11 @@
         type="text"
         id="name"
         name="name"
-        [(ngModel)]="enrollmentData.fullName"
+        [(ngModel)]="enrollments.name"
         required
       />
     </div>
-    <!-- <br /> -->
+
 
     <div>
       <label for="email">Email:</label>
@@ -19,11 +19,11 @@
         type="email"
         id="email"
         name="email"
-        [(ngModel)]="enrollmentData.email"
+        [(ngModel)]="enrollments.email"
         required
       />
     </div>
-    <!-- <br /> -->
+
 
 
     <div>
@@ -32,11 +32,11 @@
         type="text"
         id="mobile"
         name="mobile"
-        [(ngModel)]="enrollmentData.mobile"
+        [(ngModel)]="enrollments.phone"
         required
       />
     </div>
-    <!-- <br /> -->
+
 
     <div>
       <label for="cmobile">Confirm Mobile No:</label>
@@ -44,11 +44,11 @@
         type="text"
         id="cmobile"
         name="cmobile"
-        [(ngModel)]="enrollmentData.confirmMobile"
+        [(ngModel)]="enrollments.confirmMobile"
         required
       />
     </div>
-    <!-- <br /> -->
+
 
     <div>
       <label for="payment">Payment Method:</label>
@@ -57,24 +57,24 @@
         name="pay"
         id="bkash"
         value="bkash"
-        [(ngModel)]="enrollmentData.paymentMethod"
+        [(ngModel)]="enrollments.paymentMethod"
       />bKash <br />
       <input
         type="radio"
         name="pay"
         id="rocket"
         value="rocket"
-        [(ngModel)]="enrollmentData.paymentMethod"
+        [(ngModel)]="enrollments.paymentMethod"
       />Rocket <br />
       <input
         type="radio"
         name="pay"
         id="dcard"
         value="dcard"
-        [(ngModel)]="enrollmentData.paymentMethod"
+        [(ngModel)]="enrollments.paymentMethod"
       />Debit Card
     </div>
-    <!-- <br /> -->
+
 
     <button type="submit" class="btn-success">Submit</button>
   </form>

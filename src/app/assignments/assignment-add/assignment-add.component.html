@@ -1,0 +1,27 @@
+
+<div class="container">
+  <fieldset>
+
+  <h1>{{ isUpdate ? "Edit Assignment" : "Add Assignment" }}</h1>
+  <form (ngSubmit)="onSubmit()">
+    <label for="topic">Title:</label><br />
+    <input type="text" name="topic" [(ngModel)]="assignments.topic" required /><br />
+
+   <label for="courseId">Course_Id</label><br>
+   <!-- <select name="courseId" [(ngModel)]="assignments.courseId" required style="width: 100%;">
+    <option *ngFor="let course of cor" [value]="course.id">
+      {{ course.id }} {{ course.name }}
+    </option>
+  </select><br /> -->
+   <input type="text" name="course_id" [(ngModel)]="assignments.courseId" required /><br />
+
+   <label for="dueDate">DueDate:</label><br />
+   <input type="date" name="dueDate"  [(ngModel)]="assignments.dueDate" required /><br />
+
+    <button type="submit" class="btn btn-success">{{ isUpdate ? "Update" : "Add" }}</button>
+  </form>
+</fieldset>
+</div>
+
+
+

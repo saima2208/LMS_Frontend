@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { Course } from '../../model/course.model';
+import { Course } from '../course.model';
 import { CommonModule, NgFor } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { CourseService } from '../../services/course.service';
+import { CourseService } from '../course.service';
+
 
 @Component({
   selector: 'app-course',
@@ -14,16 +15,6 @@ import { CourseService } from '../../services/course.service';
 export class CourseComponent {
 
   course: Course[] = [];
-
-
-
-  // ngOnInit(): void {
-
-  //   let allCourse = JSON.parse(localStorage.getItem('courses') || '[]');
-  //   this.course = allCourse;
-
-
-  // }
 
   constructor(private router: Router, private courseService: CourseService) {}
 

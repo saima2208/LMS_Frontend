@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { Course } from '../../model/course.model';
+import { Course } from '../course.model';
 
-import { CourseService } from '../../services/course.service';
+
 import { NgIf } from '@angular/common';
+import { CourseService } from '../course.service';
 
 @Component({
   selector: 'app-course-list',
@@ -23,20 +24,21 @@ export class CourseListComponent {
     });
   }
 
+
   saveCourse() {
     this.courseService.getCourses().subscribe((data) => {
       this.courses = data;
     });
   }
 
-  Edit(a: Course) {
+  updateCourse(a: Course) {
     this.router.navigate(['/add-course'], { state: { a } });
   }
 
-  Delete(a: Course): void {
+  deleteCourse(a: Course): void {
     if (a.id != null) {
       if (confirm('are you want to delete?')) {
-        this.courseService.getCourses().subscribe(() => {
+        this.courseService.deleteCourse(a.id).subscribe(() => {
           this.saveCourse();
         });
       }
@@ -44,6 +46,8 @@ export class CourseListComponent {
       alert('Id is Invalid?');
     }
   }
+
+
 
   addNewCourse(): void {
     this.router.navigate(['/add-course'], { state: { course: new Course() } });

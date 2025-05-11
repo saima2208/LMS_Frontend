@@ -1,9 +1,8 @@
-/* Navbar Styles */
+/* Navbar Styles
 .navbar {
-  background-color: #ffffff; /* Dark background for the navbar */
+  background-color: #ffffff;
 
-  /* Subtle shadow for depth */
-  /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+
   padding: 10px 20px;
 }
 
@@ -16,12 +15,11 @@
 
 .navbar-toggler {
   border: none;
-  background: #fff; /* Toggler button color */
+  background: #fff;
 }
 
 .navbar-toggler-icon {
-  background-color: #fff; /* Toggler icon background */
-  border-radius: 2px;
+  background-color: #fff;
   width: 25px;
   height: 2px;
   display: block;
@@ -48,18 +46,18 @@
 
 .navbar-nav .nav-item .nav-link {
   font-size: 1.2rem;
-  color: #0a0b0b; /* Light text color */
+  color: #0a0b0b;
   margin-right: 15px;
   transition: color 0.3s;
 }
 
 .navbar-nav .nav-item .nav-link:hover,
 .navbar-nav .nav-item .nav-link:focus {
-  color: #ffc107; /* Highlight color on hover/focus */
+  color: #ffc107;
 }
 
 .navbar-nav .dropdown-menu {
-  background-color: #444; /* Dropdown background */
+  background-color: #444;
   border: none;
 }
 
@@ -69,21 +67,164 @@
 }
 
 .navbar-nav .dropdown-menu .dropdown-item:hover {
-  background-color: #ffc107; /* Highlight dropdown items */
-  color: #000; /* Readable text on highlight */
+  background-color: #ffc107;
+  color: #000;
 }
 
 .form-inline .btn {
   font-size: 0.9rem;
   margin: 0 5px;
   padding: 5px 15px;
-  background-color: #28a745; /* Green button */
+  background-color: #28a745;
   color: #fff;
   border: none;
   transition: background-color 0.3s, transform 0.2s;
 }
 
 .form-inline .btn:hover {
-  background-color: #218838; /* Darker green on hover */
-  transform: scale(1.05); /* Slight zoom on hover */
+  background-color: #218838;
+  transform: scale(1.05);
+} */
+
+
+/* General Navbar Styles */
+.navbar {
+  background-color: #ffffff; /* Solid white background */
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.navbar-brand h3 {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: blueviolet;
+  margin: 0;
+}
+
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  padding: 5px;
+}
+
+.navbar-toggler-icon {
+  width: 25px;
+  height: 2px;
+  background-color: #333; /* Dark lines for toggler */
+  display: block;
+  position: relative;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+  content: '';
+  width: 25px;
+  height: 2px;
+  background-color: #333;
+  position: absolute;
+  left: 0;
+  transition: transform 0.3s ease;
+}
+
+.navbar-toggler-icon::before {
+  top: -7px;
+}
+
+.navbar-toggler-icon::after {
+  top: 7px;
+}
+
+.navbar-nav .nav-item {
+  margin: 0 5px;
+}
+
+.navbar-nav .nav-link {
+  font-size: 1.2rem;
+  color: #0a0b0b;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffc107; /* Highlight color */
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: #f8f9fa; /* Light dropdown background */
+  border-radius: 4px;
+  border: 1px solid #ddd;
+}
+
+.navbar-nav .dropdown-item {
+  font-size: 1rem;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-nav .dropdown-item:hover {
+  background-color: #ffc107;
+  color: #000;
+}
+
+/* Buttons in Form */
+.form-inline .btn {
+  font-size: 1rem;
+  padding: 8px 16px;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.form-inline .btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column; /* Stack nav links vertically */
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .navbar-toggler {
+    margin-left: auto; /* Align toggler to the right */
+  }
+
+  .navbar-toggler-icon::before {
+    top: -5px; /* Adjust for smaller icon */
+  }
+
+  .navbar-toggler-icon::after {
+    top: 5px; /* Adjust for smaller icon */
+  }
+
+  .form-inline .btn {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-brand h3 {
+    font-size: 1.5rem;
+  }
+
+  .navbar-nav {
+    width: 100%;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 0;
+  }
+
+  .navbar-nav .nav-link {
+    font-size: 1rem;
+  }
+
+  .form-inline .btn {
+    font-size: 0.8rem;
+    padding: 5px 10px;
+  }
 }

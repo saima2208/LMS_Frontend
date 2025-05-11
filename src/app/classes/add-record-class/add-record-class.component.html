@@ -1,0 +1,27 @@
+<div class="body">
+  <div class="row">
+    <!-- Left Side: Admin Dashboard -->
+    <div class="col-left">
+      <app-admin-dashboard></app-admin-dashboard>
+    </div>
+
+    <!-- Right Side: Form Section -->
+    <div class="col-right">
+      <h2>Add Record Classes</h2>
+      <fieldset>
+
+        <h1>{{ isUpdate ? "Edit Record Class" : "Add Record Class" }}</h1>
+    <form (ngSubmit)="onSubmit()" #courseForm="ngForm">
+
+          <label for="courseId">Course ID</label>
+          <input type="text" id="courseId" placeholder="Enter Course ID"><br>
+
+          <label for="videoUrl">Video URL</label>
+          <input type="text" id="videoUrl" placeholder="Enter Video URL"><br>
+
+          <button type="submit">Add Record</button>
+        </form>
+      </fieldset>
+    </div>
+  </div>
+</div>

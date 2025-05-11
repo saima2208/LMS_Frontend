@@ -11,23 +11,28 @@ import { RegistrationComponent } from './registration/registration.component';
 import { LoginComponent } from './login/login.component';
 import { CourseComponent } from './courses/course/course.component';
 import { AddCourseComponent } from './courses/add-course/add-course.component';
-
 import { CourseListComponent } from './courses/course-list/course-list.component';
 import { AddLessonComponent } from './lessons/add-lesson/add-lesson.component';
 import { LessonListComponent } from './lessons/lesson-list/lesson-list.component';
-import { EnrollmentComponent } from './enrollment/enrollment.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { FeedbackComponent } from './pages/feedback/feedback.component';
 import { authGuard } from './core/auths.guard';
 import { DetailsComponent } from './courses/details/details.component';
 import { TermsAndConditionComponent } from './pages/terms-and-condition/terms-and-condition.component';
+import { EnrollmentComponent } from './enrollments/enrollment/enrollment.component';
+import { EnrollmentListComponent } from './enrollments/enrollment-list/enrollment-list.component';
+import { PendingEnrollmentComponent } from './enrollments/pending-enrollment/pending-enrollment.component';
+import { AssignmentListComponent } from './assignments/assignment-list/assignment-list.component';
+import { AssignmentAddComponent } from './assignments/assignment-add/assignment-add.component';
+import { AddRecordClassComponent } from './classes/add-record-class/add-record-class.component';
+import { RecordClassComponent } from './classes/record-class/record-class.component';
 
 
 
 export const routes: Routes = [
   {path:'admin',component:AdminDashboardComponent},
-  {path: 'home',component:HomeComponent, canActivate: [authGuard],},
+  {path: '',component:HomeComponent, canActivate: [authGuard],},
   {path: 'home',component:HomeComponent},
   {path:'adminProfile',component:AdminComponent},
   {path:'add-admin',component:AddAdminComponent},
@@ -48,7 +53,14 @@ export const routes: Routes = [
   {path:'feedback',component:FeedbackComponent},
   {path:'course-details',component:DetailsComponent},
   {path:'teacher-list',component:TeacherListComponent},
-  {path:'termsCondition',component:TermsAndConditionComponent}
+  {path:'termsCondition',component:TermsAndConditionComponent},
+  {path:'enroll-list',component:EnrollmentListComponent},
+  {path:'pending-enroll',component:PendingEnrollmentComponent},
+  {path:'assignment-list',component:AssignmentListComponent},
+  {path:'add-assignment',component:AssignmentAddComponent},
+  {path:'add-recordClass',component:AddRecordClassComponent},
+  {path:'recordClasses',component:RecordClassComponent}
+
 
 ];
 

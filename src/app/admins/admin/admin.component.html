@@ -1,5 +1,5 @@
 
-<div class="body">
+ <!-- <div class="body">
 
   <div class="row">
        <div class="col-3">
@@ -43,52 +43,41 @@
       </div>
 
    </div>
-</div>
-
-
-
-
- <!-- <div class="body">
-
-  <div class="row">
-       <div class="col-3">
-          <app-admin-dashboard></app-admin-dashboard>
-      </div>
-      <div class="col-9">
-        <h1>Personal Information </h1>
-          <div class="profile-card">
-            <div class="row">
-              <div class="col-md-4 mb-4" *ngFor="let user of users"></div>
-              <div class="col-4">
-                <img src="UserImage/girlUser.jpg" alt="Add Profile picture">
-                <h2>{{ users.name }}</h2>
-                <h4>{{ users.user_id }}</h4>
-              </div>
-              <div class="col-8">
-                <div class="info">
-                  <p>👨‍👩‍👧 Father's Name: <span>{{ users.fatherNmae }}</span></p>
-                  <p>👩 Mother's Name: <span>{{ users.motherNmae }} </span></p>
-                  <p>📧 Email: <span>{{ users.email }} </span></p>
-                  <p>📞 Phone No: <span>{{ users.phone }} </span></p>
-                  <p>🚺 Gender: <span>{{ users.gender }} </span></p>
-                  <p>🌍 Nationality: <span>{{ users.nationality }} </span></p>
-                </div>
-              </div>
-
-            </div>
-
-
-
-
-
-
-                <a href="/add-admin" class="btn ">Edit Profile</a>
-
-
-            </div>
-
-      </div>
-
-   </div>
 </div> -->
 
+
+
+
+ <div class="body">
+  <div class="row">
+    <div class="col-3">
+      <app-admin-dashboard></app-admin-dashboard>
+    </div>
+
+    <div class="col-9">
+      <h1>Admin Dashboard</h1>
+      <div class="profile-card">
+        <div class="row">
+          <div class="col-4">
+            <img [src]="currentUser.image" alt="Add Profile picture">
+            <h2>{{ currentUser.name }}</h2>
+            <h4>Admin ID: {{ currentUser.id }}</h4>
+          </div>
+
+          <div class="col-8">
+            <div class="info">
+              <p>👨‍👩‍👧 Father's Name: <span>{{ currentUser.fatherName }}</span></p>
+              <p>👩 Mother's Name: <span>{{ currentUser.motherName }}</span></p>
+              <p>📧 Email: <span>{{ currentUser.email }}</span></p>
+              <p>📞 Phone No: <span>{{ currentUser.phoneNo }}</span></p>
+              <p>🚺 Gender: <span>{{ currentUser.gender }}</span></p>
+              <p>🌍 Nationality: <span>{{ currentUser.nationality }}</span></p>
+            </div>
+          </div>
+        </div>
+
+        <a href="['/add-admin']" class="btn">Edit Profile</a>
+      </div>
+    </div>
+  </div>
+</div>

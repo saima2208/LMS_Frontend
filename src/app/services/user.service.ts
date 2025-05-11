@@ -12,10 +12,22 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
+    // Fetch logged-in user's data
+  // getLoggedInUser(): Observable<User> {
+  //   return this.http.get<User>(`${this.apiUrl}`);
+  // }
+
   // Get all users
   getUsers(): Observable<User[]> {
     return this.http.get<User[]>(this.apiUrl);
   }
+
+  getCurrentUser(): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/me`);
+  }
+
+
+
 
   // Get a user by ID
   getUserById(id: number): Observable<User> {
@@ -42,5 +54,5 @@ export class UserService {
       params: { role }
     });
   }
-  
+
 }

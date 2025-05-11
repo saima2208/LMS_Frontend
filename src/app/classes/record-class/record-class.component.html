@@ -1,0 +1,6 @@
+<div class="video-list">
+  <div class="video" *ngFor="let record of recordClass">
+    <!-- <h3>{{ record.courseName }}</h3> -->
+    <video [src]="record.videoUrl" controls></video>
+  </div>
+</div>

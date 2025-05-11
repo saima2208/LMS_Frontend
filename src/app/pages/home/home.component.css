@@ -76,7 +76,7 @@ video {
   text-transform: uppercase;
 }
 
-.course .card {
+/* .course .card {
   margin: 1rem auto;
   width: 100%;
   max-width: 16rem;
@@ -108,6 +108,133 @@ video {
 
 .course .btn-primary:hover {
   background-color: #0056b3;
+} */
+
+
+/* Course Section Styles */
+.course {
+  background-color: #f9f9f9; /* Light background for the section */
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.course h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Card Styles */
+.card {
+  border: none;
+  overflow: hidden;
+  border-radius: 16px; /* Rounded corners */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Lift effect */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  max-height: 200px;
+  object-fit: cover; /* Ensure the image covers the card without distortion */
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin: 5px 0;
+}
+
+.card-text.text-success {
+  font-weight: bold;
+}
+
+/* Buttons */
+.button-container .btn {
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 0.9rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button-container .btn-success {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+}
+
+.button-container .btn-success:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
+.button-container .btn-enroll {
+  background-color: #ffc107;
+  color: #fff;
+  border: none;
+}
+
+.button-container .btn-enroll:hover {
+  background-color: #e0a800;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .course h2 {
+    font-size: 1.8rem;
+  }
+
+  .card {
+    margin-bottom: 20px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  .button-container .btn {
+    font-size: 0.85rem;
+    padding: 8px 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .course h2 {
+    font-size: 1.5rem;
+  }
+
+  .card-img-top {
+    max-height: 150px;
+  }
+
+  .card-title {
+    font-size: 0.9rem;
+  }
+
+  .card-text {
+    font-size: 0.8rem;
+  }
+
+  .button-container .btn {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
 }
 
 /* Feedback Section Placeholder */

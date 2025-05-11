@@ -1,0 +1,114 @@
+<!-- components/pending-enrollment.component.html  -->
+<!-- <div>
+  <h2>Pending Enrollments</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+   <tbody>
+  <tr *ngFor="let enrollment of pendingEnrollments">
+    <td data-label="Name">{{ enrollment.name }}</td>
+    <td data-label="Email">{{ enrollment.email }}</td>
+    <td data-label="Actions">
+      <button (click)="approveEnrollment(enrollment)">Approve</button>
+         <button (click)="rejectEnrollment(enrollment)">Reject</button>
+    </td>
+  </tr>
+</tbody>
+
+  </table>
+</div> -->
+
+<!-- <div>
+  <h2>Pending Enrollments</h2>
+  <div *ngIf="pendingEnrollments.length === 0">
+    <p>No pending enrollments to approve or reject.</p>
+  </div>
+  <table *ngIf="pendingEnrollments.length > 0">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let enrollment of pendingEnrollments">
+        <td data-label="Name">{{ enrollment.name }}</td>
+        <td data-label="Email">{{ enrollment.email }}</td>
+        <td data-label="Actions">
+          <button (click)="approveEnrollment(enrollment)">Approve</button>
+          <button (click)="rejectEnrollment(enrollment)">Reject</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+ -->
+<!-- <div class="row">
+<div class="col-3">
+      <app-admin-dashboard></app-admin-dashboard>
+     </div>
+
+
+<div class="col-9">
+
+  <h2>Pending Enrollments</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let enrollment of pendingEnrollments">
+        <td data-label="Name">{{ enrollment.name }}</td>
+        <td data-label="Email">{{ enrollment.email }}</td>
+        <td data-label="Actions">
+          <button (click)="approveEnrollment(enrollment.id)">Approve</button>
+          <button (click)="rejectEnrollment(enrollment.id)">Reject</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div> -->
+
+<div class="body">
+  <div class="row">
+    <div class="col-3">
+      <app-admin-dashboard></app-admin-dashboard>
+    </div>
+
+    <div class="col-9">
+      <h2>Pending Enrollments</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Student Name</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let enrollment of pendingEnrollments">
+            <td data-label="Name">{{ enrollment.name }}</td>
+            <td data-label="Email">{{ enrollment.email }}</td>
+            <td data-label="Actions">
+              <button (click)="approveEnrollment(enrollment.id)">Approve</button>
+              <button (click)="rejectEnrollment(enrollment.id)">Reject</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

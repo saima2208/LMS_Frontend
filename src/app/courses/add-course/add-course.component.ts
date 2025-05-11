@@ -1,13 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-
 import { CommonModule, NgFor } from '@angular/common';
-import { CourseService } from '../../services/course.service';
-import { Course } from '../../model/course.model';
+import { Course } from '../course.model';
 import { UserService } from '../../services/user.service';
 import { User } from '../../model/user.model';
+import { CourseService } from '../course.service';
 
 @Component({
   selector: 'app-add-course',
@@ -27,7 +25,8 @@ export class AddCourseComponent implements OnInit {
 
   getTeachers() {
     this.userService.getUserByRole('TEACHER').subscribe({
-      next: (data) => {(this.teachers = data);
+      next: (data) => {
+        (this.teachers = data);
         console.log(this.teachers)
       },
       error: (err) => console.error('Failed to load teachers:', err),
@@ -51,7 +50,7 @@ export class AddCourseComponent implements OnInit {
   onSubmit() {
     if (this.isUpdate) {
       // Update course logic
-      this.courseService.updateCourse(this.cor.id!, this.cor).subscribe({
+      this.courseService.updateCourse(this.cor.id, this.cor).subscribe({
         next: () => {
           this.router.navigate(['/course-list']);
         },

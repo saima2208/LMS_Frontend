@@ -1,23 +1,20 @@
-import { Course } from '../../courses/course.model';
-import { Component, OnInit } from '@angular/core';
-import { Lesson } from '../../model/lesson.model';
-import { Router } from '@angular/router';
-import { LessonService } from '../../services/lesson.service';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-
-import { CommonModule, NgFor } from '@angular/common';
+import { Assignment } from '../assignment.model';
+import { Router } from '@angular/router';
+import { AssignmentService } from '../assignment.service';
 import { CourseService } from '../../courses/course.service';
-
+import { Course } from '../../courses/course.model';
 
 @Component({
-  selector: 'app-add-lesson',
+  selector: 'app-assignment-add',
   imports: [FormsModule],
-  templateUrl: './add-lesson.component.html',
-  styleUrl: './add-lesson.component.css'
+  templateUrl: './assignment-add.component.html',
+  styleUrl: './assignment-add.component.css'
 })
-export class AddLessonComponent {
-  // this is object initialized  for the class
-  lessons: Lesson = new Lesson();
+export class AssignmentAddComponent {
+ // this is object initialized  for the class
+  assignments: Assignment = new Assignment();
 
   isUpdate=false;
 
@@ -28,14 +25,14 @@ export class AddLessonComponent {
 
   constructor(
      private router:Router,
-     private lessonService: LessonService,
+     private assignmentService: AssignmentService,
      private courseService: CourseService){
 
     const nav= this.router.getCurrentNavigation();
 
     if(nav?.extras.state&&nav.extras.state['a']){
 
-      this.lessons=nav.extras.state['a'];
+      this.assignments=nav.extras.state['a'];
 
       this.isUpdate=true;
     }
@@ -56,7 +53,7 @@ export class AddLessonComponent {
     // }
 
     getCourses(): void {
-      this.courseService.getCourses().subscribe({
+      this.courseService.getAllCourses().subscribe({
         next: (data) => {
           this.cor = data; // Store all courses in the array
           console.log('Courses fetched:', this.cor);
@@ -67,32 +64,29 @@ export class AddLessonComponent {
 
        onSubmit() {
             if (this.isUpdate) {
-              // Update course logic
-              this.lessonService.updateLesson(this.lessons.id!, this.lessons).subscribe({
+              // Update Assignment logic
+              this.assignmentService.updateAssignment(this.assignments.id!, this.assignments).subscribe({
                 next: () => {
-                  this.router.navigate(['/lesson-list']);
+                  this.router.navigate(['/assignment-list']);
                 },
                 error: (err) => {
-                  alert('Failed to update lesson: ' + err.message);
+                  alert('Failed to update assignments: ' + err.message);
                   console.error(err);
                 },
               });
             } else {
-              // Create course logic
-              this.lessonService.createLesson(this.lessons).subscribe({
+              // Create assignments logic
+              this.assignmentService.createAssignment(this.assignments).subscribe({
                 next: () => {
-                  this.router.navigate(['/lesson-list']);
-                  this.lessons = new Lesson(); // Reset the form model
+                  this.router.navigate(['/assignment-list']);
+                  this.assignments = new Assignment(); // Reset the form model
                 },
                 error: (err) => {
-                  alert('Failed to create lesson: ' + err.message);
+                  alert('Failed to create assignments: ' + err.message);
                   console.error(err);
                 },
               });
             }
           }
 
-
-    }
-
-
+}

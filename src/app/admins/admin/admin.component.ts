@@ -1,20 +1,33 @@
+import { User } from './../../model/user.model';
 import { Component, OnInit } from '@angular/core';
 import { AdminDashboardComponent } from '../admin-dashboard/admin-dashboard.component';
-import { User } from '../../model/user.model';
-import { NgFor } from '@angular/common';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
+
 
 @Component({
   selector: 'app-admin',
-  imports: [AdminDashboardComponent, FormsModule],
+  imports: [AdminDashboardComponent, FormsModule, CommonModule],
   templateUrl: './admin.component.html',
   styleUrl: './admin.component.css',
 })
-export class AdminComponent implements OnInit {
-  users: User[] = [];
+export class AdminComponent {
+
+  currentUser: User = new User();
+
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
-    let allUser = JSON.parse(localStorage.getItem('users') || '[]');
-    this.users = allUser;
+    this.userService.getCurrentUser().subscribe({
+      next: (data: User) => (this.currentUser = data),
+      error: (err) => console.error('Error fetching user data:', err),
+    });
   }
+
+  editUser(user: User): void {
+    this.router.navigate(['/edit-user', user.id]);
+  }
+
 }

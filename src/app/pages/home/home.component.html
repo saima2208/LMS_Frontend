@@ -14,49 +14,40 @@
       </div>
   </div>
 </section>
+
 <section class="course">
   <h2>Checkout New Releases Of Our Courses</h2>
- 
 
-    <div class="course">
+  <div class="course">
+    <div class="row mt-4">
+      <!-- Use *ngFor with slice pipe to display only the first 4 courses -->
+      <div class="col-md-4 mb-4" *ngFor="let course of course | slice:0:3">
+        <div class="card shadow-lg rounded-4">
+          <!-- Course Image -->
+          <img [src]="course.image" class="card-img-top img-fluid book-image" alt="Course Image">
 
-  <div class="row mt-4">
-      <div class="col-md-4 mb-4" *ngFor="let course of course">
-          <div class="card shadow-lg rounded-4">
-              <!-- Course Image -->
-              <img [src]="course.image" class="card-img-top img-fluid book-image" alt="Course Image">
+          <div class="card-body text-center">
+            <!-- Course Name -->
+            <h5 class="card-title fw-bold text-primary">{{ course.courseName }}</h5>
 
-              <div class="card-body text-center">
-                  <!-- Course Name -->
-                  <h5 class="card-title fw-bold text-primary">{{ course.courseName }}</h5>
+            <!-- Short description -->
+            <p class="card-text text-muted">✍️ {{ course.description }}</p>
 
-                  <!-- Short description -->
-                  <p class="card-text text-muted">✍️ {{ course.description }}</p>
+            <!-- Course Price -->
+            <p class="card-text text-success">💲 <strong>Price:</strong> ${{ course.price }}</p>
 
-                  <!-- Course Price -->
-                   <p class="card-text text-success">💲 <strong>Price:</strong> ${{ course.price }}</p>
-
-                  <!-- View details Button -->
-                  <div class="button-container">
-                    <!-- <button class="btn btn-warning shadow-sm fw-bold">
-                       Details
-                    </button> -->
-                     <!-- <button class="btn btn-enroll shadow-sm fw-bold "> Enroll
-                    </button> -->
-                    <a href="/course-details" class="btn btn-success shadow-sm fw-bold "> Details</a>
-                    <a href="/enroll" class="btn btn-success shadow-sm fw-bold "> Enroll</a>
-                  </div>
-
-              </div>
+            <!-- View Details and Enroll Buttons -->
+            <div class="button-container">
+              <a href="/course-details" class="btn btn-success shadow-sm fw-bold">Details</a>
+              <a href="/enroll" class="btn btn-success shadow-sm fw-bold">Enroll</a>
+            </div>
           </div>
+        </div>
       </div>
+    </div>
   </div>
-
-
-</div>
-
-
 </section>
+
 
 <section class="feedback">
 

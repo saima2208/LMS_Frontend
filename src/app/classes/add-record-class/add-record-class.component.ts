@@ -2,11 +2,15 @@
 import { Component } from '@angular/core';
 import { AdminDashboardComponent } from "../../admins/admin-dashboard/admin-dashboard.component";
 import { Router } from '@angular/router';
-import { RecordClass } from '../recordClass.model';
+
 import { Course } from '../../courses/course.model';
 import { RecordClassService } from '../record-class.service';
 import { CourseService } from '../../courses/course.service';
 import { FormsModule } from '@angular/forms';
+import { RecordClass } from '../recordClass.model';
+
+
+
 
 @Component({
   selector: 'app-add-record-class',

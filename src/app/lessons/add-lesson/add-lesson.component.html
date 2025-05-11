@@ -8,12 +8,12 @@
     <input type="text" name="title" [(ngModel)]="lessons.topic" required /><br />
 
    <label for="courseId">Course_Id</label><br>
-   <select name="courseId" [(ngModel)]="lessons.courseId" required style="width: 100%;">
+   <!-- <select name="courseId" [(ngModel)]="lessons.courseId" required style="width: 100%;">
     <option *ngFor="let course of cor" [value]="course.id">
       {{ course.id }} {{ course.name }}
     </option>
-  </select><br />
-   <!-- <input type="text" name="course_id" [(ngModel)]="lessons.courseId" required /><br /> -->
+  </select><br /> -->
+   <input type="text" name="course_id" [(ngModel)]="lessons.courseId" required /><br />
 
    <label for="content">Content:</label><br />
    <textarea [(ngModel)]="lessons.content" name="content" required></textarea><br />

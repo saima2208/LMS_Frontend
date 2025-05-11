@@ -1,7 +1,9 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { RecordClass } from './recordClass.model';
+
 import { map, Observable } from 'rxjs';
+import { RecordClass } from './recordClass.model';
+
 
 @Injectable({
   providedIn: 'root'

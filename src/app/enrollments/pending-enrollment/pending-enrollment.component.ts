@@ -92,28 +92,10 @@ export class PendingEnrollmentComponent implements OnInit {
   }
 
   approveEnrollment(enrollmentId: number) {
-    // this.enrollmentService.updateEnrollmentStatus(enrollmentId, 'APPROVED').subscribe({
-    //   next: () => {
-    //     alert('Enrollment approved successfully!');
-    //     this.loadPendingEnrollments();
-    //   },
-    //   error: (err) => {
-    //     console.error('Failed to approve enrollment:', err);
-    //     alert('Failed to approve enrollment: ' + err.message);
-    //   }
-    // });
+    
   }
 
   rejectEnrollment(enrollmentId: number) {
-  //   this.enrollmentService.updateEnrollmentStatus(enrollmentId, 'REJECTED').subscribe({
-  //     next: () => {
-  //       alert('Enrollment rejected successfully!');
-  //       this.loadPendingEnrollments();
-  //     },
-  //     error: (err) => {
-  //       console.error('Failed to reject enrollment:', err);
-  //       alert('Failed to reject enrollment: ' + err.message);
-  //     }
-  //   });
+
    }
 }

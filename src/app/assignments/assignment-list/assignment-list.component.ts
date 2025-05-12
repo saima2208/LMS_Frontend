@@ -2,10 +2,11 @@ import { Component } from '@angular/core';
 import { Assignment } from '../assignment.model';
 import { Router } from '@angular/router';
 import { AssignmentService } from '../assignment.service';
+import { AdminDashboardComponent } from "../../admins/admin-dashboard/admin-dashboard.component";
 
 @Component({
   selector: 'app-assignment-list',
-  imports: [],
+  imports: [AdminDashboardComponent],
   templateUrl: './assignment-list.component.html',
   styleUrl: './assignment-list.component.css'
 })

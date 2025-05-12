@@ -6,6 +6,7 @@
       <tr>
         <th>Name</th>
         <th>Email</th>
+
         <th>Actions</th>
       </tr>
     </thead>
@@ -94,6 +95,7 @@
           <tr>
             <th>Student Name</th>
             <th>Email</th>
+            <th>Course Name</th>
             <th>Actions</th>
           </tr>
         </thead>
@@ -101,6 +103,7 @@
           <tr *ngFor="let enrollment of pendingEnrollments">
             <td data-label="Name">{{ enrollment.name }}</td>
             <td data-label="Email">{{ enrollment.email }}</td>
+            <td data-label="Email">{{ enrollment.courseName }}</td>
             <td data-label="Actions">
               <button (click)="approveEnrollment(enrollment.id)">Approve</button>
               <button (click)="rejectEnrollment(enrollment.id)">Reject</button>

@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AdminDashboardComponent } from "../../admins/admin-dashboard/admin-dashboard.component";
 import { Router } from '@angular/router';
 
@@ -8,24 +8,26 @@ import { RecordClassService } from '../record-class.service';
 import { CourseService } from '../../courses/course.service';
 import { FormsModule } from '@angular/forms';
 import { RecordClass } from '../recordClass.model';
+import { CommonModule } from '@angular/common';
 
 
 
 
 @Component({
   selector: 'app-add-record-class',
-  imports: [AdminDashboardComponent, FormsModule],
+  imports: [AdminDashboardComponent, FormsModule, CommonModule],
   templateUrl: './add-record-class.component.html',
   styleUrl: './add-record-class.component.css'
 })
-export class AddRecordClassComponent {
+export class AddRecordClassComponent implements OnInit{
   recordClass: RecordClass = new RecordClass();
 
-  isUpdate = false;
+
 
   //  cor: Course = new Course;
 
   cor: Course[] = [];
+    isUpdate = false;
 
 
   constructor(
@@ -47,44 +49,61 @@ export class AddRecordClassComponent {
     this.getCourses();
   }
 
-  // getCourses() {
-  //   this.courseService.getCourseById(this.cor.id).subscribe({
-  //     next: (data) => {
-  //       this.cor = data;
-  //       console.log(this.cor);
-  //     },
-  //     error: (err) => console.error('Failed to load courses:', err),
-  //   });
-  // }
 
-  getCourses(): void {
+
+    getCourses(): void {
     this.courseService.getCourses().subscribe({
       next: (data) => {
-        this.cor = data; // Store all courses in the array
-        console.log('Courses fetched:', this.cor);
+        this.cor = data; // Assign fetched courses to the list
+        console.log('Fetched courses:', this.cor);
       },
       error: (err) => console.error('Failed to load courses:', err),
     });
   }
 
-  onSubmit() {
+
+  // onSubmit() {
+  //   if (this.isUpdate) {
+  //     // Update course logic
+  //     this.recordClassService.updateRecordClass(this.recordClass.id!, this.recordClass).subscribe({
+  //       next: () => {
+  //         this.router.navigate(['/recordClasses']);
+  //       },
+  //       error: (err) => {
+  //         alert('Failed to update lesson: ' + err.message);
+  //         console.error(err);
+  //       },
+  //     });
+  //   } else {
+  //     // Create course logic
+  //     this.recordClassService.createRecordClass(this.recordClass).subscribe({
+  //       next: () => {
+  //         this.router.navigate(['/recordClasses']);
+  //         this.recordClass = new RecordClass(); // Reset the form model
+  //       },
+  //       error: (err) => {
+  //         alert('Failed to create recordClass: ' + err.message);
+  //         console.error(err);
+  //       },
+  //     });
+  //   }
+  // }
+
+
+  onSubmit(): void {
     if (this.isUpdate) {
-      // Update course logic
       this.recordClassService.updateRecordClass(this.recordClass.id!, this.recordClass).subscribe({
-        next: () => {
-          this.router.navigate(['/lesson-list']);
-        },
+        next: () => this.router.navigate(['/lesson-list']),
         error: (err) => {
           alert('Failed to update lesson: ' + err.message);
           console.error(err);
         },
       });
     } else {
-      // Create course logic
       this.recordClassService.createRecordClass(this.recordClass).subscribe({
         next: () => {
           this.router.navigate(['/recordClasses']);
-          this.recordClass = new RecordClass(); // Reset the form model
+          this.recordClass = new RecordClass(); // Reset form model
         },
         error: (err) => {
           alert('Failed to create recordClass: ' + err.message);
@@ -93,5 +112,4 @@ export class AddRecordClassComponent {
       });
     }
   }
-
 }

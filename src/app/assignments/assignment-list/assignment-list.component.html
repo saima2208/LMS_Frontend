@@ -1,6 +1,55 @@
 
-<div class="body">
+<!-- <div class="body">
   <h1>Assignment List</h1>
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>ID</th>
+        <th>Topic</th>
+        <th>Course_id</th>
+        <th>DueDate</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (assignment of assignments; track assignment.topic) {
+      
+      <tr>
+        <td>{{ assignments.indexOf(assignment) + 1 }}</td>
+        <td>{{ assignment.id }}</td>
+        <td>{{ assignment.topic }}</td>
+        <td>{{ assignment.courseId }}</td>
+        <td>{{ assignment.dueDate }}</td>
+        <td>
+          <div class="button-container">
+            <button class="btn btn-primary" (click)="editAssignment(assignment)">
+              Edit
+            </button>
+            <button class="btn btn-warning" (click)="deleteAssignment(assignment)">
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  <button class="btn btn-primary" (click)="addNewAssignment()">Add Assignment</button>
+</div> -->
+
+
+
+<div class="body">
+  <div class="row">
+    <!-- Left Side: Admin Dashboard -->
+    <div class="col-left">
+      <app-admin-dashboard></app-admin-dashboard>
+    </div>
+
+    <!-- Right Side: Form Section -->
+    <div class="col-right">
+     <h1>Assignment List</h1>
   <table class="table table-striped table-hover table-bordered">
     <thead>
       <tr>

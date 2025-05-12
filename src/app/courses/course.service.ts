@@ -54,7 +54,14 @@ export class CourseService {
   }
 
   getAllCourses(): Observable<Course[]> {
-    return this.http.get<Course[]>(`${this.apiUrl},course`);
+    return this.http.get<Course[]>(`${this.apiUrl}`);
+  }
+
+    getCoursesByName(courseName: string): Observable<any> {
+    const url = `${this.apiUrl}/search-by-name`;
+    const body = { courseName }; // Request body
+
+    return this.http.post(url, body);
   }
 
 }

@@ -11,19 +11,20 @@ import { CourseService } from '../../courses/course.service';
 
 @Component({
   selector: 'app-add-lesson',
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './add-lesson.component.html',
   styleUrl: './add-lesson.component.css'
 })
-export class AddLessonComponent {
+export class AddLessonComponent implements OnInit{
   // this is object initialized  for the class
   lessons: Lesson = new Lesson();
 
-  isUpdate=false;
+
 
   //  cor: Course = new Course;
 
   cor: Course[] = [];
+   isUpdate=false;
 
 
   constructor(
@@ -42,29 +43,20 @@ export class AddLessonComponent {
     }
 
     ngOnInit() {
-      this.getCourses();
-    }
+    this.getCourses();
+  }
 
-    // getCourses() {
-    //   this.courseService.getCourseById(this.cor.id).subscribe({
-    //     next: (data) => {
-    //       this.cor = data;
-    //       console.log(this.cor);
-    //     },
-    //     error: (err) => console.error('Failed to load courses:', err),
-    //   });
-    // }
+
 
     getCourses(): void {
-      this.courseService.getCourses().subscribe({
-        next: (data) => {
-          this.cor = data; // Store all courses in the array
-          console.log('Courses fetched:', this.cor);
-        },
-        error: (err) => console.error('Failed to load courses:', err),
-      });
-    }
-
+    this.courseService.getCourses().subscribe({
+      next: (data) => {
+        this.cor = data; // Assign fetched courses to the list
+        console.log('Fetched courses:', this.cor);
+      },
+      error: (err) => console.error('Failed to load courses:', err),
+    });
+  }
        onSubmit() {
             if (this.isUpdate) {
               // Update course logic

@@ -79,9 +79,10 @@ form button:hover {
 }
 
 /* Heading styles */
-h2 {
+h1 {
   margin-bottom: 16px;
   color: #333;
+  margin-left: 200px;
 }
 
 /* Responsive Design */

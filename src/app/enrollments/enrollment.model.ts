@@ -4,17 +4,16 @@ export enum EnrollmentStatus {
   CANCELLED = 'REJECTED'
 }
 
-
 export class Enrollment {
   id: number;
   courseName: String;
   name: String;
-  email:String;
+  email: String;
   phone: String;
-  confirmMobile:String;
+  confirmMobile: String;
   enrollmentDate: Date;
   paymentMethod: String;
- status: EnrollmentStatus;
+  status: EnrollmentStatus;
 
   constructor() {
     this.id = 0;
@@ -22,10 +21,10 @@ export class Enrollment {
     this.name = '';
     this.email = '';
     this.phone = '';
-     this.confirmMobile = '';
+    this.confirmMobile = '';
     this.enrollmentDate = new Date();
     this.paymentMethod = '';
-   this.status = EnrollmentStatus.PENDING;  // Default status set to PENDING
+    this.status = EnrollmentStatus.PENDING;  // Default status set to PENDING
   }
 
 }

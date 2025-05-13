@@ -1,47 +1,45 @@
 <div class="video">
-<div class="card text-bg-dark" >
-  <!-- <img src="Image\coursepage.jpeg" class="card-img" alt="..."> -->
-  <video src="https://videos.pexels.com/video-files/3129977/3129977-sd_640_360_30fps.mp4" autoplay loop muted></video>
-  <div class="card-video-overlay">
-    <h2 class="card-title">Our Courses</h2>
-    <h3>Boost Your Skillset, Boost Your Career</h3>
+  <div class="card text-bg-dark">
+    <!-- <img src="Image\coursepage.jpeg" class="card-img" alt="..."> -->
+    <video src="https://videos.pexels.com/video-files/3129977/3129977-sd_640_360_30fps.mp4" autoplay loop muted></video>
+    <div class="card-video-overlay">
+      <h2 class="card-title">Our Courses</h2>
+      <h3>Boost Your Skillset, Boost Your Career</h3>
 
 
+    </div>
   </div>
-</div>
 </div>
 <div class="course">
   <h1 class="form-title text-primary text-center mb-4"> All Courses </h1>
   <div class="row mt-4">
-      <div class="col-md-4 mb-4" *ngFor="let course of course">
-          <div class="card shadow-lg rounded-4">
-              <!-- Course Image -->
-              <img [src]="course.image" class="card-img-top img-fluid book-image" alt="Course Image">
+    <div class="col-md-4 mb-4" *ngFor="let course of course">
+      <div class="card shadow-lg rounded-4">
+        <!-- Course Image -->
+        <img [src]="course.image" class="card-img-top img-fluid book-image" alt="Course Image">
 
-              <div class="card-body text-center">
-                  <!-- Course Name -->
-                  <h5 class="card-title fw-bold text-primary">{{ course.courseName }}</h5>
+        <div class="card-body text-center">
+          <!-- Course Name -->
+          <h5 class="card-title fw-bold text-primary">{{ course.courseName }}</h5>
 
-                  <!-- Short description -->
-                  <p class="card-text text-muted">✍️ {{ course.description }}</p>
+          <!-- Short description -->
+          <p class="card-text text-muted">✍️ {{ course.description }}</p>
 
-                  <!-- Course Price -->
-                   <p class="card-text text-success">💲 <strong>Price:</strong> ${{ course.price }}</p>
+          <!-- Course Price -->
+          <p class="card-text text-success">💲 <strong>Price:</strong> ${{ course.price }}</p>
 
-                  <!-- View details Button -->
-                  <div class="button-container">
-                    <!-- <button class="btn btn-warning shadow-sm fw-bold">
-                       Details
-                    </button> -->
-                     <!-- <button class="btn btn-enroll shadow-sm fw-bold "> Enroll
-                    </button> -->
-                    <a href="/course-details" class="btn btn-success shadow-sm fw-bold "> Details</a>
-                    <a href="/enroll" class="btn btn-success shadow-sm fw-bold "> Enroll</a>
-                  </div>
-
-              </div>
+          <!-- View details Button -->
+          <div class="button-container">
+            <a href="/course-details" class="btn btn-success shadow-sm fw-bold "> Details</a>
+            <a [routerLink]="'/enroll'" [queryParams]="{ title: course.courseName }"
+              class="btn btn-success shadow-sm fw-bold">
+              Enroll
+            </a>
           </div>
+
+        </div>
       </div>
+    </div>
   </div>
 
 

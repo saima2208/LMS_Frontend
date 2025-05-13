@@ -19,15 +19,13 @@ import { CommonModule } from '@angular/common';
   templateUrl: './add-record-class.component.html',
   styleUrl: './add-record-class.component.css'
 })
-export class AddRecordClassComponent implements OnInit{
+export class AddRecordClassComponent implements OnInit {
   recordClass: RecordClass = new RecordClass();
 
 
 
-  //  cor: Course = new Course;
-
   cor: Course[] = [];
-    isUpdate = false;
+  isUpdate = false;
 
 
   constructor(
@@ -51,7 +49,7 @@ export class AddRecordClassComponent implements OnInit{
 
 
 
-    getCourses(): void {
+  getCourses(): void {
     this.courseService.getCourses().subscribe({
       next: (data) => {
         this.cor = data; // Assign fetched courses to the list
@@ -62,40 +60,14 @@ export class AddRecordClassComponent implements OnInit{
   }
 
 
-  // onSubmit() {
-  //   if (this.isUpdate) {
-  //     // Update course logic
-  //     this.recordClassService.updateRecordClass(this.recordClass.id!, this.recordClass).subscribe({
-  //       next: () => {
-  //         this.router.navigate(['/recordClasses']);
-  //       },
-  //       error: (err) => {
-  //         alert('Failed to update lesson: ' + err.message);
-  //         console.error(err);
-  //       },
-  //     });
-  //   } else {
-  //     // Create course logic
-  //     this.recordClassService.createRecordClass(this.recordClass).subscribe({
-  //       next: () => {
-  //         this.router.navigate(['/recordClasses']);
-  //         this.recordClass = new RecordClass(); // Reset the form model
-  //       },
-  //       error: (err) => {
-  //         alert('Failed to create recordClass: ' + err.message);
-  //         console.error(err);
-  //       },
-  //     });
-  //   }
-  // }
 
 
   onSubmit(): void {
     if (this.isUpdate) {
       this.recordClassService.updateRecordClass(this.recordClass.id!, this.recordClass).subscribe({
-        next: () => this.router.navigate(['/lesson-list']),
+        next: () => this.router.navigate(['/recordClasses']),
         error: (err) => {
-          alert('Failed to update lesson: ' + err.message);
+          alert('Failed to update recordClasses: ' + err.message);
           console.error(err);
         },
       });

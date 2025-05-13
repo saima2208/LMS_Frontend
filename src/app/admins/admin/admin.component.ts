@@ -19,12 +19,28 @@ export class AdminComponent implements OnInit{
 
   constructor(private router: Router, private userService: UserService) { }
 
-  ngOnInit(): void {
+    ngOnInit() {
+    this.getCurrentUser();
+  }
+
+
+
+    getCurrentUser(): void {
     this.userService.getCurrentUser().subscribe({
-      next: (data: User) => (this.currentUser = data),
-      error: (err) => console.error('Error fetching user data:', err),
+      next: (data) => {
+        this.currentUser = data; // Assign fetched courses to the list
+        console.log('Fetched courses:', this.currentUser);
+      },
+      error: (err) => console.error('Failed to load courses:', err),
     });
   }
+
+  // ngOnInit(): void {
+  //   this.userService.getCurrentUser().subscribe({
+  //     next: (data: User) => (this.currentUser = data),
+  //     error: (err) => console.error('Error fetching user data:', err),
+  //   });
+  // }
 
   editUser(user: User): void {
     this.router.navigate(['/edit-user', user.id]);

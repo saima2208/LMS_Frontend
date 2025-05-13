@@ -1,64 +1,4 @@
-// import { Component, OnInit } from '@angular/core';
-// import { EnrollmentService } from '../enrollment.service';
-// import { Enrollment } from '../enrollment.model';
-// import { CommonModule } from '@angular/common';
-
-// @Component({
-//   selector: 'app-pending-enrollment',
-//   imports: [CommonModule],
-//   templateUrl: './pending-enrollment.component.html',
-//   styleUrl: './pending-enrollment.component.css'
-// })
-// export class PendingEnrollmentComponent implements OnInit{
-
-//    pendingEnrollments: Enrollment[] = [];
-
-//   constructor(private enrollmentService: EnrollmentService) {}
-
-//   ngOnInit() {
-//     // Fetch the list of pending enrollments on component initialization
-//     this.loadPendingEnrollments();
-//   }
-
-//   // Fetch pending enrollments
-//   loadPendingEnrollments() {
-//     this.enrollmentService.getAllEnrollments().subscribe({
-//       next: (data) => {
-//         this.pendingEnrollments = data.filter(enrollment => enrollment.status === 'PENDING');
-//       },
-//       error: (err) => {
-//         console.error('Failed to load pending enrollments:', err);
-//       }
-//     });
-//   }
-
-//   // Approve an enrollment
-//   approveEnrollment(enrollment: Enrollment) {
-//     enrollment.status = 'APPROVED'; // Change status to 'APPROVED'
-//     this.updateEnrollmentStatus(enrollment);
-//   }
-
-//   // Reject an enrollment
-//   rejectEnrollment(enrollment: Enrollment) {
-//     enrollment.status = 'REJECTED'; // Change status to 'REJECTED'
-//     this.updateEnrollmentStatus(enrollment);
-//   }
-
-//   // Update enrollment status
-//   updateEnrollmentStatus(enrollment: Enrollment) {
-//     this.enrollmentService.updateEnrollment(enrollment.id, enrollment).subscribe({
-//       next: () => {
-//         alert('Enrollment status updated successfully!');
-//         this.loadPendingEnrollments(); // Reload pending enrollments after update
-//       },
-//       error: (err) => {
-//         alert('Failed to update enrollment status: ' + err.message);
-//         console.error(err);
-//       }
-//     });
-//   }
-// }
-
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { EnrollmentService } from '../enrollment.service';
 import { Enrollment } from '../enrollment.model';
@@ -74,7 +14,10 @@ import { AdminDashboardComponent } from "../../admins/admin-dashboard/admin-dash
 export class PendingEnrollmentComponent implements OnInit {
   pendingEnrollments: Enrollment[] = [];
 
-  constructor(private enrollmentService: EnrollmentService) {}
+  constructor(
+    private enrollmentService: EnrollmentService,
+    private http: HttpClient
+  ) { }
 
   ngOnInit() {
     this.loadPendingEnrollments();
@@ -91,11 +34,31 @@ export class PendingEnrollmentComponent implements OnInit {
     });
   }
 
-  approveEnrollment(enrollmentId: number) {
-    
+  approveEnrollment(id: number): void {
+    this.updateEnrollmentStatus(id, 'APPROVED');
   }
 
-  rejectEnrollment(enrollmentId: number) {
+  // Reject Enrollment
+  rejectEnrollment(id: number): void {
+    this.updateEnrollmentStatus(id, 'REJECTED');
+  }
 
-   }
+  // Update Enrollment Status
+  private updateEnrollmentStatus(id: number, status: string): void {
+    this.enrollmentService.updateEnrollmentStatus(id, status).subscribe({
+      next: (updatedEnrollment) => {
+        alert(`Enrollment ${status.toLowerCase()} successfully!`);
+        this.removeEnrollmentFromList(id);
+      },
+      error: (err) => {
+        console.error(`Failed to update enrollment status: ${err.message}`);
+        alert('Failed to update enrollment status. Please try again.');
+      }
+    });
+  }
+
+  // Remove enrollment from list after updating status
+  private removeEnrollmentFromList(id: number): void {
+    this.pendingEnrollments = this.pendingEnrollments.filter(enrollment => enrollment.id !== id);
+  }
 }

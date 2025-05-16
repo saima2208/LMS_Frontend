@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Lesson } from '../model/lesson.model';
+import { Lesson } from '../lessons/lesson.model';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 

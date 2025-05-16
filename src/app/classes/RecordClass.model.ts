@@ -1,12 +1,12 @@
 export class RecordClass{
   id:number;
-  courseId:string;
+  courseName:string;
   videoUrl:string;
 
 
   constructor(){
     this.id=0;
-    this.courseId='';
+    this.courseName='';
     this.videoUrl='';
   }
 }

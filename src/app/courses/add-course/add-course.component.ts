@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { CommonModule, NgFor } from '@angular/common';
 import { Course } from '../course.model';
-import { UserService } from '../../services/user.service';
-import { User } from '../../model/user.model';
+import { UserService } from '../../users/user.service';
+import { User } from '../../users/user.model';
 import { CourseService } from '../course.service';
 
 @Component({
@@ -19,20 +19,6 @@ export class AddCourseComponent implements OnInit {
   isUpdate = false;
   teachers: User[] = [];
 
-  ngOnInit() {
-    this.getTeachers();
-  }
-
-  getTeachers() {
-    this.userService.getUserByRole('TEACHER').subscribe({
-      next: (data) => {
-        (this.teachers = data);
-        console.log(this.teachers)
-      },
-      error: (err) => console.error('Failed to load teachers:', err),
-    });
-  }
-
   constructor(
     private router: Router,
     private courseService: CourseService,
@@ -45,6 +31,20 @@ export class AddCourseComponent implements OnInit {
 
       this.isUpdate = true;
     }
+  }
+
+  ngOnInit() {
+    this.getTeachers();
+  }
+
+  getTeachers() {
+    this.userService.getUserByRole('TEACHER').subscribe({
+      next: (data) => {
+        (this.teachers = data);
+        console.log(this.teachers)
+      },
+      error: (err) => console.error('Failed to load teachers:', err),
+    });
   }
 
   onSubmit() {

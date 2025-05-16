@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { CourseService } from '../../courses/course.service';
 import { Course } from '../../courses/course.model';
 import { CommonModule, NgFor } from '@angular/common';
@@ -7,7 +7,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
-  imports: [FormsModule, CommonModule, NgFor],
+  imports: [FormsModule, CommonModule, NgFor,RouterLink],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
@@ -19,6 +19,8 @@ course: Course[] = [];
   ngOnInit(): void {
     this.courseService.getCourses().subscribe((data) => {
       this.course = data;
+      this.course = data.sort((a, b) => b.id - a.id);
+
     });
 }
 }

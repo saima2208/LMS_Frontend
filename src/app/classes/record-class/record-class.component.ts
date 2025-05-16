@@ -21,4 +21,8 @@ export class RecordClassComponent {
       this.recordClass = data;
     });
   }
+
+  addNewRecordClass(): void {
+      this.router.navigate(['/add-recordClass'], { state: { recordClass: new RecordClass() } });
+    }
 }

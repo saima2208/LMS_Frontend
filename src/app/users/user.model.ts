@@ -13,9 +13,9 @@
 //   role: 'Admin' | 'Teacher' | 'Student';
 // }
 export enum Role {
-  Admin = 'Admin',
-  Teacher = 'Teacher',
-  Student = 'Student',
+  Admin = 'ADMIN',
+  Teacher = 'TEACHER',
+  Student = 'STUDENT',
 }
 
 export class User {
@@ -24,11 +24,11 @@ export class User {
   fatherName: string;
   motherName: string;
   address: string;
-  phoneNo: string;
+  phone: string;
   email: string;
   gender:string;
   nationality:string;
-  image:string;
+  avatarUrl:string;
   password: string;
   role:Role;
 
@@ -39,11 +39,11 @@ export class User {
       this.fatherName = "";
       this.motherName = "";
       this.address = "";
-      this.phoneNo = "";
+      this.phone = "";
       this.email = "";
       this.gender = "";
       this.nationality = "";
-      this.image = "";
+      this.avatarUrl = "";
 
       this.password = "";
       this.role= Role.Admin;

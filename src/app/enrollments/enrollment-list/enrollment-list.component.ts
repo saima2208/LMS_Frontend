@@ -27,6 +27,7 @@ enrollments: Enrollment[] = [];
   saveEnrollment() {
     this.enrollmentService.getAllEnrollments().subscribe((data) => {
       this.enrollments = data;
+      this.enrollments = data.sort((a, b) => b.id - a.id);
     });
   }
 

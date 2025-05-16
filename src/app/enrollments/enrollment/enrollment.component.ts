@@ -50,12 +50,12 @@ export class EnrollmentComponent implements OnInit {
     } else {
       this.enrollmentService.createEnrollment(this.enrollments).subscribe({
         next: () => {
-          alert('Enrollment created successfully!');
-          this.router.navigate(['/pending-enroll']);
+          alert(' successfully submit the form.We will confirm you within 24 hours.');
+          // this.router.navigate(['/pending-enroll']);
           this.resetForm();
         },
         error: (err) => {
-          alert('Failed to create enrollment: ' + err.message);
+          alert('Failed to submit the form,try again: ' + err.message);
           console.error(err);
         },
       });

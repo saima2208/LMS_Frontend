@@ -1,12 +1,13 @@
 import { Course } from '../../courses/course.model';
 import { Component, OnInit } from '@angular/core';
-import { Lesson } from '../../model/lesson.model';
+import { Lesson } from '../lesson.model';
 import { Router } from '@angular/router';
-import { LessonService } from '../../services/lesson.service';
+
 import { FormsModule } from '@angular/forms';
 
 import { CommonModule, NgFor } from '@angular/common';
 import { CourseService } from '../../courses/course.service';
+import { LessonService } from '../lesson.service';
 
 
 @Component({

@@ -1,0 +1,56 @@
+<div class="row">
+  <div class="left">
+    <div class="col-3">
+
+      <!-- student dashboard start -->
+
+      <app-student-dashboard></app-student-dashboard>
+
+      <!-- student dashboard end -->
+    </div>
+
+  </div>
+
+  <div class="right">
+    <div class="col-9">
+      <!-- feedback form start -->
+
+      <fieldset>
+        <form (ngSubmit)="onSubmit()">
+          <h1>Feedback Form</h1>
+
+          <input type="hidden" name="id" [(ngModel)]="feedbacks.id" hidden /><br />
+
+          <!-- Student Title Field -->
+          <div>
+            <label for="studentId">Student Name</label>
+            <input type="text" id="studentId" name="studentId" [(ngModel)]="feedbacks.studentId" required readonly />
+          </div>
+
+          <!-- Feedback Field -->
+          <div>
+            <label for="content">Feedback:</label>
+            <textarea name="content" id="content" [(ngModel)]="feedbacks.content" required></textarea>
+          </div>
+
+          <!-- Rating -->
+          <div class="form-group">
+            <label for="rating">Rating:</label>
+            <select id="rating" [(ngModel)]="feedbacks.rating" name="rating" required>
+              <option *ngFor="let r of [1, 2, 3, 4, 5]" [value]="r">
+                {{ r }} Star{{ r > 1 ? 's' : '' }}
+              </option>
+            </select>
+          </div>
+
+
+          <button type="submit" class="btn-success">Submit</button>
+
+          <!-- feedback form end -->
+
+
+        </form>
+      </fieldset>
+    </div>
+
+  </div>

@@ -27,11 +27,13 @@ export class PendingEnrollmentComponent implements OnInit {
     this.enrollmentService.getAllEnrollments().subscribe({
       next: (data) => {
         this.pendingEnrollments = data.filter(enrollment => enrollment.status === 'PENDING');
+          
       },
       error: (err) => {
         console.error('Failed to load pending enrollments:', err);
       }
     });
+
   }
 
   approveEnrollment(id: number): void {

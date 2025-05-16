@@ -1,9 +1,9 @@
-.video-list {
+/* .video-list {
   display: grid;
   gap: 16px;
-}
+} */
 
-.video {
+/* .video {
   border: 1px solid #ccc;
   padding: 12px;
   border-radius: 8px;
@@ -11,7 +11,44 @@
 }
 
 video {
-  width: 100%;
-  max-width: 640px;
+  width: 50%;
+  max-width: 400pxpx;
   border-radius: 8px;
+} */
+
+
+.video.list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Three columns by default */
+  gap: 16px; /* Space between items */
+}
+
+.video .card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional styling */
+}
+
+.video video {
+  width: 100%; /* Ensure videos fit within the card */
+  height: auto;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+}
+
+.card-body {
+  text-align: center;
+  padding: 16px;
+}
+
+@media (max-width: 768px) {
+  .video.list {
+    grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+  }
+}
+
+@media (max-width: 480px) {
+  .video.list {
+    grid-template-columns: 1fr; /* One column for small screens */
+  }
 }

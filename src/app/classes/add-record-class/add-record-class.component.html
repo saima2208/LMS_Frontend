@@ -1,26 +1,26 @@
 
 <div class="body">
   <div class="row">
-    <!-- Left Side: Admin Dashboard -->
+
     <div class="col-left">
       <app-admin-dashboard></app-admin-dashboard>
     </div>
 
-    <!-- Right Side: Form Section -->
+
     <div class="col-right">
       <fieldset>
         <h1>{{ isUpdate ? "Edit Record Class" : "Add Record Class" }}</h1>
         <form (ngSubmit)="onSubmit()" #courseForm="ngForm">
-          <!-- Course ID Dropdown -->
-          <label for="courseId">Course ID</label>
-          <select name="courseId" [(ngModel)]="recordClass.courseId" required style="width: 100%;">
-            <option *ngFor="let course of cor" [value]="course.id">
+
+          <label for="courseName">Course ID</label>
+          <select name="courseName" [(ngModel)]="recordClass.courseName" required style="width: 100%;">
+            <option *ngFor="let course of cor" [value]="course.courseName">
               {{ course.id }} - {{ course.courseName }}
             </option>
           </select>
           <br />
 
-          <!-- Video URL Input -->
+
           <label for="videoUrl">Video URL</label>
           <input
             type="text"
@@ -31,10 +31,14 @@
           />
           <br />
 
-          <!-- Submit Button -->
+
           <button type="submit">{{ isUpdate ? "Update Record" : "Add Record" }}</button>
         </form>
       </fieldset>
     </div>
   </div>
 </div>
+
+
+
+

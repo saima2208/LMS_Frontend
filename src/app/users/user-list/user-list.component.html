@@ -1,0 +1,54 @@
+<div class="body">
+  <h1>User Panel</h1>
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Father Name</th>
+        <th>Mother Name</th>
+        <th>Phone Number</th>
+        <th>Address</th>
+        <th>Role</th>
+        <th>Image</th>
+        <th>Actions</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      @for (user of users; track user.name) {
+      <!-- <tr *ngFor="let course of courses"> -->
+      <tr>
+        <td>{{ users.indexOf(user) + 1 }}</td>
+        <td>{{ user.id }}</td>
+        <td>{{ user.name }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.fatherName }}</td>
+        <td>{{ user.motherName}}</td>
+        <td>{{ user.phone }}</td>
+        <td>{{ user.address }}</td>
+        <td>{{ user.role }}</td>
+        <td>
+          <img *ngIf="user.avatarUrl; else noImage" [src]="user.avatarUrl" alt="User Image" class="img-thumbnail"
+            width="60" height="60" />
+          <ng-template #noImage>
+            <span class="text-muted">No Image</span>
+          </ng-template>
+        </td>
+        <td>
+          <div class="button-container">
+            <button class="btn btn-primary" (click)="updateUser(user)">Edit</button>
+            <button class="btn btn-warning" (click)="deleteUser(user)">
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+  <button class="btn btn-primary" (click)="addNewUser()">Add User</button>
+</div>

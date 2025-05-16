@@ -1,10 +1,10 @@
-import { User } from './../../model/user.model';
+import { User } from '../../users/user.model';
 import { Component, OnInit } from '@angular/core';
 import { AdminDashboardComponent } from '../admin-dashboard/admin-dashboard.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
-import { UserService } from '../../services/user.service';
+import { UserService } from '../../users/user.service';
 
 
 @Component({

@@ -1,6 +1,44 @@
-<div class="video-list">
+<!-- <div class="video-list">
   <div class="video" *ngFor="let record of recordClass">
-    <!-- <h3>{{ record.courseName }}</h3> -->
+    <h3>{{ record.courseName }}</h3>
     <video [src]="record.videoUrl" controls></video>
   </div>
 </div>
+ -->
+
+ <!-- <div class="video list">
+    <div class="row mt-4">
+
+      <div class="video" *ngFor="let record of recordClass">
+        <div class="card shadow-lg rounded-4">
+
+          <video [src]="record.videoUrl" controls></video>
+
+          <div class="card-body text-center">
+
+            <h5 class="card-title fw-bold text-primary">{{ record.courseName }}</h5>
+
+
+            <p class="card-text text-muted">✍️ {{ record.lesson }}</p>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+ -->
+
+
+ <div class="video list">
+  <div class="card" *ngFor="let record of recordClass">
+    <video [src]="record.videoUrl" controls></video>
+    <div class="card-body">
+      <h5 class="card-title fw-bold text-primary">{{ record.courseName }}</h5>
+      <!-- <p class="card-text text-muted">✍️ {{ record.lesson }}</p> -->
+    </div>
+  </div>
+</div>
+
+<button class="btn btn-primary" (click)="addNewRecordClass()">Add Class</button>
+

@@ -59,7 +59,7 @@
       <div class="profile-card">
         <div class="row">
           <div class="col-4">
-            <img [src]="currentUser.image" alt="Add Profile picture">
+            <img [src]="currentUser.avatarUrl" alt="Add Profile picture">
             <h2>{{ currentUser.name }}</h2>
             <h4>Admin ID: {{ currentUser.id }}</h4>
           </div>
@@ -69,7 +69,7 @@
               <p>👨‍👩‍👧 Father's Name: <span>{{ currentUser.fatherName }}</span></p>
               <p>👩 Mother's Name: <span>{{ currentUser.motherName }}</span></p>
               <p>📧 Email: <span>{{ currentUser.email }}</span></p>
-              <p>📞 Phone No: <span>{{ currentUser.phoneNo }}</span></p>
+              <p>📞 Phone No: <span>{{ currentUser.phone }}</span></p>
               <p>🚺 Gender: <span>{{ currentUser.gender }}</span></p>
               <p>🌍 Nationality: <span>{{ currentUser.nationality }}</span></p>
             </div>

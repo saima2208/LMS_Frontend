@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LessonService } from '../../services/lesson.service';
-import { Lesson } from '../../model/lesson.model';
+
+import { Lesson } from '../lesson.model';
+import { LessonService } from '../lesson.service';
 
 @Component({
   selector: 'app-lesson-list',
@@ -19,7 +20,7 @@ export class LessonListComponent implements OnInit {
   ngOnInit(): void {
     this.lessonService.getLessons().subscribe((data) => {
       this.lessons = data;
-      
+
     });
   }
 

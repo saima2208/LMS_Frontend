@@ -10,7 +10,7 @@ import { RecordClass } from './recordClass.model';
 })
 export class RecordClassService {
 
-   private apiUrl = 'http://localhost:8080/api/recordsClass';
+   private apiUrl = 'http://localhost:8080/api/record-classes';
 
   constructor(private http: HttpClient) {}
 
@@ -20,7 +20,7 @@ export class RecordClassService {
         data.map((item) => {
           const recordClass = new RecordClass();
           recordClass.id = item.id;
-          recordClass.courseId = item.course.id;
+          recordClass.courseName = item.course.courseName;
 
 
           recordClass.videoUrl = ''; // Add video URL if your API includes it
@@ -34,9 +34,15 @@ export class RecordClassService {
     return this.http.get<RecordClass>(`${this.apiUrl}/${id}`);
   }
 
-  getRecordClassByCourseId(courseId: number): Observable<RecordClass[]> {
+  getRecordClassByCourseName(courseName: string): Observable<RecordClass[]> {
+    return this.http.get<RecordClass[]>(`${this.apiUrl}?courseName=${courseName}`);
+  }
+
+
+    getRecordClassByCourseId(courseId: number): Observable<RecordClass[]> {
     return this.http.get<RecordClass[]>(`${this.apiUrl}?courseId=${courseId}`);
   }
+
 
   createRecordClass(recordClass: RecordClass): Observable<RecordClass> {
     return this.http.post<RecordClass>(this.apiUrl, recordClass, {

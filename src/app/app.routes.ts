@@ -1,3 +1,4 @@
+import { UserListComponent } from './users/user-list/user-list.component';
 import { TeacherListComponent } from './teachers/teacher-list/teacher-list.component';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminDashboardComponent } from './admins/admin-dashboard/admin-dashboard.component';
@@ -16,7 +17,7 @@ import { AddLessonComponent } from './lessons/add-lesson/add-lesson.component';
 import { LessonListComponent } from './lessons/lesson-list/lesson-list.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ContactComponent } from './pages/contact/contact.component';
-import { FeedbackComponent } from './pages/feedback/feedback.component';
+
 import { authGuard } from './core/auths.guard';
 import { DetailsComponent } from './courses/details/details.component';
 import { TermsAndConditionComponent } from './pages/terms-and-condition/terms-and-condition.component';
@@ -27,6 +28,9 @@ import { AssignmentListComponent } from './assignments/assignment-list/assignmen
 import { AssignmentAddComponent } from './assignments/assignment-add/assignment-add.component';
 import { AddRecordClassComponent } from './classes/add-record-class/add-record-class.component';
 import { RecordClassComponent } from './classes/record-class/record-class.component';
+import { FeedbackComponent } from './feedbacks/feedback/feedback.component';
+import { FeedbackFormComponent } from './feedbacks/feedback-form/feedback-form.component';
+import { AddUserComponent } from './users/add-user/add-user.component';
 
 
 
@@ -59,7 +63,10 @@ export const routes: Routes = [
   {path:'assignment-list',component:AssignmentListComponent},
   {path:'add-assignment',component:AssignmentAddComponent},
   {path:'add-recordClass',component:AddRecordClassComponent},
-  {path:'recordClasses',component:RecordClassComponent}
+  {path:'recordClasses',component:RecordClassComponent},
+  {path:'add-feedback',component:FeedbackFormComponent},
+  {path:'user-list',component:UserListComponent},
+  {path:'add-user',component:AddUserComponent}
 
 
 ];

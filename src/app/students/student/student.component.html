@@ -1,4 +1,4 @@
-
+<!--
 <div class="body">
 
   <div class="row">
@@ -33,7 +33,7 @@
 
 
 
-                <!-- <button type="submit"><a href="/add-admin">Edit Profile</a></button> -->
+                <button type="submit"><a href="/add-admin">Edit Profile</a></button>
 
                 <a href="/add-admin" class="btn ">Edit Profile</a>
 
@@ -46,6 +46,86 @@
 </div>
 
 
+
+
+ -->
+
+
+
+
+ <!-- <div class="body">
+  <div class="row">
+    <div class="col-3">
+      <app-student-dashboard></app-student-dashboard>
+    </div>
+
+    <div class="col-9">
+      <h1>Personal Information Details</h1>
+      <div class="profile-card">
+        <div class="row">
+          <div class="col-4">
+
+                <img [src]="'UserImage/' + (user.avatarUrl || 'blank.jpg')" alt="Add Profile picture">
+
+
+
+            <h2>{{ user.name }}</h2>
+            <h4>Student ID: {{ user.id }}</h4>
+
+
+          <div class="col-8">
+            <div class="info">
+              <p>👨‍👩‍👧 Father's Name: <span>{{ user.fatherName }}</span></p>
+              <p>👩 Mother's Name: <span>{{ user.motherName }}</span></p>
+              <p>📧 Email: <span>{{ user.email }}</span></p>
+              <p>📞 Phone No: <span>{{ user.phone }}</span></p>
+              <p>🚺 Gender: <span>{{ user.gender }}</span></p>
+              <p>🌍 Nationality: <span>{{ user.address }}</span></p>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <a routerLink="/edit-profile" class="btn">Edit Profile</a>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="body">
+  <div class="row">
+    <div class="col-3">
+      <app-student-dashboard></app-student-dashboard>
+    </div>
+
+    <div class="col-9">
+      <h1>Personal Information Details</h1>
+      <div class="profile-card">
+        <div class="row">
+          <div class="col-4">
+            <img [src]="user.avatarUrl || 'UserImage\blank.jpg'" alt="Profile picture" />
+            <h2>{{ user.name || 'Unknown' }}</h2>
+            <h4>Student ID: {{ user.id || 'N/A' }}</h4>
+          </div>
+
+          <div class="col-8">
+            <div class="info">
+              <p>👨‍👩‍👧 Father's Name: <span>{{ user.fatherName || 'N/A' }}</span></p>
+              <p>👩 Mother's Name: <span>{{ user.motherName || 'N/A' }}</span></p>
+              <p>📧 Email: <span>{{ user.email || 'N/A' }}</span></p>
+              <p>📞 Phone No: <span>{{ user.phone || 'N/A' }}</span></p>
+              <!-- <p>🚺 Gender: <span>{{ user.gender || 'N/A' }}</span></p> -->
+              <p>🌍 Address: <span>{{ user.address || 'N/A' }}</span></p>
+            </div>
+          </div>
+        </div>
+
+        <a href="/add-admin" class="btn">Edit Profile</a>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

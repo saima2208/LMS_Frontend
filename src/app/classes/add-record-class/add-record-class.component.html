@@ -20,6 +20,27 @@
           </select>
           <br />
 
+            <label for="lessonName">Lessons</label>
+          <select name="lessonName" [(ngModel)]="recordClass.lessonId" required style="width: 100%;">
+            <option *ngFor="let lessons of lesson" [value]="lessons.id">
+              {{ lessons.id }} - {{ lessons.topic }}
+            </option>
+          </select>
+          <br />
+
+
+                 <!-- Lesson Selection -->
+          <!-- <label for="lesson">Lesson</label>
+          <select name="lesson" [(ngModel)]="recordClass.lessonId" required style="width: 100%;">
+            <option *ngFor="let lesson of lessons" [value]="lesson.id">
+              {{ lesson.id }} - {{ lesson.lessonName }}
+            </option>
+          </select>
+          <br /> -->
+
+
+
+
 
           <label for="videoUrl">Video URL</label>
           <input

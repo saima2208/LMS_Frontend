@@ -31,42 +31,48 @@ import { RecordClassComponent } from './classes/record-class/record-class.compon
 import { FeedbackComponent } from './feedbacks/feedback/feedback.component';
 import { FeedbackFormComponent } from './feedbacks/feedback-form/feedback-form.component';
 import { AddUserComponent } from './users/add-user/add-user.component';
+import { ProfileComponent } from './profiles/profile/profile.component';
+import { ChangePasswordComponent } from './profiles/change-password/change-password.component';
+import { EditComponent } from './profiles/edit/edit.component';
 
 
 
 export const routes: Routes = [
-  {path:'admin',component:AdminDashboardComponent},
-  {path: '',component:HomeComponent, canActivate: [authGuard],},
-  {path: 'home',component:HomeComponent},
-  {path:'adminProfile',component:AdminComponent},
-  {path:'add-admin',component:AddAdminComponent},
-  {path:'student',component:StudentDashboardComponent},
-  {path:'teacher',component:TeacherDashboardComponent},
-  {path:'studentProfile',component:StudentComponent},
-  {path:'teacherProfile',component:TeacherComponent},
-  {path:'registration',component:RegistrationComponent},
-  {path:'login',component:LoginComponent},
-  {path:'courses',component:CourseComponent},
-  {path:'add-course',component:AddCourseComponent},
-  {path: 'login', component: LoginComponent },
-  {path:'course-list',component:CourseListComponent},
-  {path:'add-lesson',component:AddLessonComponent},
-  {path:'lesson-list',component:LessonListComponent},
-  {path:'enroll',component:EnrollmentComponent},
-  {path:'contact',component:ContactComponent},
-  {path:'feedback',component:FeedbackComponent},
-  {path:'course-details',component:DetailsComponent},
-  {path:'teacher-list',component:TeacherListComponent},
-  {path:'termsCondition',component:TermsAndConditionComponent},
-  {path:'enroll-list',component:EnrollmentListComponent},
-  {path:'pending-enroll',component:PendingEnrollmentComponent},
-  {path:'assignment-list',component:AssignmentListComponent},
-  {path:'add-assignment',component:AssignmentAddComponent},
-  {path:'add-recordClass',component:AddRecordClassComponent},
-  {path:'recordClasses',component:RecordClassComponent},
-  {path:'add-feedback',component:FeedbackFormComponent},
-  {path:'user-list',component:UserListComponent},
-  {path:'add-user',component:AddUserComponent}
+  { path: 'admin', component: AdminDashboardComponent },
+  { path: '', component: HomeComponent, canActivate: [authGuard], },
+  { path: 'home', component: HomeComponent },
+  { path: 'adminProfile', component: AdminComponent },
+  { path: 'add-admin', component: AddAdminComponent },
+  { path: 'student', component: StudentDashboardComponent },
+  { path: 'teacher', component: TeacherDashboardComponent },
+  { path: 'studentProfile', component: StudentComponent },
+  { path: 'teacherProfile', component: TeacherComponent },
+  { path: 'registration', component: RegistrationComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'courses', component: CourseComponent },
+  { path: 'add-course', component: AddCourseComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'course-list', component: CourseListComponent },
+  { path: 'add-lesson', component: AddLessonComponent },
+  { path: 'lesson-list', component: LessonListComponent },
+  { path: 'enroll', component: EnrollmentComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: 'feedback', component: FeedbackComponent },
+  { path: 'course-details', component: DetailsComponent },
+  { path: 'teacher-list', component: TeacherListComponent },
+  { path: 'termsCondition', component: TermsAndConditionComponent },
+  { path: 'enroll-list', component: EnrollmentListComponent },
+  { path: 'pending-enroll', component: PendingEnrollmentComponent },
+  { path: 'assignment-list', component: AssignmentListComponent },
+  { path: 'add-assignment', component: AssignmentAddComponent },
+  { path: 'add-recordClass', component: AddRecordClassComponent },
+  { path: 'recordClasses', component: RecordClassComponent },
+  { path: 'add-feedback', component: FeedbackFormComponent },
+  { path: 'user-list', component: UserListComponent },
+  { path: 'add-user', component: AddUserComponent },
+  {path:'profile',component:ProfileComponent},
+  {path:'changePassword', component:ChangePasswordComponent},
+  {path:'edit',component:EditComponent}
 
 
 ];

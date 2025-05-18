@@ -1,6 +1,6 @@
 export class Feedback {
   id: number;
-  studentId:number;
+ 
   content:string;
   rating: number;
   image: string;
@@ -10,7 +10,7 @@ export class Feedback {
   constructor()
    {
     this.id = 0;
-    this.studentId = 0;
+
     this.content = '';
     this.rating=0;
     this.stars = '';

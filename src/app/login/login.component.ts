@@ -47,7 +47,7 @@ export class LoginComponent {
         switch (role) {
           case 'admin':
             // this.router.navigate(['/adminProfile']);
-            window.location.href="/adminProfile";
+            window.location.href="/admin";
             break;
           case 'teacher':
             // this.router.navigate(['/teacherProfile']);

@@ -15,7 +15,7 @@ import { UserService } from '../../users/user.service';
   templateUrl: './feedback-form.component.html',
   styleUrls: ['./feedback-form.component.css'], // Fixed `styleUrl` to `styleUrls` (plural)
 })
-export class FeedbackFormComponent implements OnInit {
+export class FeedbackFormComponent  {
   feedbacks: Feedback = new Feedback();
   students: User[] = [];
   isUpdate = false;
@@ -34,27 +34,27 @@ export class FeedbackFormComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    this.getStudent();
+  // ngOnInit(): void {
+  //   this.getStudent();
 
-    // Subscribe to query parameters to get `studentId`
-    this.route.queryParamMap.subscribe((params) => {
-      const studentId = params.get('studentId');
-      if (studentId) {
-        this.feedbacks.studentId = +studentId; // Convert to number
-      }
-    });
-  }
+  //   // Subscribe to query parameters to get `studentId`
+  //   this.route.queryParamMap.subscribe((params) => {
+  //     const studentId = params.get('studentId');
+  //     if (studentId) {
+  //       this.feedbacks.studentId = +studentId; // Convert to number
+  //     }
+  //   });
+  // }
 
-  getStudent(): void {
-    this.userService.getUserByRole('STUDENT').subscribe({
-      next: (data) => {
-        this.students = data; // Assign fetched data to `students`
-        console.log(this.students);
-      },
-      error: (err) => console.error('Failed to load students:', err),
-    });
-  }
+  // getStudent(): void {
+  //   this.userService.getUserByRole('STUDENT').subscribe({
+  //     next: (data) => {
+  //       this.students = data; // Assign fetched data to `students`
+  //       console.log(this.students);
+  //     },
+  //     error: (err) => console.error('Failed to load students:', err),
+  //   });
+  // }
 
   onSubmit(): void {
     if (this.isUpdate) {
@@ -69,6 +69,8 @@ export class FeedbackFormComponent implements OnInit {
         },
       });
     } else {
+      // decode token from local storage, get the id, call api with that id
+
       this.feedbackService.addFeedback(this.feedbacks).subscribe({
         next: () => {
           alert('Feedback submitted successfully!');

@@ -20,20 +20,20 @@
         <tr>
           <th>#</th>
           <th>Name</th>
-          <th>Subject</th>
+          <th>Father Name</th>
          <th>Image</th>
-         <th>Details</th>
+         <th>Phone</th>
         </tr>
       </thead>
       <tbody>
-        @for (instructor of instructors; track instructor.name) {
+        @for (teacher of teachers; track teacher.name) {
         <!-- <tr *ngFor="let instructor of instructors"> -->
           <tr>
-            <td>{{instructors.indexOf(instructor) + 1}}</td>
-          <td>{{ instructor.name }}</td>
-          <td>{{ instructor.subject }}</td>
-          <td><img src="{{instructor.image }}" alt="Image" class="img-thumbnail" width="60" height="60"/></td>
-          <td>{{ instructor.details }}</td>
+            <td>{{teachers.indexOf(teacher) + 1}}</td>
+          <td>{{ teacher.name }}</td>
+          <td>{{ teacher.fatherName }}</td>
+          <td><img src="{{teacher.avatarUrl }}" alt="Image" class="img-thumbnail" width="60" height="60"/></td>
+          <td>{{ teacher.phone }}</td>
 
         </tr>}
       </tbody>
@@ -41,5 +41,5 @@
 
   </div>
 
-  
+
 </section>

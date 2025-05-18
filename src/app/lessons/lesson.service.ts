@@ -36,6 +36,10 @@ export class LessonService {
     return this.http.get<Lesson[]>(`${this.apiUrl}?courseId=${courseId}`);
   }
 
+   getLessonsByCourseName(courseName: string): Observable<Lesson[]> {
+    return this.http.get<Lesson[]>(`${this.apiUrl}?courseName=${courseName}`);
+  }
+
   createLesson(lesson: Lesson): Observable<Lesson> {
     return this.http.post<Lesson>(this.apiUrl, lesson, {
       headers: new HttpHeaders({ 'Content-Type': 'application/json' }),

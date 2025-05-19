@@ -129,7 +129,7 @@ feedbacks: Feedback = new Feedback();
 
 
 
-// function jwt_decode(token: string): any {
-//   throw new Error('Function not implemented.');
-//  }
+function jwt_decode(token: string): any {
+  throw new Error('Function not implemented.');
+ }
 

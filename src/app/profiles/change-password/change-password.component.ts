@@ -101,3 +101,4 @@ export class ChangePasswordComponent {
     return this.http.put(`${this.apiUrl}/change-password`, data);
   }
 }
+

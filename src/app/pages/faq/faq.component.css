@@ -1,0 +1,60 @@
+/* General Container Styling */
+.container {
+  margin: 2rem auto;
+  padding: 1rem;
+  max-width: 800px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading Styling */
+.container h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* No Messages Message Styling */
+.container p {
+  text-align: center;
+  font-size: 1rem;
+  color: #888;
+}
+
+/* Card Styling */
+.card {
+  margin: 1rem 0;
+  padding: 1rem;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+/* Card Hover Effect */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Content Styling */
+.card h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #444;
+}
+
+.card p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Bold Text Styling */
+.card p strong {
+  color: #222;
+}

@@ -34,6 +34,8 @@ import { AddUserComponent } from './users/add-user/add-user.component';
 import { ProfileComponent } from './profiles/profile/profile.component';
 import { ChangePasswordComponent } from './profiles/change-password/change-password.component';
 import { EditComponent } from './profiles/edit/edit.component';
+import { FaqComponent } from './pages/faq/faq.component';
+
 
 
 
@@ -72,7 +74,8 @@ export const routes: Routes = [
   { path: 'add-user', component: AddUserComponent },
   {path:'profile',component:ProfileComponent},
   {path:'changePassword', component:ChangePasswordComponent},
-  {path:'edit',component:EditComponent}
+  {path:'edit',component:EditComponent},
+  {path:'faq',component:FaqComponent}
 
 
 ];

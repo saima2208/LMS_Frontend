@@ -30,11 +30,13 @@ export class ProfileComponent implements OnInit{
    password: '',
    role: Role.Admin
  };
+  currentUserId?: number;
 
   constructor(private profileService: ProfileService,private router: Router) {}
 
   ngOnInit(): void {
     this.fetchUserInfo();
+    this.currentUserId = Number(localStorage.getItem('id'));
   }
 
   fetchUserInfo(): void {

@@ -1,1 +1,14 @@
-<p>faq works!</p>
+
+<div class="container">
+  <h1>Contacted Messages</h1>
+  <div *ngIf="contacts.length === 0">
+    <p>No messages yet.</p>
+  </div>
+  <div *ngIf="contacts.length > 0">
+    <div *ngFor="let contact of contacts" class="card">
+      <h3>{{ contact.name }}</h3>
+      <p><strong>Email:</strong> {{ contact.email }}</p>
+      <p><strong>Message:</strong> {{ contact.message }}</p>
+    </div>
+  </div>
+</div>

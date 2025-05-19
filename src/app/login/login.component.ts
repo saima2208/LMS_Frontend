@@ -52,11 +52,11 @@ export class LoginComponent {
             break;
           case 'teacher':
             // this.router.navigate(['/teacherProfile']);
-            window.location.href="/teacherProfile";
+            window.location.href="/teacher";
             break;
           case 'student':
             // this.router.navigate(['/studentProfile']);
-            window.location.href="/studentProfile";
+            window.location.href="/student";
             break;
           default:
             alert('Unknown role. Please contact support.');

@@ -15,20 +15,80 @@
       What they say about our courses</h1>
     </div>
   </div>
-
-<!-- <div class="card mb-3" style="max-width: 540px;">
+ <!-- @for (feedback of feedbacks; track feedback.id) {
+<div class="card mb-3" style="max-width: 540px;">
   <div class="row g-0">
 
-    <div class="col-md-4 mb-4" *ngFor="let feedback of feedback">
-      <img [src]="user.image" class="img-fluid rounded-start" alt="...">
-    </div>
+    <div class="col-md-4 mb-4" *ngFor="let feedback of feedbacks">
+
+      <img [src]="feedback.image" class="img-fluid rounded-start" alt="...">
+
     <div class="col-md-8">
       <div class="card-body">
-        <h5 class="card-title">{{user.name }}</h5>
+        <h5 class="card-title">{{feedback.studentName }}</h5>
         <p class="card-text">{{feedback.content}}</p>
-        <p class="card-text"><small class="text-body-secondary">{{feedback.publisAt}}</small></p>
+         <p class="card-text">{{feedback.rating}}</p>
+        <p class="card-text"><small class="text-body-secondary">{{feedback.createdAt}}</small></p>
+      </div>
+    </div>
+
+    </div>
+  } -->
+<!--
+<div class="col-md-4 mb-4" *ngFor="let feedback of feedbacks">
+  <div class="card shadow-lg rounded-4">
+
+        <div class="card-body text-center">
+
+          <h5 class="card-title fw-bold text-primary">{{ feedback.studentName }}</h5>
+
+
+          <p class="card-text text-muted">✍️ {{ feedback.content }}</p>
+
+
+          <p class="card-text text-success"><strong>Rating:</strong> {{ feedback.stars }}</p>
+        </div>
+      </div>
+</div> -->
+
+
+<div class="feedback-container">
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let feedback of feedbacks">
+      <div class="card shadow-lg rounded-4">
+        <!-- User Image -->
+        <img
+          [src]="feedback.image"
+          class="card-img-top img-fluid user-image"
+          alt="{{ feedback.studentName }}"
+        />
+
+        <div class="card-body text-center">
+          <!-- User Name -->
+          <h5 class="card-title fw-bold text-primary">
+            {{ feedback.studentName }}
+          </h5>
+
+          <!-- Feedback Content -->
+          <p class="card-text text-muted">✍️ {{ feedback.content }}</p>
+
+          <!-- Feedback Rating -->
+          <p class="card-text text-success">
+            <strong>Rating:</strong> {{ feedback.stars}}
+          </p>
+
+          <!-- Feedback Date -->
+          <p class="card-text text-secondary">
+            <small>{{ feedback.createdAt | date: 'medium' }}</small>
+          </p>
+        </div>
       </div>
     </div>
   </div>
-</div> -->
+</div>
+
+
+
+
+
 

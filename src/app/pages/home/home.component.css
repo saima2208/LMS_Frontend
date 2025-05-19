@@ -76,39 +76,6 @@ video {
   text-transform: uppercase;
 }
 
-/* .course .card {
-  margin: 1rem auto;
-  width: 100%;
-  max-width: 16rem;
-}
-
-.course .card img {
-  border-top-left-radius: 0.5rem;
-  border-top-right-radius: 0.5rem;
-  height: 180px;
-  object-fit: cover;
-}
-
-.course .card-title {
-  font-size: 1.25rem;
-  color: #0d6efd;
-  margin-bottom: 0.5rem;
-}
-
-.course .card-text {
-  font-size: 0.9rem;
-  color: #555;
-  margin-bottom: 1rem;
-}
-
-.course .btn-primary {
-  background-color: #0d6efd;
-  border: none;
-}
-
-.course .btn-primary:hover {
-  background-color: #0056b3;
-} */
 
 
 /* Course Section Styles */
@@ -116,7 +83,7 @@ video {
   background-color: #f9f9f9; /* Light background for the section */
   padding: 40px 20px;
   text-align: center;
- 
+
 }
 
 .course h2 {
@@ -239,7 +206,7 @@ video {
 }
 
 /* Feedback Section Placeholder */
-.feedback {
+/* .feedback {
   padding: 2rem;
   background-color: #f9f9f9;
   text-align: center;
@@ -248,8 +215,110 @@ video {
 }
 
 .feedback::before {
-  content: "Feedback Section Coming Soon!";
+
   font-size: 1.5rem;
   font-weight: bold;
   color: #666;
+} */
+
+
+
+/* General Section Styling */
+.feedback {
+  padding: 2rem;
+  background-color: #f9f9f9;
+}
+
+.feedback h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+}
+
+/* Feedback Container Styling */
+.feedback-container {
+  display: flex;
+  /* justify-content: center;
+  align-items: center; */
+  flex-wrap: wrap;
+}
+
+/* Card Styling */
+.card {
+  border: none;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+
+}
+
+/* .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+} */
+
+/* User Image */
+.user-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Card Content */
+.card-content {
+  flex: 1;
+}
+
+.card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .feedback-container .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .user-image {
+    margin-bottom: 1rem;
+  }
+
+  .card-content {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .feedback {
+    padding: 1rem;
+  }
+
+  .feedback h1 {
+    font-size: 1.5rem;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-text {
+    font-size: 0.85rem;
+  }
 }

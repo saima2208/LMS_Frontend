@@ -16,7 +16,7 @@
 </section>
 
 <section class="course">
-  <h2>Checkout New Releases Of Our Courses</h2>
+  <h1>Checkout New Releases Of Our Courses</h1>
 
   <div class="course">
     <div class="row mt-4">
@@ -53,6 +53,44 @@
 </section>
 
 
-<section class="feedback">
 
+
+<section class="feedback">
+  <h1>Students Feedback</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4" *ngFor="let feedback of feedbacks">
+        <div class="card shadow-lg rounded-4">
+          <!-- User Image -->
+ <img [src]="feedback.image || 'UserImage\blank.jpg'"  alt="{{ feedback.studentName }}"/>
+
+          <!-- <img
+            [src]="feedback.image"
+            class="user-image"
+            alt="{{ feedback.studentName }}" -->
+         
+
+          <div class="card-content p-3">
+            <!-- User Name -->
+            <h5 class="card-title fw-bold text-primary">
+              {{ feedback.studentName }}
+            </h5>
+
+            <!-- Feedback Content -->
+            <p class="card-text text-muted mb-2">✍️ {{ feedback.content }}</p>
+
+            <!-- Feedback Rating -->
+            <p class="card-text text-success mb-1">
+              <strong>Rating:</strong> {{ feedback.stars }}
+            </p>
+
+            <!-- Feedback Date -->
+            <p class="card-text text-secondary">
+              <small>{{ feedback.createdAt | date: 'medium' }}</small>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

@@ -59,6 +59,9 @@
 import { FormBuilder, FormGroup, FormsModule, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { UserService } from '../../users/user.service';
+import { Router } from '@angular/router';
+import { User } from '../../users/user.model';
 
 @Component({
   selector: 'app-change-password',
@@ -67,38 +70,33 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./change-password.component.css']
 })
 export class ChangePasswordComponent {
-  changePasswordForm: FormGroup;
-  private readonly apiUrl = 'http://localhost:8080/api/users';
 
-  constructor(private fb: FormBuilder, private http: HttpClient) {
-    this.changePasswordForm = this.fb.group({
-      currentPassword: ['', [Validators.required]],
-      newPassword: ['', [Validators.required, Validators.minLength(6)]],
-      confirmPassword: ['', [Validators.required]]
+
+  formData = {
+    currentPassword: '',
+    newPassword: '',
+  };
+  successMessage = '';
+  errorMessage = '';
+
+  constructor(private userService: UserService) {}
+
+  onSubmit(changePasswordForm: any) {
+    if (changePasswordForm.invalid) {
+      return;
+    }
+
+    this.userService.changePassword(this.formData).subscribe({
+      next: () => {
+        this.successMessage = 'Password changed successfully!';
+        this.errorMessage = '';
+        changePasswordForm.resetForm(); // Reset the form after success
+      },
+      error: (err) => {
+        this.errorMessage = err.error || 'An error occurred while changing the password.';
+        this.successMessage = '';
+      },
     });
-  }
-
-  onSubmit() {
-    if (this.changePasswordForm.invalid) {
-      alert('Please fill out all fields correctly.');
-      return;
-    }
-
-    const { currentPassword, newPassword, confirmPassword } = this.changePasswordForm.value;
-
-    if (newPassword !== confirmPassword) {
-      alert('New Password and Confirm Password do not match.');
-      return;
-    }
-
-    this.changePassword({ currentPassword, newPassword }).subscribe(
-      () => alert('Password changed successfully!'),
-      (error) => alert('Failed to change password: ' + error.message)
-    );
-  }
-
-  private changePassword(data: { currentPassword: string; newPassword: string }) {
-    return this.http.put(`${this.apiUrl}/change-password`, data);
   }
 }
 

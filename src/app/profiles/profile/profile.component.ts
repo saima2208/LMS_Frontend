@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProfileService } from '../services/profile.service';
 import { Router } from '@angular/router';
-import { Role, User } from '../../users/user.model';
+import { GetUserInfo, Role, User } from '../../users/user.model';
 import { CommonModule } from '@angular/common';
 import { Password } from '../password.model';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { UserService } from '../../users/user.service';
 
 @Component({
   selector: 'app-profile',
@@ -14,53 +15,48 @@ import { Observable } from 'rxjs';
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.css'
 })
-export class ProfileComponent implements OnInit{
-
- user: User = {
-   id: 0,
-   name: '',
-   email: '',
-   phone: '',
-   fatherName: '',
-   motherName: '',
-   address: '',
-   avatarUrl: '',
-   gender: '',
-   nationality: '',
-   password: '',
-   role: Role.Admin
- };
+export class ProfileComponent implements OnInit {
+  currentUser: User = new User();
   currentUserId?: number;
 
-  constructor(private profileService: ProfileService,private router: Router) {}
+  userInfo: GetUserInfo | undefined;
+
+  constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
+
     this.fetchUserInfo();
+
     this.currentUserId = Number(localStorage.getItem('id'));
-  }
 
-  fetchUserInfo(): void {
-    this.profileService.getUserInfo().subscribe(
-      (response) => {
-        this.user = response;
+  }
+  fetchUserInfo() {
+
+    const userId = localStorage.getItem('id');
+    if (!userId) return;
+
+    this.userService.getCurrentUser().subscribe({
+      next: (res: GetUserInfo)=>{
+        // alert('successfully retraive!');
+        this.userInfo = res;
       },
-      (error) => {
-        console.error('Error fetching user info:', error);
+
+       error: (err) => {
+        console.error('Failed to load user info:', err);
       }
-    );
+    });
+
   }
 
+  onEditUserInfo(): void {
+    // Navigate to the edit user info route
+    this.router.navigate(['/edit']);
+  }
 
-onEditUserInfo(): void {
-  // Navigate to the edit user info route
-  this.router.navigate(['/edit']);
-}
-
-onChangePassword(): void {
-  // Navigate to the change password route
-  this.router.navigate(['/changePassword']);
-}
-
+  onChangePassword(): void {
+    // Navigate to the change password route
+    this.router.navigate(['/changePassword']);
+  }
 
 }
 

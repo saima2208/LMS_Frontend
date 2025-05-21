@@ -1,88 +1,33 @@
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-md-6">
-      <div class="card shadow rounded-4 border-0">
-        <div class="card-body">
-          <h4 class="card-title text-primary mb-3">
-            <i class="bi bi-person-fill me-2"></i>Profile Information
-          </h4>
+<div class="body">
+  <h1>Personal Information</h1>
+  <div class="row">
+    <div class="col-3">
+      <div class="profile-card">
+        <img [src]="userInfo?.avatarUrl" alt="Add Profile picture">
+        <h2>{{ userInfo?.name }}</h2>
+        <h4>User ID: {{ userInfo?.id }}</h4>
+      </div>
+    </div>
+    <div class="col-9">
 
-          <ul class="list-group list-group-flush mb-4">
-            <li>
-               <img [src]="user.avatarUrl || 'UserImage\blank.jpg'" alt="Profile picture" />
-            </li>
-            <li class="list-group-item">
-              <strong><i class="bi bi-person me-2"></i>Name:</strong> {{ user.name }}
-            </li>
-            <li class="list-group-item">
-              <strong>📧 Email:</strong> {{ user.email }}
-            </li>
-            <li class="list-group-item">
-              <strong>📞 Phone No:</strong> {{ user.phone }}
-            </li>
-              <li class="list-group-item">
-              <strong><i class="bi bi-person me-2"></i>Father Name:</strong> {{ user.fatherName }}
-            </li>
-              <li class="list-group-item">
-              <strong>👩 Mother's Name:</strong> {{ user.motherName }}
-            </li>
-              <li class="list-group-item">
-              <strong>🌍 Address:</strong> {{ user.address }}
-            </li>
-          </ul>
+      <div class="info">
+        <p>👨‍👩‍👧 Father's Name: <span>{{ userInfo?.fatherName }}</span></p>
+        <p>👩 Mother's Name: <span>{{ userInfo?.motherName }}</span></p>
+        <p>📧 Email: <span>{{ userInfo?.email }}</span></p>
+        <p>📞 Phone No: <span>{{ userInfo?.phone }}</span></p>
+        <p>🌍 Address: <span>{{ userInfo?.address }}</span></p>
+      </div>
+      <div class="d-flex justify-content-between">
 
-          <div class="d-flex justify-content-between">
-            <!-- <a href="edit">
-                <button class="btn btn-outline-primary w-48">
-              <i class="bi bi-pencil-square me-1"></i>Edit Info
-            </button>
-            </a> -->
+        <button class="btn btn-warning" (click)="onEditUserInfo()">
+          <i class="bi bi-lock-fill me-1"></i>Edit Profile
+        </button>
 
-             <button class="btn btn-warning" (click)="onEditUserInfo()">
-            <i class="bi bi-lock-fill me-1"></i>Edit Profile
-            </button>
+        <button class="btn btn-warning" (click)="onChangePassword()">
+          <i class="bi bi-lock-fill me-1"></i>Change Password
+        </button>
 
- <button class="btn btn-warning" (click)="onChangePassword()">
-            <i class="bi bi-lock-fill me-1"></i>Change Password
-            </button>
-
-            <!-- <a href="changePassword">
-               <button class="btn btn-outline-warning w-48 ">
-              <i class="bi bi-lock-fill me-1"></i>Change Password
-            </button>
-            </a> -->
-
-
-
-          </div>
-        </div>
       </div>
     </div>
   </div>
 </div>
-
-<!-- Edit Info Modal -->
-<!-- <div class="modal fade" id="editModal" tabindex="-1" aria-labelledby="editModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <form [formGroup]="editForm" (ngSubmit)="submitEdit()" class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="editModalLabel">Edit Profile</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="mb-3">
-          <label for="editName" class="form-label">Name</label>
-          <input type="text" id="editName" class="form-control" formControlName="name" />
-        </div>
-        <div class="mb-3">
-          <label for="editPhone" class="form-label">Phone</label>
-          <input type="text" id="editPhone" class="form-control" formControlName="phone" />
-        </div>
-      </div>
-      <div class="modal-footer">
-        <button type="submit" class="btn btn-primary">Save Changes</button>
-      </div>
-    </form>
-  </div>
-</div> -->
-

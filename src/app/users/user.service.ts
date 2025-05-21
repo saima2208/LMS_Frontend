@@ -19,8 +19,10 @@ export class UserService {
     return this.http.get<User[]>(this.apiUrl);
   }
 
-  getCurrentUser(): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/me`);
+  getCurrentUser(): Observable<any> {
+
+    const userId = Number(localStorage.getItem('id'));
+    return this.http.get<any>(`${this.apiUrl}/${userId}`);
   }
 
 
@@ -34,9 +36,9 @@ export class UserService {
 //   }
 
   // Get a user by ID
-  getUserById(id: number): Observable<User> {
-    return this.http.get<User>(`${this.apiUrl}/${id}`);
-  }
+  // getUserById(id: number): Observable<User> {
+  //   return this.http.get<User>(`${this.apiUrl}/${id}`);
+  // }
 
   // Create a new user
   createUser(user: User): Observable<User> {
@@ -44,13 +46,18 @@ export class UserService {
   }
 
   // Update a user
-  updateUser(id: number, user: User): Observable<User> {
+  fetchUserById(id: number): Observable<User> {
+    return this.http.get<User>(`${this.apiUrl}/${id}`);
+  }
+
+   updateUser(id: number, user: User): Observable<User> {
     return this.http.put<User>(`${this.apiUrl}/${id}`, user);
   }
 
-  updateUserByEmail(email: string, userData: any): Observable<any> {
-  return this.http.put('/api/users', { email, ...userData });
-}
+
+//   updateUserByEmail(email: string, userData: any): Observable<any> {
+//   return this.http.put('/api/users', { email, ...userData });
+// }
 
 
   // Delete a user
@@ -62,6 +69,10 @@ export class UserService {
     return this.http.get<User[]>(`${this.apiUrl}/role`, {
       params: { role }
     });
+  }
+
+   changePassword(data: { currentPassword: string; newPassword: string }): Observable<any> {
+    return this.http.post(`${this.apiUrl}/change-password`, data);
   }
 
 }

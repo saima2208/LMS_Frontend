@@ -1,17 +1,4 @@
 
-// export interface User {
-//   id: number;
-//   name: string;
-//   fatherName: string;
-//   motherName: string;
-//   email: string;
-//   password: string;
-//   phone: string;
-//    gender:string;
-//   nationality:string;
-//   avatarUrl?: string;
-//   role: 'Admin' | 'Teacher' | 'Student';
-// }
 export enum Role {
   Admin = 'ADMIN',
   Teacher = 'TEACHER',
@@ -26,8 +13,6 @@ export class User {
   address: string;
   phone: string;
   email: string;
-  gender:string;
-  nationality:string;
   avatarUrl:string;
   password: string;
   role:Role;
@@ -41,13 +26,22 @@ export class User {
       this.address = "";
       this.phone = "";
       this.email = "";
-      this.gender = "";
-      this.nationality = "";
       this.avatarUrl = "";
-
       this.password = "";
       this.role= Role.Admin;
-
   }
 
+}
+
+export interface GetUserInfo{
+  id: number;
+  name: string;
+  fatherName: string;
+  motherName: string;
+  address: string;
+  phone: string;
+  email: string;
+  avatarUrl:string;
+  password: string;
+  role:Role;
 }

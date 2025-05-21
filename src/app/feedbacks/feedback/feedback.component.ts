@@ -35,27 +35,29 @@ isUpdate = false;
 
    }
 
-
-
   getFeedbacks() {
-    this.feedbackService.getFeedbacks().subscribe({
-      next: (data) => {
-        this.feedbacks = data.map((feedback) => {
+  this.feedbackService.getFeedbacks().subscribe({
+    next: (data) => {
+      this.feedbacks = data
+        .map((feedback) => {
           const student = this.students.find(
             (user) => user.id === feedback.studentId
           );
 
           if (student) {
-            feedback.image = student.avatarUrl || 'UserImage\blank.jpg'; // Fallback image
+            feedback.image = student.avatarUrl || 'UserImage/blank.jpg'; // Fallback image
             feedback.studentName = student.name; // Assign student's name
           }
           return feedback;
-        });
-        console.log(this.feedbacks);
-      },
-      error: (err) => console.error('Failed to load feedbacks:', err),
-    });
-  }
+        })
+        .sort((a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()); // Sort by date descending
+
+      console.log('Sorted Feedbacks:', this.feedbacks);
+    },
+    error: (err) => console.error('Failed to load feedbacks:', err),
+  });
+}
+
 
 
      getStudents() {

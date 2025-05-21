@@ -4,10 +4,11 @@ import { UserService } from '../user.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AdminDashboardComponent } from "../../admins/admin-dashboard/admin-dashboard.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-add-user',
-  imports: [FormsModule, AdminDashboardComponent],
+  imports: [FormsModule, AdminDashboardComponent,CommonModule],
   templateUrl: './add-user.component.html',
   styleUrl: './add-user.component.css'
 })
@@ -33,17 +34,17 @@ export class AddUserComponent {
   }
 
   // onSubmit() {
-  //   if (this.isUpdate) {
-  //     // Update course logic
-  //     this.userService.updateUser(this.users.id, this.users).subscribe({
-  //       next: () => {
-  //         this.router.navigate(['/user-list']);
-  //       },
-  //       error: (err) => {
-  //         alert('Failed to update user: ' + err.message);
-  //         console.error(err);
-  //       },
-  //     });
+    // if (this.isUpdate) {
+    //   // Update course logic
+    //    this.userService.updateUser(this.users.id, this.users).subscribe({
+    //     next: () => {
+    //       this.router.navigate(['/user-list']);
+    //     },
+    //     error: (err) => {
+    //       alert('Failed to update user: ' + err.message);
+    //       console.error(err);
+    //     },
+    //   });
   //   } else {
   //     // Create course logic
   //     this.userService.createUser(this.users).subscribe({
@@ -68,16 +69,28 @@ export class AddUserComponent {
       return;
     }
 
+     if (this.isUpdate) {
+      // Update course logic
+       this.userService.updateUser(this.users.id, this.users).subscribe({
+        next: () => {
+          this.router.navigate(['/user-list']);
+        },
+        error: (err) => {
+          alert('Failed to update user: ' + err.message);
+          console.error(err);
+        },
+      });
+
     // Update user by email
-    this.userService.updateUserByEmail(this.users.email, this.users).subscribe({
-      next: () => {
-        this.router.navigate(['/user-list']);
-      },
-      error: (err) => {
-        alert('Failed to update user: ' + err.message);
-        console.error(err);
-      },
-    });
+    // this.userService.updateUserByEmail(this.users.email, this.users).subscribe({
+    //   next: () => {
+    //     this.router.navigate(['/user-list']);
+    //   },
+    //   error: (err) => {
+    //     alert('Failed to update user: ' + err.message);
+    //     console.error(err);
+    //   },
+    // });
   } else {
     // Logic for adding a new user
     this.userService.createUser(this.users).subscribe({
@@ -92,4 +105,5 @@ export class AddUserComponent {
   }
 }
 
+}
 }

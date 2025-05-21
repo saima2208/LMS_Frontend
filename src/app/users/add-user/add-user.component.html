@@ -25,7 +25,7 @@
 <select name="role" id="role" [(ngModel)]="users.role" required>
   <option value="ADMIN">ADMIN</option>
   <option value="TEACHER">TEACHER</option>
-  <option value="STUDENT">STUDENT</option>
+  <!-- <option value="STUDENT">STUDENT</option> -->
 </select>
 
       <label for="name">Name:</label><br />
@@ -34,8 +34,20 @@
        <label for="email">Email</label><br />
       <input type="email" name="email" [(ngModel)]="users.email" required /><br />
 
-       <label for="password">Password</label><br />
-      <input type="password" name="password" [(ngModel)]="users.password" required /><br />
+       <!-- <label for="password">{{ isUpdate ? "" : "Password" }}</label><br /> -->
+      <!-- <input type="password" name="password" [(ngModel)]="users.password" required /><br /> -->
+
+  <div *ngIf="!isUpdate">
+    <label for="password">Password</label><br />
+    <input
+      type="password"
+      id="password"
+      name="password"
+      [(ngModel)]="users.password"
+      required
+    /><br />
+  </div>
+
 
       <label for="fatherName">Father Name</label><br />
       <input type="text" name="fatherName" [(ngModel)]="users.fatherName" required /><br />

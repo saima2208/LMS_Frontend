@@ -1,4 +1,167 @@
- img {
+ /* img {
     margin-right: 0;
     margin-bottom: 15px;
   }
+
+
+  .body {
+  margin: 20px;
+}
+
+.profile-card {
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card img {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+h1 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.info p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.info span {
+  font-weight: bold;
+} */
+
+
+
+/* Body Section */
+.body {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+}
+
+/* Row Layout */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+/* Profile Card (Left Section) */
+.col-3 {
+  flex: 1 1 25%;
+  max-width: 25%;
+}
+
+.profile-card {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+.profile-card h2 {
+  font-size: 1.5rem;
+  color: #444;
+  margin-bottom: 5px;
+}
+
+.profile-card h4 {
+  font-size: 1rem;
+  color: #666;
+}
+
+/* Information Section (Right Section) */
+.col-9 {
+  flex: 1 1 70%;
+  max-width: 70%;
+}
+
+.info {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.body h1 {
+  font-size: 2.8rem;
+  color: #333;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 10px;
+ text-align: center;
+}
+
+.info p {
+  font-size: 1rem;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.info p span {
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* Buttons Section */
+.d-flex {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.btn-warning {
+  background-color: #ffc107;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+  transform: scale(1.05);
+}
+
+.me-1 {
+  margin-right: 5px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .row {
+    flex-direction: column;
+  }
+
+  .col-3, .col-9 {
+    max-width: 100%;
+  }
+}

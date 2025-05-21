@@ -6,7 +6,10 @@
     </div> -->
 
     <!-- <div class="col-9"> -->
-      <h1>Personal Information Details</h1>
+      <h1> Edit Personal Information</h1>
+      <div class="info">
+               <form (ngSubmit)="onSubmit()" #courseForm="ngForm">
+
       <!-- <div class="profile-card"> -->
         <!-- <div class="col-4 position-relative">
           <img src="UserImage/girlUser.jpg" alt="Add Profile picture" class="img-fluid rounded shadow">
@@ -22,8 +25,7 @@
     <!-- </div> -->
 
           <!-- <div class="col-8"> -->
-            <div class="info">
-              <form>
+
                 <div class="mb-3">
                   <label for="fatherName" class="form-label">👨‍👩‍👧 Father's Name:</label>
                   <input type="text" class="form-control" id="fatherName" >
@@ -32,10 +34,10 @@
                   <label for="motherName" class="form-label">👩 Mother's Name:</label>
                   <input type="text" class="form-control" id="motherName" >
                 </div>
-                <div class="mb-3">
+                <!-- <div class="mb-3">
                   <label for="email" class="form-label">📧 Email:</label>
                   <input type="email" class="form-control" id="email" >
-                </div>
+                </div> -->
                 <div class="mb-3">
                   <label for="phoneNo" class="form-label">📞 Phone No:</label>
                   <input type="text" class="form-control" id="phoneNo">

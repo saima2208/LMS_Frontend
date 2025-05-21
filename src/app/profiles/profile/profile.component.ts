@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
 
   userInfo: GetUserInfo | undefined;
 
+
   constructor(private router: Router, private userService: UserService) { }
 
   ngOnInit(): void {
@@ -40,7 +41,6 @@ export class ProfileComponent implements OnInit {
         // alert('successfully retraive!');
         this.userInfo = res;
       },
-
        error: (err) => {
         console.error('Failed to load user info:', err);
       }
@@ -48,9 +48,13 @@ export class ProfileComponent implements OnInit {
 
   }
 
-  onEditUserInfo(): void {
-    // Navigate to the edit user info route
-    this.router.navigate(['/edit']);
+  // onEditUserInfo(): void {
+  //   // Navigate to the edit user info route
+  //   this.router.navigate(['/edit']);
+  // }
+
+   onEditUserInfo(a: User) {
+    this.router.navigate(['/edit'], { state: { a } });
   }
 
   onChangePassword(): void {

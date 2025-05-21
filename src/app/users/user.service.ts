@@ -26,20 +26,6 @@ export class UserService {
   }
 
 
-  //  getCurrentUser(): Observable<any> {
-  //   return this.http.get<any>(`${this.apiUrl}/me`);
-  // }
-
-
-//  getCurrentUser(email: string): Observable<User> {
-//     return this.http.get<User>(`${this.apiUrl}?email=${email}`);
-//   }
-
-  // Get a user by ID
-  // getUserById(id: number): Observable<User> {
-  //   return this.http.get<User>(`${this.apiUrl}/${id}`);
-  // }
-
   // Create a new user
   createUser(user: User): Observable<User> {
     return this.http.post<User>(this.apiUrl, user);
@@ -52,6 +38,10 @@ export class UserService {
 
    updateUser(id: number, user: User): Observable<User> {
     return this.http.put<User>(`${this.apiUrl}/${id}`, user);
+  }
+
+    updateProfile(id:number,user: User): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`,user);
   }
 
 
@@ -74,5 +64,7 @@ export class UserService {
    changePassword(data: { currentPassword: string; newPassword: string }): Observable<any> {
     return this.http.post(`${this.apiUrl}/change-password`, data);
   }
+
+  
 
 }

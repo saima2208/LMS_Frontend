@@ -16,6 +16,8 @@ export class User {
   avatarUrl:string;
   password: string;
   role:Role;
+  // avatarUrl?: string; // URL of the uploaded image
+  // avatarFile?: File; // File object for uploading
 
 
   constructor() {

@@ -33,34 +33,6 @@ export class AddUserComponent {
     }
   }
 
-  // onSubmit() {
-    // if (this.isUpdate) {
-    //   // Update course logic
-    //    this.userService.updateUser(this.users.id, this.users).subscribe({
-    //     next: () => {
-    //       this.router.navigate(['/user-list']);
-    //     },
-    //     error: (err) => {
-    //       alert('Failed to update user: ' + err.message);
-    //       console.error(err);
-    //     },
-    //   });
-  //   } else {
-  //     // Create course logic
-  //     this.userService.createUser(this.users).subscribe({
-  //       next: () => {
-  //         this.router.navigate(['/user-list']);
-  //         this.users = new User(); // Reset the form model
-  //       },
-  //       error: (err) => {
-  //         alert('Failed add user: ' + err.message);
-  //         console.error(err);
-  //       },
-  //     });
-  //   }
-  // }
-
-
   onSubmit(): void {
   if (this.isUpdate) {
     // Ensure email is present
@@ -80,7 +52,6 @@ export class AddUserComponent {
           console.error(err);
         },
       });
-
     // Update user by email
     // this.userService.updateUserByEmail(this.users.email, this.users).subscribe({
     //   next: () => {

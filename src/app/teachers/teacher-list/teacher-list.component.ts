@@ -18,10 +18,10 @@ export class TeacherListComponent implements OnInit{
 
    constructor(
      private router: Router,
-     private courseService: CourseService,
+  
      private userService: UserService
    ) {
-    
+
    }
 
    ngOnInit() {

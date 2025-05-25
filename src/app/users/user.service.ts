@@ -8,9 +8,15 @@ import { User } from './user.model';
   providedIn: 'root',
 })
 export class UserService {
+
+
   private apiUrl = 'http://localhost:8080/api/users';
 
   constructor(private http: HttpClient) {}
+
+    getCoursesByUserId() {
+    throw new Error('Method not implemented.');
+  }
 
 
 

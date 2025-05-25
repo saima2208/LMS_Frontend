@@ -16,14 +16,13 @@ import { CourseService } from '../course.service';
 export class CourseListComponent {
   courses: Course[] = [];
 
-  constructor(private router: Router, private courseService: CourseService) {}
+  constructor(private router: Router, private courseService: CourseService) { }
 
   ngOnInit(): void {
     this.courseService.getCourses().subscribe((data) => {
       this.courses = data;
     });
   }
-
 
   saveCourse() {
     this.courseService.getCourses().subscribe((data) => {

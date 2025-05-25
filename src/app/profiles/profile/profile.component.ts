@@ -37,23 +37,19 @@ export class ProfileComponent implements OnInit {
     if (!userId) return;
 
     this.userService.getCurrentUser().subscribe({
-      next: (res: GetUserInfo)=>{
+      next: (res: GetUserInfo) => {
         // alert('successfully retraive!');
         this.userInfo = res;
       },
-       error: (err) => {
+      error: (err) => {
         console.error('Failed to load user info:', err);
       }
     });
 
   }
 
-  // onEditUserInfo(): void {
-  //   // Navigate to the edit user info route
-  //   this.router.navigate(['/edit']);
-  // }
 
-   onEditUserInfo(a: User) {
+  onEditUserInfo(a: User) {
     this.router.navigate(['/edit'], { state: { a } });
   }
 

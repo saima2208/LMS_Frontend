@@ -1,0 +1,214 @@
+INSERT INTO public.t_courses (course_name,description,"duration(months)",image,price,start_date,teacher_id) VALUES
+	 ('Java Programming Advance','A comprehensive course on Java programming.','6 months','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQpaJO3ewGDYoBfqjBZTeS2hTBaFWQnMHrt0w&s','19.99','2022-05-05',8),
+	 ('Learn Python','Python course for beginners.','2 months','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDbglgyFzFCmnJ-xXtsQJN1FvaUeq45nrvcg&s','5000','2025-05-23',3),
+	 ('Angular','Angular course for beginners.','3 months','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqp_QbDt3ou4W6pZ6HSaMfyn_id1YHpBUe_w&s','200','2025-05-31',9),
+	 ('C++','C programming course.','3 months','https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/ISO_C%2B%2B_Logo.svg/1200px-ISO_C%2B%2B_Logo.svg.png','199.99','2025-05-11',2),
+	 ('Robotics','Robotics Course.','4 months','CourseImage\\robotics.jpeg','200','2025-05-31',15),
+	 ('HTML & CSS','rgrg','04','CourseImage\\images.jpg','300','2025-05-14',7);
+
+
+
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(9, '', 'aayat@gmail.com', 'th', 'efd', 'Ayat', '$2a$10$xkHae13X6qwWAhGMWAZnAur5MdbIR6Zf3pjR3hej6YFjGajMVBxB6', '98738347', 'TEACHER', NULL);
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(10, NULL, 'abcd@gmail.com', NULL, NULL, 'ABC', '$2a$10$EDLm4OccAFkjcw0y.jF0Eetywk.py2Vj8tNnQCkrXvke1BIr/mXTa', '01987654321', 'STUDENT', NULL);
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(11, NULL, 'parves@mail.com', NULL, NULL, 'Nafiuzzaman', '$2a$10$jOd1a7f9oPt.37I0HjMfjO7Fkfm9G614xHgRY7ZciHkaPo7Udxm.y', '92837', 'STUDENT', NULL);
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(15, '', 'sumaiya@gmail.com', 'Md. Hossain', 'Halima Begum', 'Sumaiya', '$2a$10$ZDzUW/LXd7QMKjHB3tGVQeEEBo1Vj108EqTPvD4NnGidQTUiWXhjC', '01815367823', 'TEACHER', NULL);
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(2, NULL, 'sadim@gmail.com', 'ABC', 'DEF', 'Sadia', '$2a$10$Vb8m7gGOrt.8xeJbwJTvu.5wQESF2H4sufHM4.XgCUqenSMu0wK4q', '+880562467576', 'TEACHER', NULL);
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(8, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStB6QwYbiWvBgeyUaL8RHl-trr9okhmcX7nw&s', 'aayaaat@gmail.com', 'Md. Prince', 'Rabea Akter', 'Nusrat Zaima', '$2a$10$DHanfVj2scQcpAr97vyvbOl9.m01qmwxSPekBDhhSsSOsYRaIVd6O', '98738347', 'TEACHER', 'Barishal');
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(3, NULL, '', 'ABC', 'DEF', 'Sadia', '$2a$10$qXHk2zbpiCWXqVLuqRMhoeH8crwqSw9MctPP/OvsIxuC6i52ySq0.', '+880562467576', 'TEACHER', NULL);
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(13, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRd_XRGE9j0tQkvkYFKQU5MlZw86IXuV9TbfA&s', 'anas@gmail.com', 'Amjad Hossain', 'Eliza Islam', 'Anas Hossain', '$2a$10$Jsej9P2K2Uomsjf2hN.SkO/apuwRqI0fn2UEjfJfDAl0qMoL04IHW', '01987654321', 'STUDENT', 'House:N/I-88,Road-22,Housing Estate');
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(17, 'UserImage\\girlUser3.jpg', 'afsana@gmail.com', 'Md. Hossain', 'Tarana Halim', 'Afsana Meme', '$2a$10$y4Aga8k/mPnjE0TpyZq9uO4CYTmLnLBCXMP5s6NjVJdDGbJb1ACo6', '+880562467576', 'TEACHER', NULL);
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(14, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2VroSRyQxkSOIJwbrmnCc4SyFeDgg64NZsA&s', 'saimasonya22@gmail.com', 'Md.Noor E Ahmed', 'Ashgari Begum', 'Saima Sultana', '$2a$10$RfsxoJaQ7Vx6Hwt525Pqxe8LkNSCaojSJtBPsUAgPAEnORo01E8ta', '01996373225', 'STUDENT', NULL);
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(19, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRH87TKQrWcl19xly2VNs0CjBzy8eaKNM-ZpA&s', 'ayan@gmail.com', 'Md. Ashraf Ahmed', 'Irin Sultana', 'Nur E Ayan', '$2a$10$DGOECnOSC2ujO1aX9cKzYu2vpNgjvz2IOe6okhDX2Pjt6MtnC9hPq', '+880562467576', 'TEACHER', 'Dhaka');
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(5, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTYpRlKLDzjx3K49bQUmNzJYjuaWT5dz8qL5g&s', 'ayat@gmail.com', 'th', 'efd', 'Noor E Ayaat Naheen', '$2a$10$gZNbSdUfwpbRRwN/rManA.SC2hlKkr.ls5Z7V7qzpmaSdB1cuOrQW', '98738347', 'TEACHER', NULL);
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(4, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrLiEr7I2ye17qNmERXNpo8-6U4ktajvSMuA&s', 'rifat@gmail.com', 'ABC', 'DEF', 'Rifat Ahmed', '$2a$10$ooICNUcWXXqY4nHUiObuL.NQKCueJSKXEEQvwyz8BWnsj2oNoSPQW', '+880562467576', 'TEACHER', 'Feni');
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(12, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs4o51feOcAbppZ7l0SGP28o0OMPKtjyIcyg&s', 'alfi@gmail.com', 'Arshad Ali', 'Mukta Akter', 'Alfi', '$2a$10$v1jekbBvtRo5SdcvkBSLF.9CdO8LrAlT4XXiTW3NqDLiy9m6nBVoS', '019676543323', 'STUDENT', 'Khulna');
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(7, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8zrwHdSJOGGYrdYjTTm0o03kRUNtNPop80w&s', 'ayaaat@gmail.com', 'XTZ', 'XYZ', 'Samaratun Jannat Meme', '$2a$10$irlXJX2v51tha.dKQF9I9eAAEFGMfs89QCD6e6jCsKF2NH155DCNy', '98738347', 'TEACHER', 'Jessore');
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(1, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8K3lGxqD--f3wIhGLnXu8_xex0XSiRFuw8Q&s', 'saima@gmail.com', 'Md. Noor E Ahmed', 'Ashgari Begum', 'Saima Islam ', '$2a$10$LLRHYzXGnEdJ.nvfn5tKnOTUVkO69JF9dxfZN.i2YbERtmqNqs3Ti', '+880562467576', 'ADMIN', 'Khulna');
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(16, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTffCdndueKrWHlLCtWBBY6sOMFrfhVk5rsmA&s', 'bithy@gmail.com', 'Md. Hossain', 'Halima Begum', 'Bithy Islam', '$2a$10$VJ5XA1fQh6EH.rISfMwv.ONU.nKOipkOpICjVyvRVY4Vo3yAdnoKq', '01815367823', 'TEACHER', 'Dhaka');
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(18, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcdivwm-MBaprJFXMNY6IhCur_2InDmUkdiw&s', 'farzana.nilu@gmail.com', NULL, NULL, 'Farzana Akter', '$2a$10$rLLb6LAo9vE.NAhLQoRfr.uBP2PFsBbSudWAfHpfQc48fzgHQKmr2', '01816165164', 'STUDENT', 'Dhaka');
+INSERT INTO public.t_users
+(id, avatar_url, email, father_name, mother_name, "name", "password", phone, "role", address)
+VALUES(20, NULL, 'nafiuzzaman.parves@gmail.com', NULL, NULL, 'Nafiuzzaman', '$2a$10$/kn7UAyngnvu5uybte.vcOpbX4D2E9NtUK2yU9R0Ob.knydvElYOi', '111', 'STUDENT', NULL);
+
+
+
+
+
+
+
+INSERT INTO public.t_lessons
+(id, "content", topic, course_id)
+VALUES(1, 'This is Introduction', 'Introduction', 1);
+INSERT INTO public.t_lessons
+(id, "content", topic, course_id)
+VALUES(5, 'jhgj', 'hbjh', 1);
+INSERT INTO public.t_lessons
+(id, "content", topic, course_id)
+VALUES(4, 'https://i.ytimg.com/vi/K5KVEU3aaeQ/mqdefault.jpg?sqp=-oaymwEFCJQBEFM&rs=AMzJL3nrVyodlqxaCPpqI3RlAKtq_V7qHQ', 'Abc', 1);
+INSERT INTO public.t_lessons
+(id, "content", topic, course_id)
+VALUES(6, 'ghh', 'abc', 1);
+INSERT INTO public.t_lessons
+(id, "content", topic, course_id)
+VALUES(3, 'Introduction of python', 'Introduction to Python', 2);
+
+
+
+
+
+
+
+
+
+
+INSERT INTO public.t_feedback
+(id, "content", created_at, rating, updated_at, student_id)
+VALUES(1, 'Great course!', '2025-05-14 19:36:43.185', 5, '2025-05-14 19:36:43.185', 12);
+INSERT INTO public.t_feedback
+(id, "content", created_at, rating, updated_at, student_id)
+VALUES(2, 'Great course!', '2025-05-18 21:06:45.654', 5, '2025-05-18 21:06:45.654', 14);
+INSERT INTO public.t_feedback
+(id, "content", created_at, rating, updated_at, student_id)
+VALUES(3, 'gfd', '2025-05-19 09:04:02.027', 5, '2025-05-19 09:04:02.027', 14);
+INSERT INTO public.t_feedback
+(id, "content", created_at, rating, updated_at, student_id)
+VALUES(4, 'Learn java course is a fantastic course for beginners.', '2025-05-19 12:34:27.584', 5, '2025-05-19 12:34:27.584', 14);
+INSERT INTO public.t_feedback
+(id, "content", created_at, rating, updated_at, student_id)
+VALUES(5, 'It''s really a good course', '2025-05-21 01:09:14.093', 5, '2025-05-21 01:09:14.093', 13);
+INSERT INTO public.t_feedback
+(id, "content", created_at, rating, updated_at, student_id)
+VALUES(6, '"The course was good, but I think more hands-on examples would have helped."', '2025-05-21 01:23:22.922', 4, '2025-05-21 01:23:22.922', 18);
+INSERT INTO public.t_feedback
+(id, "content", created_at, rating, updated_at, student_id)
+VALUES(7, 'jgdjghfsdg', '2025-05-21 12:05:59.021', 3, '2025-05-21 12:05:59.021', 13);
+
+
+
+
+
+
+
+
+
+
+INSERT INTO public.t_assignment
+(id, due_date, topic, course_id)
+VALUES(1, '2025-07-08 +06', 'Final 1', 1);
+INSERT INTO public.t_assignment
+(id, due_date, topic, course_id)
+VALUES(2, '2025-05-31 +06', 'Introduction to Python Programming Assignment', 2);
+
+
+
+
+
+
+
+
+INSERT INTO public.t_assignment
+(id, due_date, topic, course_id)
+VALUES(1, '2025-07-08 +06', 'Final 1', 1);
+INSERT INTO public.t_assignment
+(id, due_date, topic, course_id)
+VALUES(2, '2025-05-31 +06', 'Introduction to Python Programming Assignment', 2);
+
+
+
+
+
+
+
+
+
+
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(1, 'abcd@gmail.com', '2025-04-05', 'ABC', 'bKash', '01987654321', 'APPROVED', 2);
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(6, 'parves@mail.com', '2025-05-13', 'Nafiuzzaman', 'bkash', '92837', 'APPROVED', 1);
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(5, 'farzana@gmail.com', '2025-04-05', 'Farzana Akter', 'bKash', '01987654321', 'REJECTED', 2);
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(3, 'abd@gmail.com', '2025-04-05', 'ABC', 'bKash', '01987654321', 'REJECTED', 1);
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(7, 'alfi@gmail.com', '2025-05-13', 'Alfi', 'rocket', '019676543323', 'APPROVED', 2);
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(8, 'anas@gmail.com', '2025-05-14', 'Anas Hossain', 'bkash', '01987654321', 'APPROVED', 4);
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(9, 'saimasonya22@gmail.com', '2025-05-15', 'Saima Sultana', 'bkash', '01996373225', 'APPROVED', 2);
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(10, 'azizah@gmail.com', '2025-05-15', 'Azizah Hossain', 'bkash', '01987654321', 'PENDING', 3);
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(11, 'azima@gmail.com', '2025-05-16', 'Azima Hossain', 'bkash', '01987654321', 'PENDING', 1);
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(2, 'abcd@gmail.com', '2025-04-05', 'ABC', 'bKash', '01987654321', 'APPROVED', 2);
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(12, 'farzana.nilu@gmail.com', '2025-05-19', 'Farzana Akter', 'dcard', '01816165164', 'APPROVED', 2);
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(4, 'farzana@gmail.com', '2025-04-05', 'Farzana Akter', 'bKash', '01987654321', 'REJECTED', 1);
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(13, 'farzana.nilu@gmail.com', '2025-05-19', 'Farzana Akter', 'rocket', '01816165164', 'PENDING', 6);
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(14, 'sadim@gmail.com', '2025-05-19', 'Learn Java', 'bkash', '01816165164', 'APPROVED', 2);
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(15, 'farzana.nilu@gmail.com', '2025-05-21', 'Farzana Akter', 'dcard', '087867367384', 'APPROVED', 3);
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(16, 'farzana.nilu@gmail.com', '2025-05-21', 'Farzana Akter', 'dcard', '01987654321', 'APPROVED', 5);
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(17, 'saima@gmail.com', '2025-05-24', 'Farzana Akter', 'bkash', '01987654321', 'PENDING', 1);
+INSERT INTO public.enrollments
+(id, email, enrollment_date, student_name, payment_method, phone, status, course_name)
+VALUES(18, 'nafiuzzaman.parves@gmail.com', '2025-05-24', 'Nafiuzzaman', 'rocket', '111', 'APPROVED', 3);

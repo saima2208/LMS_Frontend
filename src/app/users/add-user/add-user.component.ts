@@ -8,14 +8,14 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-add-user',
-  imports: [FormsModule, AdminDashboardComponent,CommonModule],
+  imports: [FormsModule, AdminDashboardComponent, CommonModule],
   templateUrl: './add-user.component.html',
   styleUrl: './add-user.component.css'
 })
 export class AddUserComponent {
   users: User = new User();
 
-    roles = Object.values(Role);
+  roles = Object.values(Role);
 
   isUpdate = false;
 
@@ -34,16 +34,13 @@ export class AddUserComponent {
   }
 
   onSubmit(): void {
-  if (this.isUpdate) {
-    // Ensure email is present
-    if (!this.users.email) {
-      alert('Email is required to update the user.');
-      return;
-    }
+    if (this.isUpdate) {
+      if (!this.users.email) {
+        alert('Email is required to update the user.');
+        return;
+      }
 
-     if (this.isUpdate) {
-      // Update course logic
-       this.userService.updateUser(this.users.id, this.users).subscribe({
+      this.userService.updateUser(this.users.id, this.users).subscribe({
         next: () => {
           this.router.navigate(['/user-list']);
         },
@@ -52,29 +49,17 @@ export class AddUserComponent {
           console.error(err);
         },
       });
-    // Update user by email
-    // this.userService.updateUserByEmail(this.users.email, this.users).subscribe({
-    //   next: () => {
-    //     this.router.navigate(['/user-list']);
-    //   },
-    //   error: (err) => {
-    //     alert('Failed to update user: ' + err.message);
-    //     console.error(err);
-    //   },
-    // });
-  } else {
-    // Logic for adding a new user
-    this.userService.createUser(this.users).subscribe({
-      next: () => {
-        this.router.navigate(['/user-list']);
-      },
-      error: (err) => {
-        alert('Failed to add user: ' + err.message);
-        console.error(err);
-      },
-    });
+    } else {
+      console.log("add user clicked")
+      this.userService.createUser(this.users).subscribe({
+        next: () => {
+          this.router.navigate(['/user-list']);
+        },
+        error: (err) => {
+          alert('Failed to add user: ' + err.message);
+          console.error(err);
+        },
+      });
+    }
   }
-}
-
-}
 }

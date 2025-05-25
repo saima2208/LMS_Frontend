@@ -1,4 +1,3 @@
-
 <div class="row">
   <div class="left">
     <div class="col-3">
@@ -18,60 +17,52 @@
 
       <fieldset>
         <h1>{{ isUpdate ? "Edit User" : "Add User" }}</h1>
-    <form (ngSubmit)="onSubmit()" #courseForm="ngForm">
-      <input type="hidden" name="id" [(ngModel)]="users.id" hidden /><br />
+        <form (ngSubmit)="onSubmit()" #courseForm="ngForm">
+          <input type="hidden" name="id" [(ngModel)]="users.id" hidden /><br />
 
-    <label for="role">Role</label>
-<select name="role" id="role" [(ngModel)]="users.role" required>
-  <option value="ADMIN">ADMIN</option>
-  <option value="TEACHER">TEACHER</option>
-  <!-- <option value="STUDENT">STUDENT</option> -->
-</select>
+          <label for="role">Role</label>
+          <select name="role" id="role" [(ngModel)]="users.role" required>
+            <option value="ADMIN">ADMIN</option>
+            <option value="TEACHER">TEACHER</option>
+            <!-- <option value="STUDENT">STUDENT</option> -->
+          </select>
 
-      <label for="name">Name:</label><br />
-      <input type="text" name="name" [(ngModel)]="users.name" required /><br />
+          <label for="name">Name:</label><br />
+          <input type="text" name="name" [(ngModel)]="users.name" required /><br />
 
-       <label for="email">Email</label><br />
-      <input type="email" name="email" [(ngModel)]="users.email" required /><br />
+          <label for="email">Email</label><br />
+          <input type="email" name="email" [(ngModel)]="users.email" required /><br />
 
-       <!-- <label for="password">{{ isUpdate ? "" : "Password" }}</label><br /> -->
-      <!-- <input type="password" name="password" [(ngModel)]="users.password" required /><br /> -->
+          <!-- <label for="password">{{ isUpdate ? "" : "Password" }}</label><br /> -->
+          <!-- <input type="password" name="password" [(ngModel)]="users.password" required /><br /> -->
 
-  <div *ngIf="!isUpdate">
-    <label for="password">Password</label><br />
-    <input
-      type="password"
-      id="password"
-      name="password"
-      [(ngModel)]="users.password"
-      required
-    /><br />
-  </div>
+          <div *ngIf="!isUpdate">
+            <label for="password">Password</label><br />
+            <input type="password" id="password" name="password" [(ngModel)]="users.password" required /><br />
+          </div>
 
 
-      <label for="fatherName">Father Name</label><br />
-      <input type="text" name="fatherName" [(ngModel)]="users.fatherName" required /><br />
+          <label for="fatherName">Father Name</label><br />
+          <input type="text" name="fatherName" [(ngModel)]="users.fatherName" required /><br />
 
-      <label for="motherName">Mother Name </label><br />
-      <input type="text" name="motherName" [(ngModel)]="users.motherName" required /><br />
+          <label for="motherName">Mother Name </label><br />
+          <input type="text" name="motherName" [(ngModel)]="users.motherName" required /><br />
 
 
 
-      <label for="phone">Phone Number:</label><br />
-       <input type="text" [(ngModel)]="users.phone" name="phone" required /><br />
+          <label for="phone">Phone Number:</label><br />
+          <input type="text" [(ngModel)]="users.phone" name="phone" required /><br />
 
-       <label for="address">Address:</label><br />
-       <input type="text" [(ngModel)]="users.address" name="address" required /><br />
+          <label for="address">Address:</label><br />
+          <input type="text" [(ngModel)]="users.address" name="address" required /><br />
 
+          <label for="image">UserImage</label><br />
+          <input type="text" name="image" [(ngModel)]="users.avatarUrl" required /><br />
 
-
-      <label for="image">UserImage</label><br />
-      <input type="text" name="image" [(ngModel)]="users.avatarUrl" required /><br />
-
-      <button type="submit" class="btn btn-success">
-        {{ isUpdate ? "Update" : "Add" }}
-      </button>
-    </form>
+          <button type="submit" class="btn btn-success">
+            {{ isUpdate ? "Update" : "Add" }}
+          </button>
+        </form>
       </fieldset>
     </div>
 

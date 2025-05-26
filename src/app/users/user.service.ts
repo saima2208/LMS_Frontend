@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { catchError, Observable, of } from 'rxjs';
 import { User } from './user.model';
+import { Course } from '../courses/course.model';
 
 
 @Injectable({
@@ -14,8 +15,11 @@ export class UserService {
 
   constructor(private http: HttpClient) {}
 
-    getCoursesByUserId() {
-    throw new Error('Method not implemented.');
+
+//Fetch courses by user
+    getCoursesByUserId(userId: number) {
+      
+    return this.http.get<Course[]>(`${this.apiUrl}/myCourses/${userId}`);
   }
 
 

@@ -3,6 +3,10 @@ import { Enrollment } from '../enrollment.model';
 import { EnrollmentService } from '../enrollment.service';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgIf } from '@angular/common';
+import { AuthService } from '../../core/auth.service';
+import { User } from '../../users/user.model';
+import { UserService } from '../../users/user.service';
 
 @Component({
   selector: 'app-enrollment',
@@ -13,11 +17,15 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EnrollmentComponent implements OnInit {
   enrollments: Enrollment = new Enrollment();
   isUpdate = false;
+  isAuthenticated = false;
+//  student: User = new User();
 
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private enrollmentService: EnrollmentService
+    private enrollmentService: EnrollmentService,
+    private userService: UserService,
+    private auth: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -33,7 +41,25 @@ export class EnrollmentComponent implements OnInit {
       this.enrollments = nav.extras.state['a'];
       this.isUpdate = true;
     }
+
+
+    this.isAuthenticated = this.auth.isAuthenticated();
+
+
+    // this.getStudents();
   }
+
+
+  //   getStudents() {
+  //   this.userService.getUserByRole('STUDENT').subscribe({
+  //     next: (data) => {
+  //       (this.student = data);
+  //       console.log(this.student)
+  //     },
+  //     error: (err) => console.error('Failed to load teachers:', err),
+  //   });
+  // }
+
 
   onSubmit() {
     if (this.isUpdate) {

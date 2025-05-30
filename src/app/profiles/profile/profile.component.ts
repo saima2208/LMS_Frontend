@@ -1,11 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { ProfileService } from '../services/profile.service';
 import { Router } from '@angular/router';
 import { GetUserInfo, Role, User } from '../../users/user.model';
 import { CommonModule } from '@angular/common';
-import { Password } from '../password.model';
-import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { UserService } from '../../users/user.service';
 

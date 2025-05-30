@@ -24,7 +24,6 @@ isUpdate = false;
      private router: Router,
      private feedbackService: FeedbackService,
      private userService: UserService,
-     private courseService: CourseService
    ) {
 
    }

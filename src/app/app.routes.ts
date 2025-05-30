@@ -36,6 +36,7 @@ import { ChangePasswordComponent } from './profiles/change-password/change-passw
 import { EditComponent } from './profiles/edit/edit.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { MycoursesComponent } from './courses/mycourses/mycourses.component';
+import { StudentListComponent } from './students/student-list/student-list.component';
 
 export const routes: Routes = [
   { path: 'admin', component: AdminDashboardComponent },
@@ -74,7 +75,8 @@ export const routes: Routes = [
   { path: 'changePassword', component: ChangePasswordComponent },
   { path: 'edit', component: EditComponent },
   { path: 'faq', component: FaqComponent },
-  { path: 'myCourses', component: MycoursesComponent }
+  { path: 'myCourses', component: MycoursesComponent },
+  {path: 'student-list', component:StudentListComponent}
 ];
 
 

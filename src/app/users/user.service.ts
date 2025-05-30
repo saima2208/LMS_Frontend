@@ -13,13 +13,16 @@ export class UserService {
 
   private apiUrl = 'http://localhost:8080/api/users';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
 
-//Fetch courses by user
-    getCoursesByUserId(userId: number) {
-      
-    return this.http.get<Course[]>(`${this.apiUrl}/myCourses/${userId}`);
+  //Fetch courses by user
+  // getCoursesByUserId(userId: number) {
+  //   return this.http.get<Course[]>(`${this.apiUrl}/${userId}/myCourses`);
+  // }
+
+  getCoursesByUserId(userId: number): Observable<Course[]> {
+    return this.http.get<Course[]>(`${this.apiUrl}/${userId}/courses`);
   }
 
 
@@ -46,18 +49,18 @@ export class UserService {
     return this.http.get<User>(`${this.apiUrl}/${id}`);
   }
 
-   updateUser(id: number, user: User): Observable<User> {
+  updateUser(id: number, user: User): Observable<User> {
     return this.http.put<User>(`${this.apiUrl}/${id}`, user);
   }
 
-    updateProfile(id:number,user: User): Observable<any> {
-    return this.http.put<any>(`${this.apiUrl}/${id}`,user);
+  updateProfile(id: number, user: User): Observable<any> {
+    return this.http.put<any>(`${this.apiUrl}/${id}`, user);
   }
 
 
-//   updateUserByEmail(email: string, userData: any): Observable<any> {
-//   return this.http.put('/api/users', { email, ...userData });
-// }
+  //   updateUserByEmail(email: string, userData: any): Observable<any> {
+  //   return this.http.put('/api/users', { email, ...userData });
+  // }
 
 
   // Delete a user

@@ -1,1 +1,56 @@
-<p>student-list works!</p>
+
+<div class="body">
+
+  <h1>Students List</h1>
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Father Name</th>
+        <th>Mother Name</th>
+        <th>Phone Number</th>
+        <th>Address</th>
+
+        <th>Image</th>
+        <th>Actions</th>
+
+
+      </tr>
+    </thead>
+    <tbody>
+      @for (student of students; track student.name) {
+      <!-- <tr *ngFor="let course of courses"> -->
+      <tr>
+        <td>{{ students.indexOf(student) + 1 }}</td>
+        <td>{{ student.id }}</td>
+        <td>{{ student.name }}</td>
+        <td>{{ student.email }}</td>
+        <td>{{ student.fatherName }}</td>
+        <td>{{ student.motherName}}</td>
+        <td>{{ student.phone }}</td>
+        <td>{{ student.address }}</td>
+
+        <td>
+          <img *ngIf="student.avatarUrl; else noImage" [src]="student.avatarUrl" alt="User Image" class="img-thumbnail"
+            width="60" height="60" />
+          <ng-template #noImage>
+            <span class="text-muted">No Image</span>
+          </ng-template>
+        </td>
+        <td>
+          <div class="button-container">
+            <button class="btn btn-primary" (click)="updateStudent(student)">Edit</button>
+            <button class="btn btn-warning" (click)="deleteStudent(student)">
+              Delete
+            </button>
+          </div>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+
+</div>

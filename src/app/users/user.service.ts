@@ -16,10 +16,6 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
 
-  //Fetch courses by user
-  // getCoursesByUserId(userId: number) {
-  //   return this.http.get<Course[]>(`${this.apiUrl}/${userId}/myCourses`);
-  // }
 
   getCoursesByUserId(userId: number): Observable<Course[]> {
     return this.http.get<Course[]>(`${this.apiUrl}/${userId}/courses`);

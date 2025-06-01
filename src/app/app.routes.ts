@@ -37,6 +37,7 @@ import { EditComponent } from './profiles/edit/edit.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { MycoursesComponent } from './courses/mycourses/mycourses.component';
 import { StudentListComponent } from './students/student-list/student-list.component';
+import { AssignmentSubmissionComponent } from './submitAssignment/assignment-submission/assignment-submission.component';
 
 export const routes: Routes = [
   { path: 'admin', component: AdminDashboardComponent },
@@ -76,7 +77,8 @@ export const routes: Routes = [
   { path: 'edit', component: EditComponent },
   { path: 'faq', component: FaqComponent },
   { path: 'myCourses', component: MycoursesComponent },
-  {path: 'student-list', component:StudentListComponent}
+  {path: 'student-list', component:StudentListComponent},
+  {path:'submit' , component:AssignmentSubmissionComponent}
 ];
 
 

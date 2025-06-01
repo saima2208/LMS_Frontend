@@ -1,0 +1,33 @@
+<div>
+  <h2>Submit Assignment</h2>
+  <label>
+    Student ID:
+    <input type="number" [(ngModel)]="studentId" />
+  </label>
+  <br />
+  <label>
+    Assignment ID:
+    <input type="number" [(ngModel)]="assignmentId" />
+  </label>
+  <br />
+  <input type="file" (change)="onFileSelected($event)" />
+  <br />
+  <button (click)="submitAssignment()">Submit Assignment</button>
+</div>
+
+<hr />
+
+<div>
+  <h2>Download Submitted Assignment</h2>
+  <label>
+    Submission ID:
+    <!-- <input #submissionIdInput type="number" /> -->
+  </label>
+
+  <input type="number" [(ngModel)]="submissionId" />
+<button (click)="downloadAssignment(submissionId)">Download</button>
+
+
+  <!-- <button (click)="downloadAssignment(submissionIdInput.value)">Download</button> -->
+</div>
+

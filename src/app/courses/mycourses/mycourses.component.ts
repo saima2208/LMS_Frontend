@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UserService } from '../../users/user.service';
 import { CommonModule, NgFor, NgIf } from '@angular/common';
+import { CourseService } from '../course.service';
 
 @Component({
   selector: 'app-mycourses',
@@ -15,15 +16,17 @@ export class MycoursesComponent implements OnInit {
 
   courses: Course[] = [];
   userId?: number;
+  //  teacherId?: number;
 
 
-  constructor(private router: Router, private userService: UserService) { }
+  constructor(
+    private router: Router,
+    private userService: UserService,
+    private courseService: CourseService
+  ) {
 
-  // ngOnInit(): void {
-  //   this.fetchMyCourses(19);
-  //   this.userId = Number(localStorage.getItem('id'));
+  }
 
-  // }
 
   ngOnInit(): void {
     this.userId = Number(localStorage.getItem('id'));
@@ -34,21 +37,6 @@ export class MycoursesComponent implements OnInit {
     }
   }
 
-  // fetchMyCourses(userId:number) {
-  //   // const userId = localStorage.getItem('id');
-  //   // if (!userId) return;
-  //   this.userService.getCoursesByUserId(userId).subscribe({
-  //     next: (data) => {
-  //       this.courses = data;
-
-  //     },
-  //     error: (err) => {
-  //       console.error('Failed to load courses :', err);
-  //     }
-
-  //   })
-
-  // }
 
   fetchMyCourses(userId: number): void {
     this.userService.getCoursesByUserId(userId).subscribe({
@@ -60,7 +48,24 @@ export class MycoursesComponent implements OnInit {
         // Display an error message in the UI
       }
     });
+
+
+
+    const teacherId = this.userId; // Assume teacher ID is the same as user ID for simplicity
+    if (teacherId) {
+      this.courseService.getCoursesByTeacher(teacherId).subscribe({
+        next: (data) => {
+          this.courses = [...this.courses, ...data]; // Merge results if necessary
+        },
+        error: (err) => {
+          console.error('Failed to load courses by teacher:', err);
+        }
+      });
+    }
   }
 }
+
+
+
 
 

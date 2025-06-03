@@ -18,7 +18,6 @@ export class MycoursesComponent implements OnInit {
   userId?: number;
   //  teacherId?: number;
 
-
   constructor(
     private router: Router,
     private userService: UserService,
@@ -26,7 +25,6 @@ export class MycoursesComponent implements OnInit {
   ) {
 
   }
-
 
   ngOnInit(): void {
     this.userId = Number(localStorage.getItem('id'));
@@ -36,7 +34,6 @@ export class MycoursesComponent implements OnInit {
       console.error('User ID is missing in localStorage');
     }
   }
-
 
   fetchMyCourses(userId: number): void {
     this.userService.getCoursesByUserId(userId).subscribe({
@@ -48,8 +45,6 @@ export class MycoursesComponent implements OnInit {
         // Display an error message in the UI
       }
     });
-
-
 
     const teacherId = this.userId; // Assume teacher ID is the same as user ID for simplicity
     if (teacherId) {

@@ -1,33 +1,147 @@
-<div>
-  <h2>Submit Assignment</h2>
-  <label>
-    Student ID:
-    <input type="number" [(ngModel)]="studentId" />
-  </label>
-  <br />
-  <label>
-    Assignment ID:
-    <input type="number" [(ngModel)]="assignmentId" />
-  </label>
-  <br />
-  <input type="file" (change)="onFileSelected($event)" />
-  <br />
-  <button (click)="submitAssignment()">Submit Assignment</button>
+<!-- <div class="row">
+  <div class="image">
+    <img
+      src="https://images.unsplash.com/photo-1699347914988-c61ec13c99c5?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZWR1Y2F0aW9uJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D"
+      alt="">
+
+  <div class="col-3">
+    <div>
+      <div class="sidebar">
+        <ul class="list-unstyled">
+          <li>
+            <a href="/profile">
+              <i class="bi bi-person-circle" width="25" height="25"></i> My Profile
+            </a>
+          </li>
+          <li>
+            <a href="/myCourses">
+              <i class="bi bi-incognito"></i> My Courses
+            </a>
+          </li>
+          <li>
+            <a href="/contact">
+              <i class="bi bi-person-fill"></i> Contact
+            </a>
+          </li>
+
+          <li>
+            <a href="/add-feedback"> <i class="bi bi-wechat"></i> Feedback</a>
+          </li>
+          <li><a href="submit">
+              <i class="bi bi-play-btn-fill"></i> Submit Assignment</a>
+          </li>
+          <li><a href="studentrecordClasses">
+              <i class="bi bi-play-btn-fill"></i> Record Classes</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-9">
+
+    <div>
+      <h1>Submit Assignment</h1>
+
+      <input type="hidden" name="id" [(ngModel)]="studentId" hidden /><br />
+
+      <label>
+        Assignment ID:
+      </label>
+
+      <select name="assignmentId" [(ngModel)]="assignmentId" required style="width: 100%;">
+        <option *ngFor="let ass of assignment" [value]="ass.id">
+          {{ ass.id }} {{ ass.topic }}
+        </option>
+      </select><br />
+
+      <input type="file" (change)="onFileSelected($event)" />
+      <br />
+      <br>
+
+      <button (click)="submitAssignment()">Submit Assignment</button>
+
+    </div>
+  </div>
+  </div>
+</div> -->
+
+<div class="background">
+  <!-- <div class="row"> -->
+    <!-- <div class="left"> -->
+    <div class="col-4" style="width: 19%;">
+      <div>
+        <div class="sidebar">
+          <ul class="list-unstyled">
+            <li>
+              <a href="/profile">
+                <i class="bi bi-person-circle" width="25" height="25"></i> My Profile
+              </a>
+            </li>
+            <li>
+              <a href="/myCourses">
+                <i class="bi bi-incognito"></i> My Courses
+              </a>
+            </li>
+            <li>
+              <a href="/contact">
+                <i class="bi bi-person-fill"></i> Contact
+              </a>
+            </li>
+            <li>
+              <a href="/add-feedback">
+                <i class="bi bi-wechat"></i> Feedback
+              </a>
+            </li>
+            <li>
+              <a href="submit">
+                <i class="bi bi-play-btn-fill"></i> Submit Assignment
+              </a>
+            </li>
+            <li>
+              <a href="studentrecordClasses">
+                <i class="bi bi-play-btn-fill"></i> Record Classes
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  <!-- </div> -->
+  <div class="right" style="margin-left: 155px; width: 49%; margin-top: 65px;">
+  <!-- <div class="row"> -->
+    <div class="col-8">
+      <div>
+        <h1>Submit Assignment</h1>
+        <input type="hidden" name="id" [(ngModel)]="studentId" hidden /><br />
+        <label>Assignment ID:</label>
+        <select name="assignmentId" [(ngModel)]="assignmentId" required>
+          <option *ngFor="let ass of assignment" [value]="ass.id">
+            {{ ass.id }} {{ ass.topic }}
+          </option>
+        </select>
+        <br />
+        <input type="file" (change)="onFileSelected($event)" />
+        <br />
+        <br />
+        <button (click)="submitAssignment()">Submit Assignment</button>
+      </div>
+    </div>
+  <!-- </div> -->
+  </div>
+
 </div>
 
-<hr />
 
+
+
+<!-- <hr /> -->
+<!--
 <div>
   <h2>Download Submitted Assignment</h2>
   <label>
     Submission ID:
-    <!-- <input #submissionIdInput type="number" /> -->
   </label>
 
   <input type="number" [(ngModel)]="submissionId" />
-<button (click)="downloadAssignment(submissionId)">Download</button>
-
-
-  <!-- <button (click)="downloadAssignment(submissionIdInput.value)">Download</button> -->
-</div>
-
+  <button (click)="downloadAssignment(submissionId)">Download</button>
+</div> -->

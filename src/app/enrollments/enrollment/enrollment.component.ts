@@ -3,14 +3,14 @@ import { Enrollment } from '../enrollment.model';
 import { EnrollmentService } from '../enrollment.service';
 import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgIf } from '@angular/common';
+import { CommonModule, NgIf } from '@angular/common';
 import { AuthService } from '../../core/auth.service';
 import { User } from '../../users/user.model';
 import { UserService } from '../../users/user.service';
 
 @Component({
   selector: 'app-enrollment',
-  imports:[FormsModule],
+  imports:[FormsModule,CommonModule],
   templateUrl: './enrollment.component.html',
   styleUrls: ['./enrollment.component.css'],
 })
@@ -18,7 +18,7 @@ export class EnrollmentComponent implements OnInit {
   enrollments: Enrollment = new Enrollment();
   isUpdate = false;
   isAuthenticated = false;
-//  student: User = new User();
+  student: User = new User();
 
   constructor(
     private route: ActivatedRoute,
@@ -46,7 +46,7 @@ export class EnrollmentComponent implements OnInit {
     this.isAuthenticated = this.auth.isAuthenticated();
 
 
-    // this.getStudents();
+    //  this.getStudents();
   }
 
 
@@ -56,7 +56,7 @@ export class EnrollmentComponent implements OnInit {
   //       (this.student = data);
   //       console.log(this.student)
   //     },
-  //     error: (err) => console.error('Failed to load teachers:', err),
+  //     error: (err) => console.error('Failed to load students:', err),
   //   });
   // }
 

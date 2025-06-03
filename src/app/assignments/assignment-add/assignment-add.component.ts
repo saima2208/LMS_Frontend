@@ -5,10 +5,11 @@ import { Router } from '@angular/router';
 import { AssignmentService } from '../assignment.service';
 import { CourseService } from '../../courses/course.service';
 import { Course } from '../../courses/course.model';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-assignment-add',
-  imports: [FormsModule],
+  imports: [FormsModule,CommonModule],
   templateUrl: './assignment-add.component.html',
   styleUrl: './assignment-add.component.css'
 })
@@ -18,7 +19,7 @@ export class AssignmentAddComponent {
 
   isUpdate=false;
 
-  //  cor: Course = new Course;
+    corse: Course = new Course();
 
   cor: Course[] = [];
 

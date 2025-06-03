@@ -1,47 +1,4 @@
-<!-- <fieldset>
-  <form (ngSubmit)="onSubmit()">
-    <h1>Enrollment Form</h1>
-
-
-    <div>
-      <label for="courseTitle">Course Title:</label>
-      <input type="text" id="courseTitle" name="courseTitle" [(ngModel)]="enrollments.courseName" required readonly />
-    </div>
-
-
-    <div>
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" name="name" [(ngModel)]="enrollments.name" required />
-    </div>
-
-
-    <div>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" [(ngModel)]="enrollments.email" required />
-    </div>
-
-
-    <div>
-      <label for="mobile">Mobile No:</label>
-      <input type="text" id="mobile" name="mobile" [(ngModel)]="enrollments.phone" required />
-    </div>
-
-    <div>
-      <label for="payment">Payment Method:</label>
-      <input type="radio" name="pay" id="bkash" value="bkash" [(ngModel)]="enrollments.paymentMethod" /> bKash <br />
-      <input type="radio" name="pay" id="rocket" value="rocket" [(ngModel)]="enrollments.paymentMethod" /> Rocket <br />
-      <input type="radio" name="pay" id="dcard" value="dcard" [(ngModel)]="enrollments.paymentMethod" /> Debit Card
-    </div>
-
-    <button type="submit" class="btn-success">Submit</button>
-  </form>
-</fieldset> -->
-
-
-
-<!-- Authentication -->
-
-  <fieldset>
+  <!-- <fieldset>
   <form (ngSubmit)="onSubmit()">
     <h1>Enrollment Form</h1>
 
@@ -52,24 +9,20 @@
       <input type="text" id="courseTitle" name="courseTitle" [(ngModel)]="enrollments.courseName" required readonly />
     </div>
 
-
     <div>
       <label for="name">Full Name:</label>
       <input type="text" id="name" name="name" [(ngModel)]="enrollments.name" required />
     </div>
-
 
     <div>
       <label for="email">Email:</label>
       <input type="email" id="email" name="email" [(ngModel)]="enrollments.email" required />
     </div>
 
-
     <div>
       <label for="mobile">Mobile No:</label>
       <input type="text" id="mobile" name="mobile" [(ngModel)]="enrollments.phone" required />
     </div>
-
 
     <div>
       <label for="payment">Payment Method:</label>
@@ -87,26 +40,21 @@
       <input type="text" id="courseTitle" name="courseTitle" [(ngModel)]="enrollments.courseName" required readonly />
     </div>
 
-      <!-- Full Name Field -->
     <div>
-      <label for="name">Full Name:</label>
-      <input type="text" id="name" name="name" [(ngModel)]="student.name" required  />
+      <label for="studentName">Full Name:</label>
+      <input type="text" id="studentName" name="studentName" [(ngModel)]="enrollments.name" required  readonly/>
     </div>
 
-        <!-- Email Field -->
      <div>
       <label for="email">Email:</label>
-      <input type="email" id="email" name="email" [(ngModel)]="student.email" required />
+      <input type="email" id="email" name="email" [(ngModel)]="enrollments.email" required />
     </div>
 
-    <!-- Mobile No Field -->
      <div>
       <label for="mobile">Mobile No:</label>
-      <input type="text" id="mobile" name="mobile" [(ngModel)]="student.phone" required />
+      <input type="text" id="mobile" name="mobile" [(ngModel)]="enrollments.phone" required />
     </div>
 
-
-  <!-- Payment Method Field -->
      <div>
       <label for="payment">Payment Method:</label>
       <input type="radio" name="pay" id="bkash" value="bkash" [(ngModel)]="enrollments.paymentMethod" /> bKash <br />
@@ -120,5 +68,102 @@
   </form>
 </fieldset>
 
+
+ -->
+
+ <fieldset>
+  <form (ngSubmit)="onSubmit()">
+    <h1>Enrollment Form</h1>
+
+    <!-- Course Title Field -->
+    <div>
+      <label for="courseTitle">Course Title:</label>
+      <input
+        type="text"
+        id="courseTitle"
+        name="courseTitle"
+        [(ngModel)]="enrollments.courseName"
+        required
+        readonly
+      />
+    </div>
+
+    <!-- Full Name Field -->
+    <div>
+      <label for="name">Full Name:</label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        [(ngModel)]="enrollments.name"
+        required
+        [readonly]="isAuthenticated"
+      />
+    </div>
+
+    <!-- Email Field -->
+    <div>
+      <label for="email">Email:</label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [(ngModel)]="enrollments.email"
+        required
+        [readonly]="isAuthenticated"
+      />
+    </div>
+
+    <!-- Mobile Number Field -->
+    <div>
+      <label for="mobile">Mobile No:</label>
+      <input
+        type="text"
+        id="mobile"
+        name="mobile"
+        [(ngModel)]="enrollments.phone"
+        required
+      />
+    </div>
+
+    <!-- Payment Method Field -->
+    <div>
+      <label for="payment">Payment Method:</label>
+      <div>
+        <input
+          type="radio"
+          name="pay"
+          id="bkash"
+          value="bkash"
+          [(ngModel)]="enrollments.paymentMethod"
+        />
+        bKash
+      </div>
+      <div>
+        <input
+          type="radio"
+          name="pay"
+          id="rocket"
+          value="rocket"
+          [(ngModel)]="enrollments.paymentMethod"
+        />
+        Rocket
+      </div>
+      <div>
+        <input
+          type="radio"
+          name="pay"
+          id="dcard"
+          value="dcard"
+          [(ngModel)]="enrollments.paymentMethod"
+        />
+        Debit Card
+      </div>
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="btn-success">Submit</button>
+  </form>
+</fieldset>
 
 

@@ -19,6 +19,7 @@ export class HomeComponent {
   course: Course[] = [];
   feedbacks: Feedback[] = [];
   students: User[] = [];
+  student: User = new User();
 
   constructor(private router: Router, private courseService: CourseService, private feedbackService: FeedbackService, private userService: UserService) { }
 

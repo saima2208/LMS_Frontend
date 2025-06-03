@@ -2,16 +2,17 @@
   <div class="card text-bg-dark">
 
     <!-- <img src="https://roboticsbiz.com/wp-content/uploads/2023/09/technology.jpg" class="card-img" alt="..."> -->
-     <!-- <img src="Image/contact.jpg" class="card-img"  alt=""> -->
-     <video class="video" src="https://videos.pexels.com/video-files/6996523/6996523-uhd_2560_1440_30fps.mp4" autoplay loop muted></video>
+    <!-- <img src="Image/contact.jpg" class="card-img"  alt=""> -->
+    <video class="video" src="https://videos.pexels.com/video-files/6996523/6996523-uhd_2560_1440_30fps.mp4" autoplay
+      loop muted></video>
     <div class="card-img-overlay">
       <h1>Welcome to educare</h1>
 
       <!-- <h3>Education for the Digital Age.</h3> -->
-      <h3>A Comprehensive Online  Learning Platform
+      <h3>A Comprehensive Online Learning Platform
       </h3>
 
-      </div>
+    </div>
   </div>
 </section>
 
@@ -39,10 +40,16 @@
             <!-- View Details and Enroll Buttons -->
             <div class="button-container">
               <a href="/course-details" class="btn btn-success shadow-sm fw-bold">Details</a>
-             <a [routerLink]="'/enroll'" [queryParams]="{ title: course.courseName }"
+              <!-- <a [routerLink]="'/enroll'" [queryParams]="{ title: course.courseName }"
               class="btn btn-success shadow-sm fw-bold">
               Enroll
-            </a>
+            </a> -->
+
+              <a [routerLink]="'/enroll'" [queryParams]="{ title: course.courseName, studentName: student.name }"
+                class="btn btn-success shadow-sm fw-bold">
+                Enroll
+              </a>
+
             </div>
           </div>
         </div>
@@ -62,13 +69,13 @@
       <div class="col-lg-3 col-md-4 col-sm-6 mb-4" *ngFor="let feedback of feedbacks">
         <div class="card shadow-lg rounded-4">
           <!-- User Image -->
- <img [src]="feedback.image || 'UserImage\blank.jpg'"  alt="{{ feedback.studentName }}"/>
+          <img [src]="feedback.image || 'UserImage\blank.jpg'" alt="{{ feedback.studentName }}" />
 
           <!-- <img
             [src]="feedback.image"
             class="user-image"
             alt="{{ feedback.studentName }}" -->
-         
+
 
           <div class="card-content p-3">
             <!-- User Name -->

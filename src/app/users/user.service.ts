@@ -29,11 +29,9 @@ export class UserService {
   }
 
   getCurrentUser(): Observable<any> {
-
     const userId = Number(localStorage.getItem('id'));
     return this.http.get<any>(`${this.apiUrl}/${userId}`);
   }
-
 
   // Create a new user
   createUser(user: User): Observable<User> {

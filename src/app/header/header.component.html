@@ -1,92 +1,74 @@
-
- <nav class="navbar navbar-expand-lg " style="background-color: solid;">
-
+<nav class="navbar navbar-expand-lg" style="background-color: solid">
   <div class="container-fluid">
-    <a class="navbar-brand"  href="#"><h3 style="color: blueviolet;margin-left: 15px;">eduCare</h3></a>
-     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <a class="navbar-brand" href="#">
+      <h3 style="color: blueviolet; margin-left: 15px">eduCare</h3>
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="/home">Home</a>
+          <a class="nav-link" aria-current="page" href="/home">Home</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/courses">Courses</a>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="/teacher-list">Teachers</a>
-      </li>
-      <li class="nav-item">
-      <a class="nav-link" href="/feedback">Feedback</a>
-    </li>
-
-    <!-- <li class="nav-item">
-      <a class="nav-link " aria-current="page" href="/add-course">Add Course</a>
-    </li> -->
+          <a class="nav-link" href="/teacher-list">Teachers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/feedback">Feedback</a>
+        </li>
 
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Pages
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Pages
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="/contact">Contact</a></li>
             <!-- <li><a class="dropdown-item" href="faq">FAQ</a></li> -->
-            <li><a class="dropdown-item" href="/termsCondition">Terms & Conditions</a></li>
+            <li>
+              <a class="dropdown-item" href="/termsCondition"
+                >Terms & Conditions</a
+              >
+            </li>
             <li><a class="dropdown-item" href="#">About</a></li>
-
-
           </ul>
         </li>
-
-        <!-- <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-           Dashboard
-          </a>
-          <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="/admin">Admin</a></li>
-            <li><a class="dropdown-item" href="/student">Student</a></li>
-            <li><a class="dropdown-item" href="/teacher">Teacher</a></li>
-
-
-          </ul>
-        </li> -->
-
-        <!-- <nav>
-          <a routerLink="/dashboard">Dashboard</a>
-          <button (click)="logout()">Logout</button>
-        </nav> -->
-
       </ul>
-      <form class="d-flex " >
-
+      <form class="d-flex">
         @if (isAuthenticated) {
-        <!-- <div class="d-inline p-2">
-          <a href="/registration">
-            <button class="btn btn-success" type="button">Registration</button>
-          </a>
 
-        </div> -->
+        <div class="d-inline p-2">
+          <a href="login">
+            <button (click)="logout()" class="btn btn-success" type="button">
+              Logout
+            </button>
+          </a>
+        </div>
+        } @else {
         <div class="d-inline p-2">
           <a href="login">
             <button class="btn btn-success" type="button">Login</button>
           </a>
         </div>
-      } @else {
-        <div class="d-inline p-2">
-          <a href="login">
-            <button (click)="logout()" class="btn btn-success" type="button">Logout</button>
-          </a>
-        </div>
-        <!-- <li class="nav-item">
-          <button (click)="logout()"
-              class="nav-link btn btn-link text-white px-3 py-2 rounded-lg transition-all hover:bg-light-green">
-              🚪 Logout
-          </button>
-        </li> -->
-      }
+        }
       </form>
     </div>
   </div>
 </nav>
-

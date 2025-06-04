@@ -4,17 +4,19 @@ import { Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AuthService {
-
   private readonly tokenKey = 'access_token';
   private roleSubject = new BehaviorSubject<string | null>(null);
 
-  constructor(private http: HttpClient, private router: Router) { }
+  constructor(private http: HttpClient, private router: Router) {}
 
   login(credentials: { email: string; password: string }) {
-    return this.http.post<any>('http://localhost:8080/api/auth/login', credentials);
+    return this.http.post<any>(
+      'http://localhost:8080/api/auth/login',
+      credentials
+    );
   }
 
   setToken(token: string) {
@@ -29,6 +31,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem(this.tokenKey);
+    localStorage.removeItem('id');
     this.roleSubject.next(null);
     this.router.navigate(['/'], { replaceUrl: true });
   }
@@ -38,7 +41,12 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    return !this.getToken();
+    // return !!this.getToken();
+    if (this.getToken() != null) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   getUserRole(): string {

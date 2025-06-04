@@ -46,13 +46,10 @@
 //       this.isUpdate = true;
 //     }
 
-
 //     this.isAuthenticated = this.auth.isAuthenticated();
-
 
 //     //  this.getStudents();
 //   }
-
 
 //   //   getStudents() {
 //   //   this.userService.getUserByRole('STUDENT').subscribe({
@@ -63,7 +60,6 @@
 //   //     error: (err) => console.error('Failed to load students:', err),
 //   //   });
 //   // }
-
 
 //   onSubmit() {
 
@@ -87,14 +83,11 @@
 //       });
 //     }
 
-
-
 //   resetForm() {
 //     this.enrollments = new Enrollment();
 //     this.isUpdate = false;
 
 //   }
-
 
 // }
 
@@ -117,7 +110,7 @@ import { User } from '../../users/user.model';
 })
 export class EnrollmentComponent implements OnInit {
   enrollments: Enrollment = new Enrollment();
-   isAuthenticated = true;
+  isAuthenticated = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -146,27 +139,34 @@ export class EnrollmentComponent implements OnInit {
     this.isAuthenticated = this.auth.isAuthenticated();
 
     // Populate user information if authenticated
-    if (!this.isAuthenticated) {
+    if (this.isAuthenticated) {
       this.userService.getCurrentUser().subscribe({
         next: (user: User) => {
           this.enrollments.name = user.name;
           this.enrollments.email = user.email;
           this.enrollments.phone = user.phone;
         },
-        error: (err) => console.error('Failed to fetch logged-in user information:', err),
+        error: (err) =>
+          console.error('Failed to fetch logged-in user information:', err),
       });
     }
   }
 
   onSubmit(): void {
-    if (!this.enrollments.email || !this.enrollments.name || !this.enrollments.phone) {
+    if (
+      !this.enrollments.email ||
+      !this.enrollments.name ||
+      !this.enrollments.phone
+    ) {
       alert('Please complete all required fields.');
       return;
     }
 
     this.enrollmentService.createEnrollment(this.enrollments).subscribe({
       next: () => {
-        alert('Successfully submitted the form. We will confirm within 24 hours.');
+        alert(
+          'Successfully submitted the form. We will confirm within 24 hours.'
+        );
         this.resetForm();
       },
       error: (err) => {
@@ -180,4 +180,3 @@ export class EnrollmentComponent implements OnInit {
     this.enrollments = new Enrollment();
   }
 }
-

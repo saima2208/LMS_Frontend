@@ -19,19 +19,6 @@ export class LoginComponent {
     private router: Router
   ) { }
 
-  // onLogin() {
-  //   this.auth.login({ email: this.email, password: this.password })
-  //     .subscribe({
-  //       next: (res) => {
-  //         this.auth.setToken(res.access_token);
-  //         this.router.navigate(['/adminProfile']);
-  //       },
-  //       error: (error) => {
-  //         alert('Invalid credentials')
-  //         console.log(error)
-  //       }
-  //     });
-  // }
 
   onLogin() {
     const loginData = { email: this.email, password: this.password };

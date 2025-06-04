@@ -1,68 +1,24 @@
-
-
 <div class="a">
   <div class="card text-bg-dark">
-      <img src="https://www.marinaosnaghi.com/wp-content/uploads/2024/09/feedback-1170x600.jpg" class="card-img" alt="...">
-       <div class="card-img-overlay">
-        <h1 class="card-title">Feedback</h1>
-        <h4>Your Feedback, Our Next Upgrade</h4>
-
-
-      </div>
-    </div>
-    <div class="container">
-  <h1>
-      What they say about our courses</h1>
+    <img src="https://www.marinaosnaghi.com/wp-content/uploads/2024/09/feedback-1170x600.jpg" class="card-img"
+      alt="...">
+    <div class="card-img-overlay">
+      <h1 class="card-title">Feedback</h1>
+      <h4>Your Feedback, Our Next Upgrade</h4>
     </div>
   </div>
- <!-- @for (feedback of feedbacks; track feedback.id) {
-<div class="card mb-3" style="max-width: 540px;">
-  <div class="row g-0">
-
-    <div class="col-md-4 mb-4" *ngFor="let feedback of feedbacks">
-
-      <img [src]="feedback.image" class="img-fluid rounded-start" alt="...">
-
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">{{feedback.studentName }}</h5>
-        <p class="card-text">{{feedback.content}}</p>
-         <p class="card-text">{{feedback.rating}}</p>
-        <p class="card-text"><small class="text-body-secondary">{{feedback.createdAt}}</small></p>
-      </div>
-    </div>
-
-    </div>
-  } -->
-<!--
-<div class="col-md-4 mb-4" *ngFor="let feedback of feedbacks">
-  <div class="card shadow-lg rounded-4">
-
-        <div class="card-body text-center">
-
-          <h5 class="card-title fw-bold text-primary">{{ feedback.studentName }}</h5>
-
-
-          <p class="card-text text-muted">✍️ {{ feedback.content }}</p>
-
-
-          <p class="card-text text-success"><strong>Rating:</strong> {{ feedback.stars }}</p>
-        </div>
-      </div>
-</div> -->
-
-
+  <div class="container">
+    <h1>
+      What they say about our courses</h1>
+  </div>
+</div>
 <div class="feedback-container">
   <div class="row">
     <div class="col-md-4 mb-4" *ngFor="let feedback of feedbacks">
       <div class="card shadow-lg rounded-4">
         <!-- User Image -->
-        <img
-          [src]="feedback.image"
-          class="card-img-top img-fluid user-image" style="height: 100px; width: 100px;"
-          alt="{{ feedback.studentName }}"
-        />
-
+        <img [src]="feedback.image" class="card-img-top img-fluid user-image" style="height: 100px; width: 100px;"
+          alt="{{ feedback.studentName }}" />
         <div class="card-body text-center">
           <!-- User Name -->
           <h5 class="card-title fw-bold text-primary">
@@ -86,9 +42,3 @@
     </div>
   </div>
 </div>
-
-
-
-
-
-

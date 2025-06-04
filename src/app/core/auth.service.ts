@@ -29,6 +29,7 @@ export class AuthService {
 
   logout() {
     localStorage.removeItem(this.tokenKey);
+    localStorage.removeItem('id');
     this.roleSubject.next(null);
     this.router.navigate(['/'], { replaceUrl: true });
   }
@@ -38,7 +39,13 @@ export class AuthService {
   }
 
   isAuthenticated(): boolean {
-    return !this.getToken();
+    return !!this.getToken();
+    // OR
+    // if(this.getToken() != null) {
+    //   return true;
+    // } else {
+    //   return false;
+    // }
   }
 
   getUserRole(): string {

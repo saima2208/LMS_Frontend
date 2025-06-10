@@ -68,6 +68,11 @@ export class CourseService {
     return this.http.post(url, body);
   }
 
+  getCurrentCourse(): Observable<any> {
+    const courseId = Number(localStorage.getItem('id'));
+    return this.http.get<any>(`${this.apiUrl}/${courseId}`);
+  }
+
 }
 
 

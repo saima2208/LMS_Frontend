@@ -44,7 +44,7 @@
       <input
         type="text"
         name="name"
-        [(ngModel)]="contact.name"
+        [(ngModel)]="contacts.name"
         required
         class="form-input"
       />
@@ -56,14 +56,14 @@
         type="email"
         id="email"
         name="email"
-        [(ngModel)]="contact.email"
+        [(ngModel)]="contacts.email"
         required
       />
     </div>
 
     <div>
       <label for="message">Message:</label>
-      <textarea name="message" id="message" [(ngModel)]="contact.message"></textarea>
+      <textarea name="message" id="message" [(ngModel)]="contacts.message"></textarea>
     </div>
     <button type="submit">Submit</button>
   </form>

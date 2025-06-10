@@ -1,3 +1,4 @@
+import { Course } from "../courses/course.model";
 
 export enum Role {
   Admin = 'ADMIN',
@@ -8,6 +9,7 @@ export enum Role {
 export class User {
   id: number;
   name: string;
+  bio:string;
   fatherName: string;
   motherName: string;
   address: string;
@@ -16,6 +18,7 @@ export class User {
   avatarUrl:string;
   password: string;
   role:Role;
+courseName: String;
   // avatarUrl?: string; // URL of the uploaded image
   // avatarFile?: File; // File object for uploading
 
@@ -23,6 +26,7 @@ export class User {
   constructor() {
       this.id = 0;
       this.name = "";
+      this.bio = "";
       this.fatherName = "";
       this.motherName = "";
       this.address = "";
@@ -31,6 +35,7 @@ export class User {
       this.avatarUrl = "";
       this.password = "";
       this.role= Role.Admin;
+      this.courseName= "";
   }
 
 }
@@ -38,6 +43,7 @@ export class User {
 export interface GetUserInfo{
   id: number;
   name: string;
+  bio:string;
   fatherName: string;
   motherName: string;
   address: string;

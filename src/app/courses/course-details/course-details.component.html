@@ -1,0 +1,117 @@
+<div class="a">
+  <div class="container">
+    <div class="row">
+      <div class="col-8">
+        <!-- @for (course of courses; track course.courseName) { -->
+        <h1>{{courseDetails.courseName}}</h1>
+        <div>
+          <img src="{{courseDetails.CourseImage}}" alt="">
+          <p>{{courseDetails.description}}</p>
+        </div>
+        <!-- } -->
+        <h2>Course Teacher</h2>
+        <div class="card mb-3" style="max-width: 540px;">
+          @for (teachers of teacher; track teachers.name) {
+          <div class="row">
+            <div class="col-md-6">
+              <img src="{{teachers.avatarUrl}}" class="img-fluid rounded-start" alt="...">
+            </div>
+            <div class="col-md-6">
+              <div>
+                <div class="card-title ">
+                  <h5>{{teachers.name}} </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <p>{{teachers.bio}}</p>
+          </div>
+          }
+        </div>
+        <h3>Course lesson plan</h3>
+        <table class="table table-success table-striped tale-border">
+          <thead>
+            <tr>
+              <th>SL</th>
+              <th>Title</th>
+              <th>Content</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (lesson of lessons; track lesson.topic) {
+            <tr>
+              <td>{{ lessons.indexOf(lesson) + 1 }}</td>
+              <td>{{ lesson.topic}}</td>
+              <td>{{ lesson.content}}</td>
+            </tr>
+            }
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+  </div>
+  <!--right side-->
+  <!-- <div class="col-4">
+        <div class="course-cart-area">
+          <div class="course-price d-flex justify-content-between">
+            <h4>TK 2500
+              <s>TK 4000</s>
+            </h4>
+
+          </div>
+          <div class="left-days">
+            <p><i class="bi bi-calendar3"></i> 4 days left at this price</p>
+          </div>
+
+          <div class="course-short-description">
+            <div class="description-column d-flex justify-content-between">
+              <p><i class="bi bi-alarm"></i> Course duration</p>
+              <p>3 months</p>
+            </div>
+
+            <div class="description-column d-flex justify-content-between">
+              <p><i class="bi bi-camera-video"></i> Total Classes</p>
+              <p>25</p>
+            </div>
+
+            <div class="description-column d-flex justify-content-between">
+              <p><i class="bi bi-journal-richtext"></i> Total Lessons</p>
+              <p>40</p>
+            </div>
+
+
+
+            <div class="course-purchase button">
+              <a href="/enroll" class="btn-primary">
+                <h5>Enroll Now</h5>
+              </a>
+              <ul class="social-link"></ul>
+              <p> <span class="fw-bold">
+                  Note :
+                </span>
+                All course have 24 hours money back guarantee</p>
+
+            </div>
+            <div class="course-includes-area">
+              <div class="title">
+                <h5>This Course includes</h5>
+              </div>
+              <p><i class="bi bi-globe"></i> 100% online course</p>
+              <p><i class="bi bi-display"></i> Access on mobile , tablet and Computer</p>
+              <p><i class="bi bi-camera-video"></i> Provide exclusive recorded class</p>
+              <p><i class="bi bi-journal-check"></i> Certificate of completion</p>
+              <p><i class="bi bi-alarm"></i> 24 hours money back guarantee</p>
+            </div>
+            <div class="cart-contact">
+              <h3>For More inquries call on</h3>
+              <h4 style="text-align: center;"><i class="bi bi-telephone"></i> 019787765</h4>
+            </div>
+
+ 
+
+          </div>
+
+        </div>
+      </div> -->

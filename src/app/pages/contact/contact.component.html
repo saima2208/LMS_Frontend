@@ -1,13 +1,10 @@
-
-<!-- <img src="https://www.oregon.gov/employ/Agency/PublishingImages/ContactUs-2024.jpg" class="img-fluid" width="100%" alt="...">  -->
 <div class="a">
   <div class="card text-bg-dark">
     <img src="https://www.oregon.gov/employ/Agency/PublishingImages/ContactUs-2024.jpg" class="card-img" alt="...">
-     <!-- <img src="Image/contact.jpg" class="card-img"  alt=""> -->
+    <!-- <img src="Image/contact.jpg" class="card-img"  alt=""> -->
     <div class="card-img-overlay">
       <h1 class="card-title">Contact</h1>
       <h4>Feel free to get in touch with us</h4>
-
 
     </div>
   </div>
@@ -17,55 +14,23 @@
     <h6>Send us a message below or email us at </h6>
     <h5><a href="#">educare&#64;info.com</a></h5>
   </div><br>
-    <div>
-      <!-- <form (ngSubmit)="saveContact()" class="course-form">
-        <div>
-          <label for="name">Name:</label>
-           <input type="text" name="name" [(ngModel)]="contacts.name" required class="form-input" />
+  <div>
+    <form (ngSubmit)="saveContact()" class="course-form">
+      <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name" [(ngModel)]="contacts.name" required class="form-input" />
+      </div>
 
-        </div>
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" [(ngModel)]="contacts.email" required />
+      </div>
 
-        <div>
-          <label for="email">Email:</label>
-          <input type="email" id="email" name="email" [(ngModel)]="contacts.email" required>
-        </div>
-
-        <div>
-          <label for="message">Message:</label>
-          <textarea name="message" id="message"  [(ngModel)]="contacts.message"></textarea>
-        </div>
-        <button type="submit">Submit</button>
-
-      </form> -->
-
-       <form (ngSubmit)="saveContact()" class="course-form">
-    <div>
-      <label for="name">Name:</label>
-      <input
-        type="text"
-        name="name"
-        [(ngModel)]="contact.name"
-        required
-        class="form-input"
-      />
-    </div>
-
-    <div>
-      <label for="email">Email:</label>
-      <input
-        type="email"
-        id="email"
-        name="email"
-        [(ngModel)]="contact.email"
-        required
-      />
-    </div>
-
-    <div>
-      <label for="message">Message:</label>
-      <textarea name="message" id="message" [(ngModel)]="contact.message"></textarea>
-    </div>
-    <button type="submit">Submit</button>
-  </form>
-    </div>
+      <div>
+        <label for="message">Message:</label>
+        <textarea name="message" id="message" [(ngModel)]="contacts.message"></textarea>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
   </div>
+</div>

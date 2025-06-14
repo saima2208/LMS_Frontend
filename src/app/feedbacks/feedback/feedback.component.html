@@ -14,29 +14,39 @@
 </div>
 <div class="feedback-container">
   <div class="row">
-    <div class="col-md-4 mb-4" *ngFor="let feedback of feedbacks">
-      <div class="card shadow-lg rounded-4">
-        <!-- User Image -->
-        <img [src]="feedback.image" class="card-img-top img-fluid user-image" style="height: 100px; width: 100px;"
-          alt="{{ feedback.studentName }}" />
-        <div class="card-body text-center">
+    <div class="col-md-3 mb-4" *ngFor="let feedback of feedbacks">
+      <div class="card shadow-lg rounded-5">
+        <div class="row">
+        <div class="col-4">
+          <!-- User Image -->
+          <img [src]="feedback.image" class="card-img-top img-fluid user-image" style="height: 100px; width: 100px;"
+            alt="{{ feedback.studentName }}" />
+        </div>
+        <div class="col-8">
+          <!-- <div class="card-body text-center"> -->
           <!-- User Name -->
           <h5 class="card-title fw-bold text-primary">
             {{ feedback.studentName }}
           </h5>
-
+          </div>
+        </div>
+        <div class="row">
           <!-- Feedback Content -->
           <p class="card-text text-muted">✍️ {{ feedback.content }}</p>
-
-          <!-- Feedback Rating -->
-          <p class="card-text text-success">
-            <strong>Rating:</strong> {{ feedback.stars}}
-          </p>
-
-          <!-- Feedback Date -->
-          <p class="card-text text-secondary">
-            <small>{{ feedback.createdAt | date: 'medium' }}</small>
-          </p>
+        </div>
+        <div class="row">
+          <div class="col-5">
+            <!-- Feedback Rating -->
+            <p class="card-text text-success">
+              <strong>Rating:</strong> {{ feedback.stars}}
+            </p>
+          </div>
+          <div class="col-7">
+            <!-- Feedback Date -->
+            <p class="card-text text-secondary">
+              <small>{{ feedback.createdAt | date: 'medium' }}</small>
+            </p>
+          </div>
         </div>
       </div>
     </div>

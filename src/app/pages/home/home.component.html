@@ -53,37 +53,37 @@
 </section>
 
 
-
-
 <section class="feedback">
-  <h1>Students Feedback</h1>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-3 col-md-4 col-sm-6 mb-4" *ngFor="let feedback of feedbacks">
-        <div class="card shadow-lg rounded-4">
+ <div class="feedback-container">
+  <div class="row">
+    <div class="col-md-3 mb-4" *ngFor="let feedback of feedbacks">
+      <div class="card shadow-lg rounded-5">
+        <div class="row">
+        <div class="col-4">
           <!-- User Image -->
- <img [src]="feedback.image || 'UserImage\blank.jpg'"  alt="{{ feedback.studentName }}"/>
-
-          <!-- <img
-            [src]="feedback.image"
-            class="user-image"
-            alt="{{ feedback.studentName }}" -->
-         
-
-          <div class="card-content p-3">
-            <!-- User Name -->
-            <h5 class="card-title fw-bold text-primary">
-              {{ feedback.studentName }}
-            </h5>
-
-            <!-- Feedback Content -->
-            <p class="card-text text-muted mb-2">✍️ {{ feedback.content }}</p>
-
+          <img [src]="feedback.image" class="card-img-top img-fluid user-image" style="height: 100px; width: 100px;"
+            alt="{{ feedback.studentName }}" />
+        </div>
+        <div class="col-8">
+          <!-- <div class="card-body text-center"> -->
+          <!-- User Name -->
+          <h5 class="card-title fw-bold text-primary">
+            {{ feedback.studentName }}
+          </h5>
+          </div>
+        </div>
+        <div class="row">
+          <!-- Feedback Content -->
+          <p class="card-text text-muted">✍️ {{ feedback.content }}</p>
+        </div>
+        <div class="row">
+          <div class="col-5">
             <!-- Feedback Rating -->
-            <p class="card-text text-success mb-1">
-              <strong>Rating:</strong> {{ feedback.stars }}
+            <p class="card-text text-success">
+              <strong>Rating:</strong> {{ feedback.stars}}
             </p>
-
+          </div>
+          <div class="col-7">
             <!-- Feedback Date -->
             <p class="card-text text-secondary">
               <small>{{ feedback.createdAt | date: 'medium' }}</small>
@@ -93,4 +93,6 @@
       </div>
     </div>
   </div>
+</div>
+
 </section>

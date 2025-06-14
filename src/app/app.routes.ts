@@ -33,6 +33,7 @@ import { MycoursesComponent } from './courses/mycourses/mycourses.component';
 import { StudentListComponent } from './students/student-list/student-list.component';
 import { AssignmentSubmissionComponent } from './submitAssignment/assignment-submission/assignment-submission.component';
 import { CourseDetailsComponent } from './courses/course-details/course-details.component';
+import { MarksFormComponent } from './submitAssignment/marks-form/marks-form.component';
 
 export const routes: Routes = [
 
@@ -72,6 +73,7 @@ export const routes: Routes = [
   { path: 'assignment-list', component: AssignmentListComponent },
   { path: 'add-assignment', component: AssignmentAddComponent },
   { path: 'submit', component: AssignmentSubmissionComponent },
+  {path: 'addMarks', component:MarksFormComponent},
   // Record Class
   { path: 'add-recordClass', component: AddRecordClassComponent },
   { path: 'recordClasses', component: RecordClassComponent },

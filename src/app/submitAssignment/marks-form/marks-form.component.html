@@ -1,17 +1,103 @@
-<fieldset>
-  <h1>Add Mark</h1>
-  <form action="">
-    <label for="courseId">Course ID:</label>
-   <select name="courseId" id="courseId">
-    <option value=""></option>
-   </select>
-   <label for="assignmentId">Assignment ID:</label>
+<!-- <fieldset>
+  <h1>{{ isUpdate ? "Edit Mark" : "Add Mark" }}</h1>
+    <form (ngSubmit)="onSubmit()" #markForm="ngForm">
+   <label for="course">Course Id</label><br />
+      <select name="course" [(ngModel)]="mark.courseId" required style="width: 100%;">
+        <option *ngFor="let course of courses" [value]="course.id">
+          {{ course.id }} {{ course.name }}
+        </option>
+      </select><br />
+   <label for="assignment">Assignment Id</label><br />
+      <select name="assignment" [(ngModel)]="mark.assignmentId" required style="width: 100%;">
+        <option *ngFor="let assignment of assignments" [value]="assignment.id">
+          {{ assignment.id }} {{ assignment.name }}
+        </option>
+      </select><br />
    <table>
+    <thead>
     <th>Student ID</th>
     <th>Student name</th>
     <th>Marks</th>
+    </thead>
+    <tbody>
+      <tr></tr>
+    </tbody>
    </table>
   </form>
 </fieldset>
 
+ -->
+
+
+ <fieldset>
+  <h1>{{ isUpdate ? "Edit Mark" : "Add Mark" }}</h1>
+  <form (ngSubmit)="onSubmit()" #markForm="ngForm">
+    <!-- Course Selection -->
+    <label for="course">Course</label><br />
+    <select
+      name="course"
+      [(ngModel)]="mark.courseId"
+      required
+      style="width: 100%;"
+    >
+      <option *ngFor="let course of courses" [value]="course.id">
+        {{ course.id }} - {{ course.courseName }}
+      </option>
+    </select><br />
+
+    <!-- Assignment Selection -->
+    <label for="assignment">Assignment</label><br />
+    <select
+      name="assignment"
+      [(ngModel)]="mark.assignmentId"
+      required
+      style="width: 100%;"
+    >
+      <option *ngFor="let assignment of assignments" [value]="assignment.id">
+        {{ assignment.id }} - {{ assignment.topic }}
+      </option>
+    </select><br />
+
+    <!-- Students Table -->
+    <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
+      <thead>
+        <tr>
+          <th style="border: 1px solid #ddd; padding: 8px;">Student ID</th>
+          <th style="border: 1px solid #ddd; padding: 8px;">Student Name</th>
+          <th style="border: 1px solid #ddd; padding: 8px;">Marks</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let student of students">
+          <td style="border: 1px solid #ddd; padding: 8px;">
+            {{ student.id }}
+          </td>
+          <td style="border: 1px solid #ddd; padding: 8px;">
+            {{ student.name }}
+          </td>
+          <td style="border: 1px solid #ddd; padding: 8px;">
+            <input
+              type="number"
+              name="marks"
+              [(ngModel)]="mark.marks"
+              required
+              min="0"
+              max="100"
+              style="width: 100%;"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table><br />
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      [disabled]="!markForm.valid"
+      style="background-color: #007bff; color: white; padding: 10px 20px; border: none; cursor: pointer;"
+    >
+      {{ isUpdate ? "Update Mark" : "Add Mark" }}
+    </button>
+  </form>
+</fieldset>
 

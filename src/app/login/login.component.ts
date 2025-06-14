@@ -18,8 +18,6 @@ export class LoginComponent {
     private auth: AuthService,
     private router: Router
   ) { }
-
-
   onLogin() {
     const loginData = { email: this.email, password: this.password };
 
@@ -56,6 +54,4 @@ export class LoginComponent {
       }
     });
   }
-
-
 }

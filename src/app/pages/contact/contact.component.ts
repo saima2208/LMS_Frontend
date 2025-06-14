@@ -12,37 +12,33 @@ import { ContactService } from '../services/contact.service';
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent {
   contacts: Contact = new Contact();
   // contact: Contact[] = [];
-  constructor(private router: Router, private contactService: ContactService
-// private toastr: ToastrService
+  constructor(private router: Router,
+     private contactService: ContactService
+    // private toastr: ToastrService
   ) { }
-
-  ngOnInit(): void {
-
-  }
-
   saveContact(): void {
     this.addContact();
   }
   addContact(): void {
     this.contactService.addContact(this.contacts).subscribe({
-next: () => {
+      next: () => {
         // this.toastr.success("Message sent successfully");
         alert('Message sent successfull');
         this.router.navigate(['/faq']);
         this.resetForm();
-},
-error: (err) => {
-  // this.toastr.error('Failed to submit message' + err.message);
-   alert('Failed to submit message' + err.message);
-  console.error(err);
-},
+      },
+      error: (err) => {
+        // this.toastr.error('Failed to submit message' + err.message);
+        alert('Failed to submit message' + err.message);
+        console.error(err);
+      },
     });
   }
   resetForm() {
-this.contacts = new Contact();
+    this.contacts = new Contact();
   }
 
 }

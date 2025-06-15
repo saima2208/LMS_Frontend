@@ -12,7 +12,7 @@ import { Course } from '../../courses/course.model';
   styleUrl: './teacher-list.component.css'
 })
 export class TeacherListComponent implements OnInit{
-//  user: User = new User();
+//  teacher: User = new User();
 
    isUpdate = false;
    teacher: User[] = [];

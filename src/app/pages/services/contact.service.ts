@@ -1,14 +1,13 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Contact } from '../../model/contact.model';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
-
-   private apiUrl = 'http://localhost:8080/api/contact';
+  private apiUrl = 'http://localhost:8080/api/contact';
 
   constructor(private http: HttpClient) {}
 
@@ -21,4 +20,5 @@ export class ContactService {
   getAllMessages(): Observable<Contact[]>{
 return this.http.get<Contact[]>(`${this.apiUrl}`);
   }
+
 }

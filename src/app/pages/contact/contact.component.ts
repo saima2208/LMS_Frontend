@@ -6,7 +6,6 @@ import { CommonModule } from '@angular/common';
 import { ContactService } from '../services/contact.service';
 
 
-
 @Component({
   selector: 'app-contact',
   imports: [FormsModule, CommonModule],

@@ -38,6 +38,7 @@ import { FaqComponent } from './pages/faq/faq.component';
 import { MycoursesComponent } from './courses/mycourses/mycourses.component';
 import { StudentListComponent } from './students/student-list/student-list.component';
 import { AssignmentSubmissionComponent } from './submitAssignment/assignment-submission/assignment-submission.component';
+import { ListComponent } from './submitAssignment/list/list.component';
 
 export const routes: Routes = [
   { path: 'admin', component: AdminDashboardComponent },
@@ -78,7 +79,8 @@ export const routes: Routes = [
   { path: 'faq', component: FaqComponent },
   { path: 'myCourses', component: MycoursesComponent },
   {path: 'student-list', component:StudentListComponent},
-  {path:'submit' , component:AssignmentSubmissionComponent}
+  {path:'submit' , component:AssignmentSubmissionComponent},
+  {path:'submitList' , component:ListComponent}
 ];
 
 

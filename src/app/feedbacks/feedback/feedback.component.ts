@@ -14,7 +14,7 @@ import { Course } from '../../courses/course.model';
   styleUrl: './feedback.component.css'
 })
 export class FeedbackComponent implements OnInit {
-  isUpdate = false;
+  
   students: User[] = [];
   feedbacks: Feedback[] = [];
   course: Course[] = [];

@@ -34,6 +34,7 @@ import { StudentListComponent } from './students/student-list/student-list.compo
 import { AssignmentSubmissionComponent } from './submitAssignment/assignment-submission/assignment-submission.component';
 import { CourseDetailsComponent } from './courses/course-details/course-details.component';
 import { MarksFormComponent } from './submitAssignment/marks-form/marks-form.component';
+import { MarksListComponent } from './submitAssignment/marks-list/marks-list.component';
 
 export const routes: Routes = [
 
@@ -74,6 +75,7 @@ export const routes: Routes = [
   { path: 'add-assignment', component: AssignmentAddComponent },
   { path: 'submit', component: AssignmentSubmissionComponent },
   {path: 'addMarks', component:MarksFormComponent},
+  {path: 'result' , component:MarksListComponent},
   // Record Class
   { path: 'add-recordClass', component: AddRecordClassComponent },
   { path: 'recordClasses', component: RecordClassComponent },

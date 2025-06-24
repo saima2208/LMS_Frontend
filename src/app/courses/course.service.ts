@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Course } from '../courses/course.model';
 import { map } from 'rxjs/operators';
+import { User } from '../users/user.model';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,10 @@ export class CourseService {
   private apiUrl = 'http://localhost:8080/api/courses';
 
   constructor(private http: HttpClient) {}
+
+  getUsersByCourseId(courseId:number): Observable<User[]> {
+    return this.http.get<User[]>(`${this.apiUrl}/users/${courseId}`);
+  }
 
   getCourses(): Observable<Course[]> {
     return this.http.get<any[]>(this.apiUrl).pipe(

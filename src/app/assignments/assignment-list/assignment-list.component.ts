@@ -18,6 +18,7 @@ export class AssignmentListComponent {
   ngOnInit(): void {
     this.assignmentService.getAssignments().subscribe((data) => {
       this.assignments = data;
+      // this.saveAssignment();
 
     });
   }

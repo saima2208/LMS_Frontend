@@ -1,0 +1,58 @@
+<!-- <table>
+  <thead>
+    <tr>
+    <th>SL No</th>
+    <th>Course Name</th>
+    <th>Assignment Name</th>
+    <th>Obtained Marks</th>
+    <th>Total Marks</th>
+    </tr>
+  </thead>
+</table> -->
+
+<div class="container">
+  <h1>Marks List</h1>
+
+  <form action="">
+    <label for="course">Course</label>
+    <input type="text"><br>
+    <label for="assignment">Assignment</label>
+    <input type="text">
+  </form>
+
+  <!-- Display loading spinner -->
+  <div *ngIf="isLoading" class="loading-spinner">
+    Loading marks...
+  </div>
+
+  <!-- Display error message -->
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+  </div>
+
+  <!-- Display marks table -->
+  <table class="table table-striped" *ngIf="!isLoading && marks.length > 0">
+    <thead>
+      <tr>
+        <th>Course</th>
+        <th>Assignment</th>
+        <th>Marks</th>
+        <th>Total Marks</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let mark of marks">
+        <td>{{ mark.courseId}}</td>
+        <td>{{ mark.assignmentId }}</td>
+        <td>{{ mark.marks }}</td>
+        <td>{{ mark.totalMarks }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- No data message -->
+  <div *ngIf="!isLoading && marks.length === 0" class="alert alert-info">
+    No marks found for the selected assignment and user.
+  </div>
+</div>
+
